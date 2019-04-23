@@ -1,7 +1,26 @@
 const express = require("express");
+const mongoose = require('mongoose')
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
+
+
+app.use(bodyParser.json())
+app.use(cors())
+app.use(
+  bodyParser.urlencoded({
+    extended: false
+  })
+)
+
+const mongoURI = 'mongodb://localhost:27017/Glam-me'
+mongoose
+.connect(mongoURI, {useNewUrlParser: true})
+.then(() => console.log("MongoDB connect"))
+.catch(err => console.log(err))
+
+var Users = require('./routes/Users')
+app.use('/user', Users)
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
