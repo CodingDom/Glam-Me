@@ -1,0 +1,12 @@
+.searchBarComponent {
+    margin: 30px auto 50px 300px;
+    width: 500px;
+    
+}
+.artistCardContainer {
+    position: relative;
+    height: auto;
+    background-color: white;
+    align-items: center;
+    width: 100%
+}

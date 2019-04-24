@@ -23,7 +23,7 @@ class App extends Component {
         <Route exact path = "/appointments" component={Appointments} />
         <Route exact path = "/artistregister" component={ArtistRegister} />
       </Switch>
-      <Navbar />
+    
    </div>
  </Router>
     );
