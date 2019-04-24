@@ -22,6 +22,13 @@
   "dependencies": {
     "express": "^4.16.3",
     "if-env": "^1.0.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodingDom/Glam-Me.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CodingDom/Glam-Me/issues"
+  },
+  "homepage": "https://github.com/CodingDom/Glam-Me#readme"
 }
-
