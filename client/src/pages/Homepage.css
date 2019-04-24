@@ -1,0 +1,10 @@
+.carousel {
+    position: relative;
+    margin-top: 15px;
+    height: 250px;
+    display: flex;
+}
+.homepageJumbo {
+    margin-top: 200px;
+    margin-bottom: 100px;
+}
