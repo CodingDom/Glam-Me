@@ -1,5 +1,6 @@
 import React from "react";
 import {Button, Form, Col} from 'react-bootstrap'
+import "./style.css";
 
 
 class Artistform extends React.Component {
@@ -10,6 +11,9 @@ class Artistform extends React.Component {
         artistpassword: "",
         artistconfirmpassword: "",
         artistspecialties: "",
+        artistcity: "",
+        artiststate: "",
+        artistzipcode: ""
 
 
     };
@@ -30,6 +34,7 @@ class Artistform extends React.Component {
       };
     render(){
         return (
+          <div className="artistForm">
             <Form method="post" action="/ " >
       <Form.Row>
         <Form.Group as={Col} controlId="formGridArtistFirstName">
@@ -46,6 +51,7 @@ class Artistform extends React.Component {
           <Form.Label>Email</Form.Label>
           <Form.Control onChange={this.handleInputChange} value={this.state.artistemail} name="artistemail"type="email" placeholder="Enter email" />
         </Form.Group>
+        <Form.Row>
       <Form.Group as={Col} controlId="formGridArtistPassword">
           <Form.Label>Password</Form.Label>
           <Form.Control onChange={this.handleInputChange} value={this.state.artistpassword} name="artistpassword" type="password" placeholder="Enter password" />
@@ -54,6 +60,77 @@ class Artistform extends React.Component {
           <Form.Label>Confirm Password</Form.Label>
           <Form.Control onChange={this.handleInputChange} value={this.state.artistconfirmpassword} name="artistconfirmpassword" type="password" placeholder="Confirm password" />
         </Form.Group>
+        </Form.Row>
+        <Form.Row>
+        <Form.Group as={Col} controlId="formGridCity">
+          <Form.Label>City</Form.Label>
+          <Form.Control  onChange={this.handleInputChange} value={this.state.artistcity} name="artistcity" />
+        </Form.Group>
+
+        <Form.Group as={Col} controlId="formGridState">
+          <Form.Label>State</Form.Label>
+          <Form.Control  onChange={this.handleInputChange} value={this.state.artiststate} name="artiststate" as="select">
+            <option>Choose...</option>
+            <option>Alabama</option>
+            <option>Alaska</option>
+            <option>Arizona</option>
+            <option>Arkansas</option>
+            <option>California</option>
+            <option>Colorado</option>
+            <option>Connecticut</option>
+            <option>Delaware</option>
+            <option>District Of Columbia</option>
+            <option>Florida</option>
+            <option>Georgia</option>
+            <option>Hawaii</option>
+            <option>Idaho</option>
+            <option>Illinois</option>
+            <option>Indiana</option>
+            <option>Iowa</option>
+            <option>Kansas</option>
+            <option>Kentucky</option>
+            <option>Louisiana</option>
+            <option>Maine</option>
+            <option>Maryland</option>
+            <option>Massachusetts</option>
+            <option>Michigan</option>
+            <option>Minnesota</option>
+            <option>Mississippi</option>
+            <option>Missouri</option>
+            <option>Montana</option>
+            <option>Nebraska</option>
+            <option>Nevada</option>
+            <option>New Hampshire</option>
+            <option>New Jersey</option>
+            <option>New Mexico</option>
+            <option>New York</option>
+            <option>North Carolina</option>
+            <option>North Dakota</option>
+            <option>Ohio</option>
+            <option>Oklahoma</option>
+            <option>Oregon</option>
+            <option>Pennsylvania</option>
+            <option>Rhode Island</option>
+            <option>South Carolina</option>
+            <option>South Dakota</option>
+            <option>Tennessee</option>
+            <option>Texas</option>
+            <option>Utah</option>
+            <option>Vermont</option>
+            <option>Virginia</option>
+            <option>Washington</option>
+            <option>West Virginia</option>
+            <option>Wisconsin</option>
+            <option>Wyoming</option>
+          </Form.Control>
+        </Form.Group>
+
+        <Form.Group as={Col} controlId="formGridZip">
+          <Form.Label>ZipCode</Form.Label>
+          <Form.Control  onChange={this.handleInputChange} value={this.state.artistzipcode} name="artistzipcode"/>
+        </Form.Group>
+        </Form.Row>
+
         <Form.Group as={Col} controlId="formGridArtistSpecialties">
         <Form.Label>Specialties</Form.Label>
         <Form.Control onChange={this.handleInputChange} value={this.state.artistspecialties}  name="artistspecialties"as="select">
@@ -70,6 +147,7 @@ class Artistform extends React.Component {
             Sign up!
       </Button>
     </Form>
+          </div>
         )
     }
 }
