@@ -1,26 +1,36 @@
 const express = require("express");
+const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const path = require("path");
+const session = require("express-session");
+// Requiring passport as we've configured it
+const passport = require("./config/passport");
 const PORT = process.env.PORT || 3001;
 const app = express();
 
-
 app.use(bodyParser.json())
-app.use(cors())
+// app.use(cors())
 app.use(
   bodyParser.urlencoded({
     extended: false
   })
 )
 
+app.use(
+  session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
+);
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Requiring our custom middleware for checking if a user is logged in
+var isAuthenticated = require("./config/middleware/isAuthenticated");
+app.use(isAuthenticated);
+
 const mongoURI = 'mongodb://localhost:27017/Glam-me'
 mongoose
 .connect(mongoURI, {useNewUrlParser: true})
 .then(() => console.log("MongoDB connect"))
 .catch(err => console.log(err))
-
-var Users = require('./routes/Users')
-app.use('/user', Users)
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
@@ -29,6 +39,13 @@ if (process.env.NODE_ENV === "production") {
 
 // Send every request to the React app
 // Define any API routes before this runs
+require("./routes/apiRoutes")(app, passport);
+
+app.post("/api/test", function(req, res) {
+  console.log(req.body);
+  res.status(200);
+});
+
 app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
