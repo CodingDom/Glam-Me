@@ -1,15 +1,18 @@
 .userRegisterForm {
     position: relative;
-    height: 480px;
+    height: auto;
     width: 420px;
     padding: 10px;
     border-radius: 15px;
-    background-color: blueviolet;
+    background-color: darkslategray;
     margin-top: 5rem;
-    margin-left:7rem;
+    margin-left:15rem;
     margin-bottom: 5rem;
     border-color: black;
     border-style: solid;
+}
+.registerLinkButton{
+    margin-top: 200px;
 }
 
 .userLoginForm {

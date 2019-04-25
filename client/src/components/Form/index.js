@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, Form, Col} from 'react-bootstrap'
+import {Button, Form, Col} from 'react-bootstrap';
 
 
 class form extends React.Component {
@@ -31,25 +31,25 @@ class form extends React.Component {
             <Form method="post" action="" >
       <Form.Row>
         <Form.Group as={Col} controlId="formGridFirstName">
-          <Form.Label>First Name</Form.Label>
+          <Form.Label><strong>First Name</strong></Form.Label>
           <Form.Control onChange={this.handleInputChange} value={this.state.firstname}name="firstname" type="text" placeholder="Enter first name" />
         </Form.Group>
     
         <Form.Group as={Col} controlId="formGridLastName">
-          <Form.Label>Last Name</Form.Label>
+          <Form.Label><strong>Last Name</strong></Form.Label>
           <Form.Control onChange={this.handleInputChange} value={this.state.lastname} name="lastname" type="text" placeholder="Enter last name" />
         </Form.Group>
       </Form.Row>
       <Form.Group as={Col} controlId="formGridEmail">
-          <Form.Label>Email</Form.Label>
+          <Form.Label><strong>Email</strong></Form.Label>
           <Form.Control onChange={this.handleInputChange} value={this.state.email} name="email"type="email" placeholder="Enter email" />
         </Form.Group>
       <Form.Group as={Col} controlId="formGridPassword">
-          <Form.Label>Password</Form.Label>
+          <Form.Label><strong>Password</strong></Form.Label>
           <Form.Control onChange={this.handleInputChange} value={this.state.password} name="password" type="password" placeholder="Enter password" />
         </Form.Group>
         <Form.Group as={Col} controlId="formGridConfirmPassword">
-          <Form.Label>Confirm Password</Form.Label>
+          <Form.Label><strong>Confirm password</strong></Form.Label>
           <Form.Control onChange={this.handleInputChange} value={this.state.confirmpassword} name="confirmpassword" type="password" placeholder="Confirm password" />
         </Form.Group>
     

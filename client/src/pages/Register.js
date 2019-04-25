@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import Form from "../components/Form/index";
 import LoginForm from "../components/LoginForm/index"
 import Button from 'react-bootstrap/Button';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import "react-tabs/style/react-tabs.css";
 import "./Register.css";
 
 class Register extends Component {
@@ -12,24 +14,26 @@ class Register extends Component {
         return (
             <Container fluid>
             <Row>
-                <Col size="md-5">
+                <Col size="md-6">
                 <div className="userRegisterForm">
-                <h3>Client Sign Up</h3>
-                <hr></hr>
+                <Tabs>
+                <TabList>
+                <Tab><strong>Register</strong></Tab>
+                <Tab><strong>Login</strong></Tab>
+                </TabList>
+ 
+                <TabPanel>
                 <Form  />
-                </div>
-                </Col>
-                <Col size="md-3">
-                <div className="userLoginForm">
-                <h3>Client Login</h3>
-                <hr></hr>
+                </TabPanel>
+            <TabPanel>
                 <LoginForm />
-
-                
+                </TabPanel>
+    </Tabs>
+              
                 </div>
                 </Col>
-                <Col size="md-2">
-                <div>
+                <Col size="md-6">
+                <div className="registerLinkButton">
                 <Link to="/artistRegister">
                 <Button variant="danger">
                 Register as artist
