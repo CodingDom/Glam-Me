@@ -51,4 +51,5 @@ UserSchema.pre("save", function(next) {
 UserSchema.methods.validPassword = function(password) {
   return bcrypt.compareSync(password, this.password);
 };
+// eslint-disable-next-line no-undef
 module.exports = User = mongoose.model('users', UserSchema)

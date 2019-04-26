@@ -1,12 +1,21 @@
+/* eslint-disable no-unused-expressions */
 import React from "react";
-import {Button, Form, Col} from 'react-bootstrap'
+import {Button, Form, Col} from 'react-bootstrap';
+import axios from "axios";
+import { Redirect } from "react-router-dom";
 
 
 class Loginform extends React.Component {
     state={
         email: "",
         password: "",
+        redirect : false
     };
+
+    renderRedirect = () => {
+      if (this.state.redirect)
+        return <Redirect to={this.state.redirect} />;
+    }
 
     handleInputChange = event => {
         const{ name, value} = event.target;
@@ -18,12 +27,19 @@ class Loginform extends React.Component {
  
     handleFormSubmit = event => {
         console.log(this.state)
-
+        event.preventDefault();
+        axios.post("/api/login", this.state ).then((res) => {
+          this.setState({
+            redirect: res.data
+          })
+          
+        })
         //look for user
       };
     render(){
         return (
-            <Form method="post" action="/api/users" >
+            <Form method="post" action="/api/login" >
+            {this.renderRedirect()}
       <Form.Row>
         <Form.Group as={Col} controlId="formGridEmail">
           <Form.Label>Email</Form.Label>

@@ -35,8 +35,14 @@ module.exports = function(app, passport) {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/signup", function(req, res) {
-    console.log(req.body);
-    const user = new User(req.body);
+    const userInfo = {
+      name: `${req.body.firstName} ${req.body.lastName}`,
+      email: req.body.email,
+      password: req.body.password,
+      // specialties: req.body.specialties,
+      // location: req.body.location
+    };
+    const user = new User(userInfo);
     user.save()
       .then(function() {
         res.redirect(307, "/api/login");

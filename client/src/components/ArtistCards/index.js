@@ -33,7 +33,7 @@ class ArtistCard extends React.Component {
           <li>
            
             <Button variant="danger">
-              Book Appointment
+              View Profile
             </Button>
           </li>
         </ul>
