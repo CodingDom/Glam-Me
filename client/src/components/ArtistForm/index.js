@@ -35,7 +35,7 @@ class Artistform extends React.Component {
     render(){
         return (
           <div className="artistForm">
-            <Form method="post" action="/ " >
+            <Form method="post" action="/api/signup " >
       <Form.Row>
         <Form.Group as={Col} controlId="formGridArtistFirstName">
           <Form.Label>First Name</Form.Label>
