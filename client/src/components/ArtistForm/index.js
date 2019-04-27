@@ -1,5 +1,6 @@
 import React from "react";
 import {Button, Form, Col} from 'react-bootstrap'
+import axios from "axios";
 import "./style.css";
 
 
@@ -30,7 +31,15 @@ class Artistform extends React.Component {
         console.log(this.state)
 
         //save user to database
-        
+        if(this.state.artistpassword == this.state.artistconfirmpassword) {
+          axios.post("/api/signup", this.state)
+          .then(res => {
+            alert("Artist account created")
+          })
+          .catch(error => {
+            console.log(error)
+          })
+        }
       };
     render(){
         return (

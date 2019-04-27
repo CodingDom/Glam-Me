@@ -9,6 +9,7 @@ import Appointments from './pages/Appointments';
 import ArtistRegister from "./pages/ArtistRegister";
 import Footer from "./components/Footer/index";
 import "./App.css";
+import ArtistProfilePage from "./pages/ArtistProfilePage";
 
 class App extends Component {
   render() {
@@ -22,6 +23,7 @@ class App extends Component {
         <Route exact path = "/artist" component={Artist} />
         <Route exact path = "/appointments" component={Appointments} />
         <Route exact path = "/artistregister" component={ArtistRegister} />
+        <Route exact path = "/artistProfile" component={ArtistProfilePage} />
       </Switch>
     
    </div>
