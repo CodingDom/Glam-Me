@@ -10,7 +10,9 @@ function jumbotron(){
     <Container>
       <h1>About Us</h1>
       <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      For your convenience, we are open 7 days a week. In addition, we offer memberships to help you de-stress, relax and maintain a healthy lifestyle.
+      Our highly experienced and friendly staff bring you the latest in styles, trends, treatments, and products for you to enjoy, in a comforting and welcoming environment.
+At Glame me , we take pride in creating a rewarding and relaxing experience for all of our clients and ensure that your visit with us leaves you with a feeling of satisfaction and overall well-being. Indulge in the escape to an elegant tranquil respite of exceptional service and unsurpassed expertise to renew your health and vitality.
       </p>
     </Container>
   </Jumbotron>
