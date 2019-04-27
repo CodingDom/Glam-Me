@@ -1,5 +1,6 @@
 import React from "react";
 import {Button, Form, Col} from 'react-bootstrap';
+import axios from "axios";
 
 
 class form extends React.Component {
@@ -22,8 +23,14 @@ class form extends React.Component {
     handleFormSubmit = event => {
         console.log(this.state)
         event.preventDefault();
-        
-        //save user to database
+        if (this.state.password == this.state.confirmpassword){
+          axios.post("/api/signup", this.state)
+          .then(res => {
+            alert("Account Created")
+          })
+        } else {
+          alert("Passwords dont match")
+        }
         
       };
     render(){

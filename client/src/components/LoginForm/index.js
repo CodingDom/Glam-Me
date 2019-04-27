@@ -1,5 +1,6 @@
 import React from "react";
 import {Button, Form, Col} from 'react-bootstrap'
+import axios from "axios";
 
 
 class Loginform extends React.Component {
@@ -18,8 +19,13 @@ class Loginform extends React.Component {
  
     handleFormSubmit = event => {
         console.log(this.state)
-
-        //look for user
+      axios.post("/api/login", this.state)
+      .then(res => {
+        console.log("user logged in")
+      }) .catch(error => {
+        console.log(error);
+      })
+       
       };
     render(){
         return (
