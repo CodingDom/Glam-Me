@@ -6,12 +6,14 @@ import LoginForm from "../components/LoginForm/index"
 import Button from 'react-bootstrap/Button';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import "react-tabs/style/react-tabs.css";
+import FadeIn from 'react-fade-in';
 import "./Register.css";
 
 class Register extends Component {
     state = {  }
     render() {
         return (
+            <FadeIn>
             <Container fluid>
             <Row>
                 <Col size="md-6">
@@ -44,6 +46,7 @@ class Register extends Component {
 
             </Row>
             </Container>
+            </FadeIn>
         );
     }
 }
