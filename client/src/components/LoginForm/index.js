@@ -23,7 +23,7 @@ class Loginform extends React.Component {
       };
     render(){
         return (
-            <Form method="post" action="/api/users" >
+            <Form method="post" action="/api/login" >
       <Form.Row>
         <Form.Group as={Col} controlId="formGridEmail">
           <Form.Label>Email</Form.Label>
