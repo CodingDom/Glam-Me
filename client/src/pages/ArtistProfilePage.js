@@ -1,5 +1,6 @@
 import React from "react";
 import ArtistProfile from "../components/ArtistProfile/index";
+import FadeIn from 'react-fade-in';
 import { Col , Row , Container } from "../components/Grid/index";
 
 
@@ -20,6 +21,7 @@ class ArtistProfilePage extends React.Component {
 
     render(){
         return (
+            <FadeIn>
             <Container fluid>
             <Row>
                 <Col size="12">
@@ -30,6 +32,7 @@ class ArtistProfilePage extends React.Component {
                 </Col>
             </Row>
             </Container>
+            </FadeIn>
         )
     }
 }

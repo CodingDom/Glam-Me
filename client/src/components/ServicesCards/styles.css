@@ -1,6 +1,4 @@
-.artistCardWrapper {
-    margin-left: 120px;
-}
+
 .card {
     background: #fff;
     border-radius: 2px;
@@ -15,13 +13,13 @@
   
   }
   
-  .card > .img-container {
+  .card > .service-img-container {
     height: 60%;
     
     text-align: center;
-    background: green;
+    background: black;
   }
-  .card > .img-container > img {
+  .card > .service-img-container > img {
     width: 60%
   }
   
@@ -31,13 +29,6 @@
     font-size: 15px;
   }
   
-  .card > .content > ul {
-    list-style-type: none;
-  }
-  
-  .card > .content > ul > li {
-    margin-top: 18px;
-  }
   
   .card > .remove {
     color: #ff1744;
