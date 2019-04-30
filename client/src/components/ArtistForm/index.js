@@ -31,7 +31,7 @@ class Artistform extends React.Component {
         console.log(this.state)
 
         //save user to database
-        if(this.state.artistpassword == this.state.artistconfirmpassword) {
+        if(this.state.artistpassword === this.state.artistconfirmpassword) {
           axios.post("/api/signup", this.state)
           .then(res => {
             alert("Artist account created")
