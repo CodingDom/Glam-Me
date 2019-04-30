@@ -18,8 +18,6 @@ function ArtistProfile (props) {
                     {props.profileLocation}
                     {props.profileRating}
                     {props.profileWorkImages}
-                   
-
                     </div>
                     </Col>
                 </Row>

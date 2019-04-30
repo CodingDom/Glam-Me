@@ -2,12 +2,14 @@ import React, { Component } from "react";
 import { Col, Row, Container} from "../components/Grid/index";
 import SearchBar from "../components/SearchBar/index";
 import ArtistCards from "../components/ArtistCards/index";
+import FadeIn from 'react-fade-in';
 import "./Artist.css";
 
 class Artist extends Component {
     state = {  }
     render() {
         return (
+            <FadeIn>
             <Container >
             <Row>
                 <Col size="12">
@@ -24,6 +26,7 @@ class Artist extends Component {
                 </Col>
             </Row>
             </Container>
+            </FadeIn>
         );
     }
 }

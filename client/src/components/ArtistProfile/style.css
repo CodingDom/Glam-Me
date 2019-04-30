@@ -1,0 +1,14 @@
+
+.artistProfileWrapper{
+    position: relative;
+    height: auto;
+    margin-top: 20px;
+    border-style: solid;
+    border-color: black;
+}
+.artistProfileInfo {
+    position: relative;
+    top: -250px;
+    margin-left: 300px;
+    
+}

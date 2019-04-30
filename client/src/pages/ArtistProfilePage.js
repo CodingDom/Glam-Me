@@ -14,7 +14,6 @@ class ArtistProfilePage extends React.Component {
     }
 
     componentDidMount(){
-        
     }
 
     render(){

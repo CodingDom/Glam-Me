@@ -10,13 +10,16 @@ import ArtistRegister from "./pages/ArtistRegister";
 import ArtistProfilePage from "./pages/ArtistProfilePage";
 import Footer from "./components/Footer/index";
 import "./App.css";
+import ArtistProfilePage from "./pages/ArtistProfilePage";
 
 class App extends Component {
   render() {
     return (
  <Router>
    <div>
+     
       <Navbar />
+      <FadeIn>
       <Switch>
         <Route exact path="/" component={Homepage} />
         <Route exact path="/register" component={Register} />
@@ -25,7 +28,7 @@ class App extends Component {
         <Route exact path = "/artistregister" component={ArtistRegister} />
         <Route exact path = "/artistprofile" component={ArtistProfilePage} />
       </Switch>
-    
+    </FadeIn>
    </div>
  </Router>
     );

@@ -3,7 +3,6 @@ import {Button, Form, Col} from 'react-bootstrap';
 import axios from "axios";
 
 
-
 class form extends React.Component {
     state={
         firstName: "",
@@ -24,7 +23,6 @@ class form extends React.Component {
     handleFormSubmit = event => {
         console.log(this.state)
         event.preventDefault();
-
         if(this.state.password === this.state.confirmpassword){
           axios.post("/api/signup", this.state)
         } else{
