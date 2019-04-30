@@ -1,0 +1,32 @@
+.serviceCards {
+    position: relative;
+    width: auto;
+    background-color: gray;
+    height: auto;
+    margin-left: 15rem;
+
+}
+.appointmentMsgContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+  
+    border: 2px dashed rgba(114, 186, 94, 0.35);
+    height: 400px;
+    
+    background-image: url(https://t3.ftcdn.net/jpg/02/21/84/04/500_F_221840480_ADhGGtUBX7GK7brGPo3AbhHhULGwebZf.jpg)
+}
+.appointmentMsgText {
+    position: -webkit-sticky;
+    background-color: black;
+    color: white;
+    position: sticky;
+    top: 0;
+}
+.artistCards {
+    position: relative;
+    background-color: gray;
+    height: auto;
+    width: 400px;
+
+}
