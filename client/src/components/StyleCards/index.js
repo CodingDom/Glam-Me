@@ -1,19 +1,19 @@
 import React from "react";
-import "./someStyling.css";
+import "./styleCards.css";
 
 import serviceImage from "../../serviceimages.json";
 
-function ServiceCards(props) {
+function StyleCards(props) {
     return(
-        <div className="serviceCardWrapper">
+        <div className="styleCardWrapper">
       {serviceImage.map(service => (
-          <span  key={service.service}      
-          value={service.service} 
+          <span  key={service.styles}      
+          value={service.styles} 
           onClick={props.onClick} 
           onChange={props.handleInputChange}name="servicePicked">
         <div className="cards">
-      <div className="service-img-container">
-        <img alt={service.service} src={service.styles} />
+      <div className="style-img-container">
+        <img alt={service.styles} src={service.styles} />
        
       </div>
     
@@ -27,4 +27,4 @@ function ServiceCards(props) {
     )
 }
 
-export default ServiceCards ;
+export default StyleCards ;

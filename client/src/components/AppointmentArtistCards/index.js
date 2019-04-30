@@ -5,20 +5,18 @@ import StarRating from "../StarRating/index";
 import "./style.css";
 
 class ArtistCard extends React.Component {
-      constructor (props) {
+    constructor(props){
         super(props)
 
         this.state = {
-          images:images
+            images:images
         }
-      }
+    }
 
-  
+     
   render() {
     return (
-      <span  
-      onClick={this.props.onClick} 
-      onChange={this.props.handleInputChange}name="servicePicked">
+        <span>
       <div className="artistCardWrapper">
       {this.state.images.map(image => (
         <div className="card">
@@ -40,7 +38,7 @@ class ArtistCard extends React.Component {
           <li>
            
             <Button variant="danger">
-              View Profile
+              View Artist
             </Button>
           </li>
         </ul>
@@ -51,7 +49,6 @@ class ArtistCard extends React.Component {
     </div>
       ))}
       </div>
-      </span>
 
       
     )

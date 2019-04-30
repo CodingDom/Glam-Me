@@ -7,7 +7,7 @@ import Register from "./pages/Register";
 import Artist from "./pages/Artist";
 import Appointments from './pages/Appointments';
 import ArtistRegister from "./pages/ArtistRegister";
-import FadeIn from 'react-fade-in';
+import ArtistProfilePage from "./pages/ArtistProfilePage";
 import Footer from "./components/Footer/index";
 import "./App.css";
 import ArtistProfilePage from "./pages/ArtistProfilePage";
@@ -26,7 +26,7 @@ class App extends Component {
         <Route exact path = "/artist" component={Artist} />
         <Route exact path = "/appointments" component={Appointments} />
         <Route exact path = "/artistregister" component={ArtistRegister} />
-        <Route exact path = "/artistProfile" component={ArtistProfilePage} />
+        <Route exact path = "/artistprofile" component={ArtistProfilePage} />
       </Switch>
     </FadeIn>
    </div>

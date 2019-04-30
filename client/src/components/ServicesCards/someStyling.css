@@ -1,0 +1,39 @@
+.serviceCardWrapper {
+  position: relative;
+    height: auto;
+    background-color: white;
+    align-items: center;
+    width: 100%;
+    margin-top: 50px;
+}
+.cards {
+    background-color:blue;
+    border-radius: 2px;
+    height: 225px;
+    margin: 10px;
+    position: relative;
+    width: 275px;
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+    text-align: left;
+    display: inline-flex;
+    margin-bottom: 70px;
+  
+  }
+  
+  .cards > .service-img-container {
+    height: 60%;
+    
+    text-align: center;
+    background: black;
+  }
+  .cards > .service-img-container > img {
+    width: 60%
+  }
+ 
+  
+
+  .cards:hover {
+    background-color: lightskyblue;
+    cursor: pointer;
+  }
+  
