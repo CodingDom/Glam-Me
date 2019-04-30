@@ -22,7 +22,7 @@ class Loginform extends React.Component {
       axios.post("/api/login", this.state)
       .then(res => {
         console.log("user logged in")
-      }) .catch(error => {
+      }).catch(error => {
         console.log(error);
       })
        
