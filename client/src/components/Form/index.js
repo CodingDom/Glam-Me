@@ -23,7 +23,7 @@ class form extends React.Component {
     handleFormSubmit = event => {
         console.log(this.state)
         event.preventDefault();
-        if (this.state.password == this.state.confirmpassword){
+        if (this.state.password === this.state.confirmpassword){
           axios.post("/api/signup", this.state)
           .then(res => {
             alert("Account Created")
