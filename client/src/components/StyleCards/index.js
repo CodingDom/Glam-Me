@@ -1,19 +1,18 @@
 import React from "react";
 import "./styleCards.css";
 
-import serviceImage from "../../serviceimages.json";
-
 function StyleCards(props) {
+  const stylesArray = props.getStyles().styles;
     return(
         <div className="styleCardWrapper">
-      {serviceImage.map(service => (
-          <span  key={service.styles}      
-          value={service.styles} 
+      {stylesArray.map(styles => (
+          <span  key={styles.style}      
+          data-style={styles.style} 
           onClick={props.onClick} 
-          onChange={props.handleInputChange}name="servicePicked">
+          onChange={props.handleInputChange}name="stylesPicked">
         <div className="cards">
       <div className="style-img-container">
-        <img alt={service.styles} src={service.styles} />
+        <img alt={styles.styles} src={styles.image} />
        
       </div>
     

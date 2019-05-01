@@ -4,7 +4,7 @@ import ArtistCards from "../components/ArtistCards/index";
 import StylesCards from "../components/StyleCards/index"; 
 import "./Appointments.css";
 import { Col, Row, Container} from "../components/Grid/index";
-import ServiceCards from "../components/ServicesCards/index";
+import serviceImage from "../serviceimages.json";
 
 class Appointments extends Component {
      constructor (props){
@@ -12,6 +12,7 @@ class Appointments extends Component {
          this.state = {
             servicesVisible: true,
             servicePicked: "",
+            stylesPicked: "",
             stylesVisible: false,
             artistVisible: false
 
@@ -28,7 +29,43 @@ class Appointments extends Component {
 
     };
  
+    handleServiceOnClick = event => {
+        const elem= event.currentTarget;
+        const val = elem.getAttribute("data-service");
+   
+        this.setState(
+            { 
+                servicePicked : val,
+                servicesVisible : false, 
+                stylesVisible: true 
+            })
+         
+    }
+    handleStylesOnClick = event => {
+        const elem= event.currentTarget;
+        const val = elem.getAttribute("data-style");
+    
+      
+        this.setState({  
+            stylesPicked: val,
+            stylesVisible: false , 
+            artistVisible: true
+        })
+       
+    }
+    handleArtisteOnClick = event => {
+        const elem= event.currentTarget;
+        const val = elem.getAttribute("data-artist");
+        this.setState(
+            { 
+                servicePicked : val,
+                servicesVisible : false, 
+                stylesVisible: true 
+            })
+    }
+
     render() {
+        console.log(this.state)
         return (
        
             <Container fluid>
@@ -44,20 +81,17 @@ class Appointments extends Component {
                 </Col>
                 <Col size="md-12">
                  <div className="serviceCards">
-                 {this.state.servicesVisible ? <ServiceCards  onChange={this.handleInputChange} onClick={() =>
-                this.setState({ servicesVisible : false, stylesVisible: true })} /> : null}
+                 {this.state.servicesVisible ? <ServiceCards   onClick={this.handleServiceOnClick} /> : null}
                  </div>
                 </Col>
                 <Col size="md-12">
-               <div classname="stylesCards">
-               {this.state.stylesVisible ? <StylesCards onClick={() =>
-                this.setState({  stylesVisible: false , artistVisible: true})} /> : null}
+               <div className="stylesCards">
+               {this.state.stylesVisible ? <StylesCards getStyles={() => serviceImage.filter(style => { return style.service === this.state.servicePicked})[0]} onClick={this.handleStylesOnClick} /> : null}
                </div>
                 </Col> 
                 <Col size="md-12">
-               <div classname="artistCards">
-               {this.state.artistVisible ? <ArtistCards onClick={() =>
-                this.setState({  artistVisible: false})}  /> : null}
+               <div className="artistCards">
+               {this.state.artistVisible ? <ArtistCards onClick={this.handleArtisteOnClick}  /> : null}
                </div>
                 </Col>
                
