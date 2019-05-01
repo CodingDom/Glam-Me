@@ -9,9 +9,8 @@ import Appointments from './pages/Appointments';
 import ArtistRegister from "./pages/ArtistRegister";
 import ArtistProfilePage from "./pages/ArtistProfilePage";
 import Footer from "./components/Footer/index";
+import FadeIn from "react-fade-in";
 import "./App.css";
-import ArtistProfilePage from "./pages/ArtistProfilePage";
-
 class App extends Component {
   render() {
     return (

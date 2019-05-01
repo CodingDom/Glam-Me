@@ -7,18 +7,19 @@ function ServiceCards(props) {
     return(
         <div className="serviceCardWrapper">
       {serviceImage.map(service => (
-          <span  key={service.service}      
-          value={service.service} 
+          <div  key={service.service}     
+          data-service={service.service} 
           onClick={props.onClick} 
-          onChange={props.handleInputChange}name="servicePicked">
+          name="servicePicked">
+          {service.service}
         <div className="cards">
       <div className="service-img-container">
-        <img alt={service.service} src={service.styles} />
+        <img alt={service.service} src={service.image} />
        
       </div>
     
     </div>
-    </span>
+    </div>
       ))}
       </div>
 

@@ -2,16 +2,27 @@
     {
       "id": 1,
       "service": "Hair",
-      "styles": {
-        "Updo": {
+      "styles": [
+        {
+          "style" : "Updo",
+          "image" : "https://s26552.pcdn.co/wp-content/uploads/2018/03/dc_neighborhood_news-13.jpg"
+        },
+        {
+          "style" : "Haircut",
           "image" : "https://s26552.pcdn.co/wp-content/uploads/2018/03/dc_neighborhood_news-13.jpg"
         }
-      },
+      ],
       "image": "https://vignette.wikia.nocookie.net/spongebobgalaxy/images/0/07/SpongeBob_SquarePants.png/revision/latest?cb=20171228024014"
     },
     {
       "id": 2,
       "service": "Makeup",
+      "styles": [
+        {
+          "style" : "lipstick",
+          "image" : "https://s26552.pcdn.co/wp-content/uploads/2018/03/dc_neighborhood_news-13.jpg"
+        }
+      ],
       "image": "https://vignette3.wikia.nocookie.net/vsbattles/images/8/80/Mr._Krabs.png/revision/latest?cb=20150919162131"
     },
     {
