@@ -10,6 +10,7 @@ import ArtistRegister from "./pages/ArtistRegister";
 import ArtistProfilePage from "./pages/ArtistProfilePage";
 import Footer from "./components/Footer/index";
 import FadeIn from "react-fade-in";
+
 import "./App.css";
 class App extends Component {
   render() {
@@ -17,19 +18,29 @@ class App extends Component {
  <Router>
    <div>
      
-      <Navbar />
+      
       <FadeIn>
-      <Switch>
+
+        <Switch>
         <Route exact path="/" component={Homepage} />
+        </Switch>
+        <Navbar />
+        <Switch>
         <Route exact path="/register" component={Register} />
         <Route exact path = "/artist" component={Artist} />
         <Route exact path = "/appointments" component={Appointments} />
         <Route exact path = "/artistregister" component={ArtistRegister} />
         <Route exact path = "/artistprofile" component={ArtistProfilePage} />
+
+
       </Switch>
+      <Footer />
     </FadeIn>
+    
    </div>
+  
  </Router>
+ 
     );
   }
 }

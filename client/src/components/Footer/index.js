@@ -1,13 +1,14 @@
 import React from "react";
-import { Container } from '../Grid/index';
 import "./style.css";
 
 
 function footer(){
     return(
-        <Container fluid className="footer">
-        <h1>Hello</h1>
-        </Container>
+     <div className ="footer">
+     <div className="text">
+     Copyright @ 2019 Glam Me
+     </div>
+     </div>
     )
 }
 

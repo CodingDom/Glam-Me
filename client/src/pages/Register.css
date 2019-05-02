@@ -10,6 +10,7 @@
     margin-bottom: 5rem;
     border-color: black;
     border-style: solid;
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
 }
 .registerLinkButton{
     margin-top: 200px;

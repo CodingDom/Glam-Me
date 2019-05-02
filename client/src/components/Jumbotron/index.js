@@ -6,8 +6,8 @@ import { Container } from "../Grid/index";
 
 function jumbotron(){
   return (
-    <Jumbotron fluid>
-    <Container>
+    <Jumbotron fluid style={{  boxShadow: "0 3px 6px #999, 0 3px 6px #999"}}>
+    <Container >
       <h1>About Us</h1>
       <p>
       For your convenience, we are open 7 days a week. In addition, we offer memberships to help you de-stress, relax and maintain a healthy lifestyle.

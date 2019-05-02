@@ -1,5 +1,7 @@
 import React from "react";
+import "./style.css";
 import { Col , Row, Container} from "../Grid/index";
+import ProfileCarousel from "../ProfileCarousel/index";
 
 
 function ArtistProfile (props) {
@@ -7,19 +9,27 @@ function ArtistProfile (props) {
             return (
                 <Container fluid>
                 <Row>
-                    <Col size="md-12">
+                   
+                    <Col size="md-2">
                     <div className="artistProfilePicture">
-                    {props.profileImage}
+                    <img alt="omomo" src={props.profileImage} />
                     </div>
                     </Col>
-                    <Col size="md-12">
+                    <Col size="md-10">
                     <div className="artistProfileInfo">
-                    {props.profileName}
-                    {props.profileLocation}
-                    {props.profileRating}
-                    {props.profileWorkImages}
+                    <strong>Technician: </strong>{props.profileName}
+                    <br />
+                    <strong>Location: </strong>{props.profileLocation}
+                    <br />
+                    <strong>Rating: </strong>{props.profileRating}
+                    <br />
+                    <strong>Rates:</strong> 25$- 150$
+                    <br />
+                    <strong>About Me: </strong>{props.profileAboutMe}
+                    
                     </div>
                     </Col>
+                
                 </Row>
                 </Container>
             )

@@ -1,14 +1,22 @@
 
-.artistProfileWrapper{
-    position: relative;
-    height: auto;
-    margin-top: 20px;
-    border-style: solid;
-    border-color: black;
+.artistProfilePicture{
+   margin-top: 30px;
+   margin-left: 30px;
 }
 .artistProfileInfo {
+ position: absolute;
+ color: white;
+ line-height: 40px;
+ margin-top: 30px;
+ padding-left: 60px;
+
+}
+.artistProfileImages {
     position: relative;
-    top: -250px;
-    margin-left: 300px;
-    
+    height: 500px;
+    width: 50%;
+  
+    background-color: blue;
+    border-style: double;
+    border-color: white;
 }
