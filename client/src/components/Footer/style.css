@@ -1,6 +1,12 @@
 .footer {
     position: relative;
-    height: 300px;
     width: 100%;
-    background-color: black;
+    border-style: double;
+    border-color: grey;
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+}
+.text {
+    text-align: center;
+    margin-top: 75px;
+    color: white;
 }

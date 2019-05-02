@@ -1,10 +1,4 @@
-.serviceCards {
-    position: relative;
-    width: auto;
-    background-color: gray;
-    height: auto;
-    margin-left: 15rem;
-}
+
 .appointmentMsgContainer {
     display: flex;
     justify-content: space-around;
