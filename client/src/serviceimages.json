@@ -1,49 +1,128 @@
 [
+  {
+   "id": 1,
+   "service": "Hair",
+   "styles": [
     {
-      "id": 1,
-      "service": "Hair",
-      "styles": [
-        {
-          "style" : "Updo",
-          "image" : "https://s26552.pcdn.co/wp-content/uploads/2018/03/dc_neighborhood_news-13.jpg"
-        },
-        {
-          "style" : "Haircut",
-          "image" : "https://s26552.pcdn.co/wp-content/uploads/2018/03/dc_neighborhood_news-13.jpg"
-        }
-      ],
-      "image": "https://vignette.wikia.nocookie.net/spongebobgalaxy/images/0/07/SpongeBob_SquarePants.png/revision/latest?cb=20171228024014"
+     "style" : "Updo",
+     "image" : "http://pophaircuts.com/images/2018/01/trendy-updos-for-medium-length-hair-updo-hairstyle-ideas.jpg"
     },
     {
-      "id": 2,
-      "service": "Makeup",
-      "styles": [
-        {
-          "style" : "lipstick",
-          "image" : "https://s26552.pcdn.co/wp-content/uploads/2018/03/dc_neighborhood_news-13.jpg"
-        }
-      ],
-      "image": "https://vignette3.wikia.nocookie.net/vsbattles/images/8/80/Mr._Krabs.png/revision/latest?cb=20150919162131"
+     "style" : "Haircut",
+     "image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4ppgwz4ad67NTtchjtoNAiTdM6YeFp3stOW7W2VJ6GrL2YDms1g"
     },
     {
-      "id": 3,
-      "service": "Nails",
-      "image": "https://vignette2.wikia.nocookie.net/fictionalcharacters/images/a/ac/Squidward.png/revision/latest?cb=20131121012626"
+      "style" : "BlowDry",
+      "image" :  "https://oaksclan.com/wp-content/uploads/2017/07/unique-blow-dry-hairstyles-for-black-hair-blow-dry-hairstyles-for-short-hair-blow-dry-hairstyles.jpg"
+     },
+     {
+      "style" : "Highlight",
+      "image" : "https://images-na.ssl-images-amazon.com/images/I/61yG9QnnePL.jpg"
+     }
+   ],
+   "image":"http://shillanailnspa.com/uploads/theshi5ktqauo/logo/2018/09/09/4_1536527516_17_Hair.png"
+  },
+  {
+   "id": 2,
+   "service": "Makeup",
+   "styles": [
+    {
+     "style" : "light-MakeUp",
+     "image" : "http://dressedupnails.com/wp-content/uploads/2018/03/light-makeup.jpg"
     },
     {
-        "id": 4,
-        "service": "Waxing",
-        "image": "https://vignette3.wikia.nocookie.net/vsbattles/images/8/80/Mr._Krabs.png/revision/latest?cb=20150919162131"
-      },
-      {
-        "id": 5,
-        "service": "Massage",
-        "image": "https://vignette3.wikia.nocookie.net/vsbattles/images/8/80/Mr._Krabs.png/revision/latest?cb=20150919162131"
-      },
-      {
-        "id": 6,
-        "service": "Facial",
-        "image": "https://vignette3.wikia.nocookie.net/vsbattles/images/8/80/Mr._Krabs.png/revision/latest?cb=20150919162131"
-      }
-  ]
+    "style" : "Dark_MakeUp",
+   "image": "https://i.pinimg.com/originals/d4/1c/fe/d41cfe8e97a335737771b43ed2b1823a.jpg"
+    }
+  ],
+    "image" : "https://d3jkudlc7u70kh.cloudfront.net/makeup-facts.jpg"
+},
   
+{
+  "id": 3,
+  "service": "Nails",
+  "styles": [
+   {
+    "style" : "Acrylic",
+    "image" : "https://static1.squarespace.com/static/56902c3ea976afc695619880/t/583f160eff7c5059145d495e/1480529429227"
+   },
+   {
+    "style" : "Sns",
+    "image" : "https://luxenailandspa.com/wp-content/uploads/2018/09/SNS-Healthy-Nails-Scottsdale.jpg"
+   },
+   {
+     "style" : "French-Tip",
+     "image" :  "http://www.fluxmagazine.com/wp-content/uploads/2018/02/Revel-Web-3.gif"
+    },
+    {
+     "style" : "Design",
+     "image" : "https://data.whicdn.com/images/311000522/original.jpg"
+    }
+  ],
+  "image":"https://freeness.us/wp-content/uploads/2018/04/nail-art-designs-with-rhinestones-pictures-beautiful-acrylic-nails-rhinestone-acrylic-nails-designs-2018-summer-of-nail-art-designs-with-rhinestones-pictures-768x768.jpg"
+ },
+
+ {
+  "id": 4,
+  "service": "Waxing",
+  "styles": [
+   {
+    "style" : "Full-Face",
+    "image" : "https://mm.aiircdn.com/120/5acdb972d9f3e.jpg"
+   },
+   {
+    "style" : "Eyes-Waxing",
+    "image" : "https://hair-salon-albury.com/wp-content/uploads/waxing-for-the-face-1.jpg"
+   },
+   {
+     "style" : "lex-Waxing",
+     "image" :  "https://arayabeauty.com/wp-content/uploads/2016/11/leg-waxing-1.jpg"
+    }
+    
+  ],
+  "image":"https://www.figarolondon.uk/wp-content/uploads/2017/10/waxing-1.jpg"
+},
+ {
+  "id": 5,
+  "service": "Massage",
+  "styles": [
+   {
+    "style" : "Swedish",
+    "image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1G8pJmcVTq58vPBlcgMnQbfMD8s8o3KM5XyXchNNxeSns0YS0"
+   },
+   {
+    "style" : "HotStone",
+    "image" : "https://i0.wp.com/www.dtoxdayspa.com/wp-content/uploads/2013/04/banner-hot-stone.jpg?fit=950%2C350&ssl=1"
+   },
+   {
+     "style" : "Signature",
+     "image" :  "http://onlinebeautytraining.com/wp-content/uploads/2017/03/body-massage.png"
+    },
+    {
+     "style" : "foot-Massage",
+     "image" : "https://s3-media2.fl.yelpcdn.com/bphoto/wvMhJEVXqqP68RvVfqTLOw/o.jpg"
+    }
+  ],
+  "image":"https://elementsmassage.com/files/frontend/original/MASSAGE-couple.jpg"
+ },
+ {
+  "id": 6,
+  "service": "Facial",
+  "styles": [
+   {
+    "style" : "Mini-Facial",
+    "image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK6Yt-1YariSO9QT6blUZnbO1omjx6LXrYzofbvVHm8rRcwtKV2A"
+   },
+   {
+    "style" : "EuroPean_Facial",
+    "image" : "https://mandalabarcelona.es/wp-content/uploads/2017/02/Mandala-Barcelona-servicios-portada-tratameintos-faciales.jpg"
+   },
+   {
+     "style" : "OxyGgen-Facial",
+     "image" :  "http://4.bp.blogspot.com/-680NgMsNFns/VgXqsgMJIxI/AAAAAAAAE8Y/rSlDHKTG4M4/s400/Masaje%2BFacial%2BiStM.jpg"
+    }
+    
+  ],
+  "image":"https://dosha.org/sites/default/files/styles/hero/public/facialswaxings.jpg?itok=6eGQSB_J"
+ }
+]
