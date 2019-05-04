@@ -1,14 +1,17 @@
-
 .appointmentMsgContainer {
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
-  
     border: 2px dashed rgba(114, 186, 94, 0.35);
     height: 400px;
-    
-    background-image: url(https://t3.ftcdn.net/jpg/02/21/84/04/500_F_221840480_ADhGGtUBX7GK7brGPo3AbhHhULGwebZf.jpg)
+    width: 100%;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("http://tattooremovalcreamsguide.com/wp-content/uploads/2017/08/image.jpg");
 }
+
 .appointmentMsgText {
     position: -webkit-sticky;
     background-color: black;
@@ -16,6 +19,7 @@
     position: sticky;
     top: 0;
 }
+
 .artistCards {
     position: relative;
     background-color: gray;
