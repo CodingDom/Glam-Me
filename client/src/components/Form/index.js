@@ -1,17 +1,25 @@
 import React from "react";
 import {Button, Form, Col} from 'react-bootstrap';
+import ReactNotification from "react-notifications-component";
+import "react-notifications-component/dist/theme.css";
 import axios from "axios";
 
 
 class form extends React.Component {
-    state={
-        firstName: "",
-        lastName: "",
-        email: "",
-        password: "",
-        confirmpassword: "",
-    };
-
+  constructor(props){
+    super(props)
+    this.state = {
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+      confirmpassword: "",
+      errorVisible : true
+    }
+    this.addNotification = this.addNotification.bind(this);
+    this.notificationDOMRef = React.createRef();
+  }
+   
     handleInputChange = event => {
         const{ name, value} = event.target;
         this.setState({
@@ -26,15 +34,34 @@ class form extends React.Component {
         if(this.state.password === this.state.confirmpassword){
           axios.post("/api/signup", this.state)
         } else{
-          alert("incorrect password")
+          this.setState({ errorVisible: true})
         }
         
         //save user to database
       
         
       };
+      addNotification () {
+        this.notificationDOMRef.current.addNotification({
+          title: "Error",
+          message: "Passwords dont match!",
+          type: "error",
+          insert: "top",
+          container: "top-center",
+          animationIn: ["animated", "fadeIn"],
+          animationOut: ["animated", "fadeOut"],
+          dismiss: { duration: 2000 },
+          dismissable: { click: true }
+        });
+      }
     render(){
         return (
+         <div>
+             {this.errorVisible ? <ReactNotification ref={this.notificationDOMRef} /> : <h1>helllo</h1>} 
+           </div>,
+          <div>
+         
+
             <Form method="post" action="/api/signup" >
       <Form.Row>
         <Form.Group as={Col} controlId="formGridFirstName">
@@ -66,6 +93,7 @@ class form extends React.Component {
             Sign up!
       </Button>
     </Form>
+    </div>
         )
     }
 }

@@ -1,13 +1,19 @@
 [ {
   "id": 1,
-  "image":"./images/glameMe.png"
+  "name": "Sarah",
+  "specialties": ["Waxing, Massages"],
+  "image":"/images/glameMe.png"
 },
 {
   "id": 2,
+  "name": "Jill",
+  "specialties": ["Hair ,Makeup"],
   "image": "https://hamiltonlabs.com.au/wp-content/uploads/2017/08/beauty-and-cosmetics-industry.jpg"
 },
 {
   "id": 3,
+  "name": "Ivon",
+  "specialties": ["Nails"],
   "image": "https://images.pexels.com/photos/2067684/pexels-photo-2067684.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
 },
 {

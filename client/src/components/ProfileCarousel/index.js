@@ -11,11 +11,10 @@ function ProfileCarousel(props) {
         <Carousel style={{height:"300px", marginTop:"50px;", marginLeft:"20px", marginRight: "20px"}}>
   {images.map(currImage => (
     <Carousel.Item style={{height:"100%",width:"100%"}}>
-    <div style={{height:"100%",width:"100%",backgroundImage:`url(${currImage.image})`,backgroundSize:"cover",backgroundPosition:"center"}}></div>
-    <Carousel.Caption>
-      <h3>GLame Me</h3>
-      <p>The Best of Beauty !!</p>
-    </Carousel.Caption>
+    <div style={{height:"100%",width:"25%",backgroundImage:`url(${currImage.image})`,backgroundSize:"cover",backgroundPosition:"center"}}></div>
+    <div style={{height:"100%",width:"25%",backgroundImage:`url(${currImage.image})`,backgroundSize:"cover",backgroundPosition:"center"}}></div>
+    <div style={{height:"100%",width:"25%",backgroundImage:`url(${currImage.image})`,backgroundSize:"cover",backgroundPosition:"center"}}></div>
+    <div style={{height:"100%",width:"25%",backgroundImage:`url(${currImage.image})`,backgroundSize:"cover",backgroundPosition:"center"}}></div>
   </Carousel.Item>
   ))}
 </Carousel>

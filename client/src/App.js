@@ -30,7 +30,7 @@ class App extends Component {
         <Route exact path = "/artist" component={Artist} />
         <Route exact path = "/appointments" component={Appointments} />
         <Route exact path = "/artistregister" component={ArtistRegister} />
-        <Route exact path = "/artistprofile" component={ArtistProfilePage} />
+        <Route exact path = "/artist/:userId" component={ArtistProfilePage} />
 
 
       </Switch>
