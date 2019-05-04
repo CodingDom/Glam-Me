@@ -11,6 +11,11 @@ import "./Register.css";
 
 class Register extends Component {
     state = {  }
+    constructor(props) {
+        super(props);
+        this.updateInfo = props.updateInfo;
+        console.log(props);
+    }
     render() {
         return (
             <FadeIn>
@@ -28,7 +33,7 @@ class Register extends Component {
                 <Form  />
                 </TabPanel>
             <TabPanel>
-                <LoginForm />
+                <LoginForm updateInfo={this.updateInfo} />
                 </TabPanel>
     </Tabs>
               
