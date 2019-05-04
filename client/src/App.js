@@ -10,27 +10,41 @@ import ArtistRegister from "./pages/ArtistRegister";
 import ArtistProfilePage from "./pages/ArtistProfilePage";
 import Footer from "./components/Footer/index";
 import FadeIn from "react-fade-in";
-
+import axios from "axios";
 import "./App.css";
 class App extends Component {
+  state = {
+    loggedIn: false
+  }
+
+  updateInfo() {
+    axios.get("/api/user_data").then(res => {
+      const info = res.data;
+      this.setState({
+        loggedIn: (info.name != undefined),
+        name: info.name,
+        id: info.id
+      });
+      console.log("Grabbed user info: ",this.state);
+    });
+  }
+
   render() {
+    console.log("Current state: ",this.state);
     return (
  <Router>
    <div>
-     
-      
       <FadeIn>
-
+      <Navbar loggedIn={this.state.loggedIn} name={this.state.name} id={this.state.id} test="hey" />
         <Switch>
-        <Route exact path="/" component={Homepage} />
+        <Route exact path="/" render={() => (<Homepage info={this.state} />)} />
         </Switch>
-        <Navbar />
         <Switch>
-        <Route exact path="/register" component={Register} />
+        <Route exact path="/register" render={() => (<Register updateInfo={this.updateInfo}/>) }/>
         <Route exact path = "/artist" component={Artist} />
         <Route exact path = "/appointments" component={Appointments} />
         <Route exact path = "/artistregister" component={ArtistRegister} />
-        <Route exact path = "/artistprofile" component={ArtistProfilePage} />
+        <Route exact path = "/artist/:userId" component={ArtistProfilePage} />
 
 
       </Switch>

@@ -8,8 +8,23 @@ import { Link } from "react-router-dom";
 import FadeIn from 'react-fade-in';
 import NavBar from "../components/NavBar/index";
 import "./Homepage.css";
+
 class Homepage extends Component {
     state = {  }
+
+    constructor(props) {
+        super(props);
+        this.state = props.info;
+    }
+
+    componentDidMount() {
+        document.querySelector("nav").style.display = "none";
+        document.querySelector(".navBarContainer").parentElement.style.zIndex = "20";
+    }
+    componentWillUnmount() {
+        document.querySelector("nav").style.display = "flex";
+    }
+
     render() {
         return (
             <FadeIn>
@@ -18,7 +33,7 @@ class Homepage extends Component {
                 </div>
                 <div className="navBarContainer">
                 <div className="navBarHome">
-                <NavBar />
+                <NavBar loggedIn={this.state.loggedIn} name={this.state.name} id={this.state.id} test="bye" />
                 </div>
                 </div>
                 
