@@ -10,10 +10,10 @@ module.exports = function(req, res, next) {
     return next();
   }
 
-  if (specialURLs.indexOf(url) === -1) {
-    // If the user isn't logged in, redirect them to the login page
-  return res.redirect("/login");
-  }
+  // if (specialURLs.indexOf(url) === -1) {
+  //   // If the user isn't logged in, redirect them to the login page
+  // return res.redirect("/login");
+  // }
 
   return next();
   
