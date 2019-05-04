@@ -70,8 +70,8 @@ module.exports = function(app, passport) {
       console.log(req.user);
       res.json({
         email: req.user.email,
-        id: req.user.id,
-        username: req.user.username
+        id: req.user._id,
+        name: req.user.name
       });
     }
   });
