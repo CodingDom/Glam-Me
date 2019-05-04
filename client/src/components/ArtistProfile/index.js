@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 import { Col , Row, Container} from "../Grid/index";
-import ProfileCarousel from "../ProfileCarousel/index";
+
 
 
 function ArtistProfile (props) {
@@ -12,7 +12,7 @@ function ArtistProfile (props) {
                    
                     <Col size="md-2">
                     <div className="artistProfilePicture">
-                    <img alt="omomo" src={props.profileImage} />
+                    <img alt="omomo" src={props.profileImage} style={{height:"200px",width:"200px"}} />
                     </div>
                     </Col>
                     <Col size="md-10">

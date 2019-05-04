@@ -9,7 +9,8 @@ class ArtistCard extends React.Component {
         super(props)
 
         this.state = {
-          images:images
+          images:images,
+          
         }
       }
 
@@ -29,19 +30,19 @@ class ArtistCard extends React.Component {
       <div className="content">
         <ul>
           <li>
-            <strong>Artist Name: </strong> {image.name}
+            <strong>Technician: </strong> {image.name}
           </li>
           <li>
-            <strong>Specialties</strong> {image.occupation}
+            <strong>Specialties</strong> {image.specialties}
           </li>
           <li>
             <strong>Rating</strong> <StarRating />
           </li>
           <li>
            
-            <Button variant="danger">
+            <a className="btn btn-danger" href={"/artist/"+image.id}>
               View Profile
-            </Button>
+            </a>
           </li>
         </ul>
       </div>

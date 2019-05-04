@@ -9,6 +9,8 @@
     "react-bootstrap": "^1.0.0-beta.8",
     "react-dom": "^16.6.3",
     "react-fade-in": "^0.1.6",
+    "react-images-upload": "^1.2.6",
+    "react-notifications-component": "^1.1.1",
     "react-router-dom": "^5.0.0",
     "react-scripts": "^2.1.1",
     "react-star-rating-component": "^1.4.1",

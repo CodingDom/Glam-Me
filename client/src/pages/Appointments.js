@@ -4,6 +4,7 @@ import ArtistCards from "../components/ArtistCards/index";
 import StylesCards from "../components/StyleCards/index"; 
 import "./Appointments.css";
 import { Col, Row, Container} from "../components/Grid/index";
+import ImageUploader from 'react-images-upload';
 import serviceImage from "../serviceimages.json";
 
 class Appointments extends Component {
@@ -14,12 +15,23 @@ class Appointments extends Component {
             servicePicked: "",
             stylesPicked: "",
             stylesVisible: false,
-            artistVisible: false
-
+            artistVisible: false,
+             pictures: [] ,
+           
             
          }
+         this.onDrop = this.onDrop.bind(this)
      }
     
+     onDrop(picture) {
+        this.setState({
+            pictures: this.state.pictures.concat(picture),
+        });
+
+        if(this.state.pictures){
+            console.log("theres an image")
+        }
+    }
     
     handleInputChange = event => {
         const{ name, value} = event.target;
@@ -87,6 +99,13 @@ class Appointments extends Component {
                 <Col size="md-12">
                <div className="stylesCards">
                {this.state.stylesVisible ? <StylesCards getStyles={() => serviceImage.filter(style => { return style.service === this.state.servicePicked})[0]} onClick={this.handleStylesOnClick} /> : null}
+               {this.state.stylesVisible ?  <ImageUploader
+                withIcon={true}
+                buttonText='Upload images'
+                onChange={this.onDrop}
+                imgExtension={['.jpg', '.gif', '.png', '.gif']}
+                maxFileSize={5242880}
+            /> : null }
                </div>
                 </Col> 
                 <Col size="md-12">
