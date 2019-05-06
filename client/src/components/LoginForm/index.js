@@ -14,7 +14,6 @@ class Loginform extends React.Component {
 
     constructor(props) {
       super(props);
-      console.log(props);
       this.updateInfo = props.updateInfo;
     }
 
@@ -35,7 +34,6 @@ class Loginform extends React.Component {
         console.log(this.state)
         event.preventDefault();
         axios.post("/api/login", this.state ).then((res) => {
-          console.log(this.updateInfo);
           if (this.updateInfo) {
             this.updateInfo();
             console.log("Updated Info");

@@ -14,7 +14,9 @@ import axios from "axios";
 import "./App.css";
 class App extends Component {
   state = {
-    loggedIn: false
+    loggedIn: false,
+    name: "",
+    id: ""
   }
 
   updateInfo() {
@@ -24,9 +26,14 @@ class App extends Component {
         loggedIn: (info.name != undefined),
         name: info.name,
         id: info.id
+      }, () => {
+        console.log("Grabbed user information: ",this.state);
       });
-      console.log("Grabbed user info: ",this.state);
     });
+  }
+
+  componentDidMount() {
+    console.log("App is now mounted!");
   }
 
   render() {

@@ -1,6 +1,38 @@
 const User = require("../models/User");
 
 module.exports = function(app, passport) {
+  //Api used for searching database for artists
+  app.get("/api/search", function(req, res) {
+    const {name, specialties, location} = req.query;
+    const query = {
+      $text: {
+        $search: name
+      }
+    };
+    if (specialties) {
+      query.specialties = specialties.split(",");
+    };
+    if (location) {
+      query.location = locaiton;
+    };
+    console.log(query);
+    User.createIndexes( { "name": "text" } ).then(function() {
+      User.find(query).then(function(resp) {
+        const users = resp.map(user => {
+          console.log(user);
+          const structure = {
+            name: user.name,
+            specialties: user.specialties,
+            location: user.location,
+            rating: user.rating
+          }
+          return structure;
+        });
+        res.json(users);
+      });
+    });
+  });
+
   // Allowing users to update their profile information
   app.put("/api/users/:id", function(req, res) {
     // Making sure the user is the account owner

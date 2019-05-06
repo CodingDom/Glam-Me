@@ -14,7 +14,6 @@ class Register extends Component {
     constructor(props) {
         super(props);
         this.updateInfo = props.updateInfo;
-        console.log(props);
     }
     render() {
         return (
