@@ -5,6 +5,13 @@ import "./style.css";
 export default class Navbar extends Component {
   state = {}
 
+  setActive(e) {
+    const nav = e.currentTarget;
+    const currActive = document.querySelector(".navbar-nav .active");
+    currActive && currActive.classList.remove("active");
+    nav.classList.toggleClass("active");
+  }
+
   componentDidMount() {
     console.log("Updated nav");
   }
@@ -21,7 +28,7 @@ export default class Navbar extends Component {
     const userMenu = () => {
       if (this.state.loggedIn) {
         return (
-          <div className="nav-link" style={{ position:"absolute", right:"30px" }}>
+          <div id="account" className="nav-link">
             <button className="dropdown-toggle text-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{background:"none",border:"none"}}>
               {this.state.name}
             </button>
@@ -35,7 +42,7 @@ export default class Navbar extends Component {
         )
       } else {
         return (
-          <div className="nav-item" style={{ position:"absolute", right:"0" }} >
+          <div id="register" className="nav-item">
               <Link
                 to="/register"
                 className="nav-link active text-white"
@@ -47,42 +54,45 @@ export default class Navbar extends Component {
       }
     }
 
+    const navigators = [
+      {
+        location: "/",
+        name: "Home"
+      },
+      {
+        location: "/artist",
+        name: "Find an Artist"
+      },
+      {
+        location: "/appointments",
+        name: "Make an Appointment"
+      }
+    ];
+
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <Link className="navbar-brand" to="/">
           Glam Me
         </Link>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav">
-          <li className="nav-item">
-              <Link
-                to="/"
-                className={
-                  window.location.pathname === "/" || window.location.pathname === "/"
-                    ? "nav-link active"
-                    : "nav-link"
-                }
-              >
-                Home
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="/artist"
-                className={window.location.pathname === "/artist" ? "nav-link active" : "nav-link"}
-              >
-              Find an Artist
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="/appointments"
-                className={window.location.pathname === "/appointments" ? "nav-link active" : "nav-link"}
-              >
-              Make an appointment
-              </Link>
-            </li>
-          </ul>
+            {navigators.map(item => (
+              <li className="nav-item">
+                <Link
+                  to={item.location}
+                  className={window.location.pathname === item.location ? "nav-link active" : "nav-link"}
+                  data-location={item.location}
+                >
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul> 
           {userMenu()}
+          </div>
       </nav>
   )};
 }

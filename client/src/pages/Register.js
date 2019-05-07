@@ -20,8 +20,8 @@ class Register extends Component {
             <FadeIn>
             <Container fluid>
             <Row>
-                <Col size="md-6">
-                <div className="userRegisterForm">
+                <Col size="md-12">
+                <div className="userRegisterForm mx-auto">
                 <Tabs>
                 <TabList>
                 <Tab><strong>Register</strong></Tab>
@@ -38,7 +38,7 @@ class Register extends Component {
               
                 </div>
                 </Col>
-                <Col size="md-6">
+                {/* <Col size="md-6">
                 <div className="registerLinkButton">
                 <Link to="/artistRegister">
                 <Button style={{  boxShadow: "0 3px 6px #999, 0 3px 6px #999"}} variant="danger">
@@ -46,7 +46,7 @@ class Register extends Component {
                 </Button>
                 </Link>
                 </div>
-                </Col>
+                </Col> */}
 
             </Row>
             </Container>

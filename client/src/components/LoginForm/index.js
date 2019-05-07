@@ -49,7 +49,7 @@ class Loginform extends React.Component {
       };
     render(){
         return (
-            <Form method="post" action="/api/login" >
+            <Form method="post" action="/api/login" className="text-white" >
             {this.renderRedirect()}
       <Form.Row>
         <Form.Group as={Col} controlId="formGridEmail">

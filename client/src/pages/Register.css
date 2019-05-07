@@ -6,7 +6,7 @@
     border-radius: 15px;
     background-color: darkslategray;
     margin-top: 5rem;
-    margin-left:15rem;
+    /* margin-left:20%; */
     margin-bottom: 5rem;
     border-color: black;
     border-style: solid;
@@ -28,4 +28,12 @@
     margin-left:20px;
     margin-bottom:5rem;
     background-color: yellow
+}
+
+.react-tabs__tab {
+    color: white;
+}
+
+.react-tabs__tab--selected {
+    color: black;
 }
