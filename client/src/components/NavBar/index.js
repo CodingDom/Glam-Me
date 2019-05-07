@@ -3,15 +3,30 @@ import {Link, withRouter} from 'react-router-dom';
 import "./style.css";
 
 export default class Navbar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+  state = {}
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     loggedIn: props.loggedIn,
+  //     name: props.name,
+  //     id: props.id
+  //   }
+  //   console.log("Navbar: ",props);
+  // }
+
+  componentDidMount() {
+    console.log("Updated nav");
+  }
+
+  componentWillReceiveProps(props) {
+    this.setState = {
       loggedIn: props.loggedIn,
       name: props.name,
       id: props.id
     }
     console.log("Navbar: ",props);
   }
+
   render() {
     const userMenu = () => {
       if (this.state.loggedIn) {

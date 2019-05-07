@@ -2,7 +2,7 @@ import React from "react";
 import {Button, Form, Col} from 'react-bootstrap'
 import axios from "axios";
 import "./style.css";
-
+import { Redirect } from "react-router-dom";
 
 class Artistform extends React.Component {
     state={
@@ -14,10 +14,14 @@ class Artistform extends React.Component {
         artistspecialties: "",
         artistcity: "",
         artiststate: "",
-        artistzipcode: ""
-
-
+        artistzipcode: "",
+        redirect: false
     };
+
+    renderRedirect = () => {
+      if (this.state.redirect)
+        return <Redirect to={this.state.redirect} />;
+    }
 
     handleInputChange = event => {
         const { name, value} = event.target;
@@ -28,13 +32,22 @@ class Artistform extends React.Component {
     };
  
     handleFormSubmit = event => {
-        console.log(this.state)
-
+        console.log(this.state);
+        event.preventDefault();
+        const userInfo = {
+          firstName: this.state.artistfirstname,
+          lastName: this.state.artistlastname,
+          email: this.state.artistemail,
+          password: this.state.artistpassword,
+          specialties: [this.state.artistspecialties]
+        }
         //save user to database
         if(this.state.artistpassword === this.state.artistconfirmpassword) {
-          axios.post("/api/signup", this.state)
+          axios.post("/api/signup", userInfo)
           .then(res => {
-            alert("Artist account created")
+            this.setState({
+              redirect: res.data
+            });
           })
           .catch(error => {
             console.log(error)
@@ -45,6 +58,7 @@ class Artistform extends React.Component {
         return (
           <div className="artistForm">
             <Form method="post" action="/api/signup " >
+            {this.renderRedirect()}
       <Form.Row>
         <Form.Group as={Col} controlId="formGridArtistFirstName">
           <Form.Label>First Name</Form.Label>
