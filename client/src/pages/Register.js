@@ -29,7 +29,7 @@ class Register extends Component {
                 </TabList>
  
                 <TabPanel>
-                <Form  />
+                <Form updateInfo={this.updateInfo} />
                 </TabPanel>
             <TabPanel>
                 <LoginForm updateInfo={this.updateInfo} />

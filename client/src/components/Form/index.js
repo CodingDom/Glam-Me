@@ -1,4 +1,5 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
 import {Button, Form, Col} from 'react-bootstrap';
 import ReactNotification from "react-notifications-component";
 import "react-notifications-component/dist/theme.css";
@@ -19,20 +20,25 @@ class form extends React.Component {
       state: "",
       zipCode: "",
       specialties: "",
-      errorVisible : true
+      errorVisible : true,
+      redirect: false
     }
+    this.updateInfo = props.updateInfo;
     this.addNotification = this.addNotification.bind(this);
     this.notificationDOMRef = React.createRef();
   }
-   
-    handleInputChange = event => {
-        const{ name, value} = event.target;
-        this.setState({
-            [name]: value
-        }, () => {
-          console.log(this.state);
-        });
-        console.log(name, value);
+
+  renderRedirect = () => {
+    if (this.state.redirect)
+      return <Redirect to={this.state.redirect} />;
+  }
+
+  handleInputChange = event => {
+      const{ name, value} = event.target;
+      this.setState({
+          [name]: value
+      });
+      console.log(name, value);
     };
  
     handleFormSubmit = event => {
@@ -52,7 +58,19 @@ class form extends React.Component {
           if (artist) {
             userInfo = {...userInfo, ...artistInfo};
           }  
+          console.log(userInfo);
           axios.post("/api/signup", userInfo)
+          .then(res => {
+            if (this.updateInfo) {
+              this.updateInfo();
+            }
+            this.setState({
+              redirect: res.data
+            });
+          })
+          .catch(error => {
+            console.log(error)
+          })
         } else{
           this.setState({ errorVisible: true})
         }
@@ -83,6 +101,7 @@ class form extends React.Component {
          
 
             <Form method="post" action="/api/signup" className="text-white" >
+            {this.renderRedirect()}
       <Form.Row>
         <Form.Group as={Col} controlId="formGridFirstName">
           <Form.Label><strong>First Name</strong></Form.Label>
@@ -104,7 +123,7 @@ class form extends React.Component {
         </Form.Group>
         <Form.Group controlId="formGridConfirmPassword">
           <Form.Label><strong>Confirm password</strong></Form.Label>
-          <Form.Control onChange={this.handleInputChange} value={this.state.confirmPassword} name="confirmpassword" type="password" placeholder="Confirm password" />
+          <Form.Control onChange={this.handleInputChange} value={this.state.confirmPassword} name="confirmPassword" type="password" placeholder="Confirm password" />
         </Form.Group>
     
       <Form.Row style={{display: this.state.artist === true ? "flex" : "none"}}><Form.Group as={Col} controlId="formGridCity">
@@ -172,7 +191,7 @@ class form extends React.Component {
 
         <Form.Group as={Col} controlId="formGridZip">
           <Form.Label>ZipCode</Form.Label>
-          <Form.Control  onChange={this.handleInputChange} value={this.state.zipCode} name="zipcode"/>
+          <Form.Control  onChange={this.handleInputChange} value={this.state.zipCode} name="zipCode"/>
         </Form.Group>
         </Form.Row>
 

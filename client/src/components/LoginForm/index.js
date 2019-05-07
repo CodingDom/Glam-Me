@@ -36,7 +36,6 @@ class Loginform extends React.Component {
         axios.post("/api/login", this.state ).then((res) => {
           if (this.updateInfo) {
             this.updateInfo();
-            console.log("Updated Info");
           }
           this.setState({
             redirect: res.data
@@ -49,24 +48,23 @@ class Loginform extends React.Component {
       };
     render(){
         return (
-            <Form method="post" action="/api/login" className="text-white" >
-            {this.renderRedirect()}
-      <Form.Row>
-        <Form.Group as={Col} controlId="formGridEmail">
-          <Form.Label>Email</Form.Label>
-          <Form.Control onChange={this.handleInputChange} value={this.state.email} name="email"  type="text" placeholder="Email Address" />
-        </Form.Group>
-      </Form.Row>
-      <Form.Group as={Col} controlId="formGridPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control onChange={this.handleInputChange} value={this.state.password} name="password"type="password" placeholder="Password" />
-        </Form.Group>
+        <Form method="post" action="/api/login" className="text-white" >
+          {this.renderRedirect()}
+
+          <Form.Group controlId="formGridEmail">
+            <Form.Label>Email</Form.Label>
+            <Form.Control onChange={this.handleInputChange} value={this.state.email} name="email"  type="text" placeholder="Email Address" />
+          </Form.Group>
+
+          <Form.Group controlId="formGridPassword">
+            <Form.Label>Password</Form.Label>
+            <Form.Control onChange={this.handleInputChange} value={this.state.password} name="password"type="password" placeholder="Password" />
+          </Form.Group>
     
-    
-      <Button onClick={this.handleFormSubmit}variant="primary" type="submit">
-            Login!
-      </Button>
-    </Form>
+          <Button onClick={this.handleFormSubmit}variant="primary" type="submit">
+                Login!
+          </Button>
+        </Form>
         )
     }
 }
