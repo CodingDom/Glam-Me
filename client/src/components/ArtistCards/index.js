@@ -4,6 +4,9 @@ import images from "../../images.json";
 import StarRating from "../StarRating/index";
 import "./style.css";
 
+
+
+
 class ArtistCard extends React.Component {
       constructor (props) {
         super(props)
@@ -12,8 +15,9 @@ class ArtistCard extends React.Component {
           images:images,
           
         }
+      //  const ArtistArray = props.getStyles().styles;
       }
-
+     
   
   render() {
     return (
@@ -24,7 +28,7 @@ class ArtistCard extends React.Component {
       {this.state.images.map(image => (
         <div className="card">
       <div className="img-container">
-        <img alt={image.alt} src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Square_200x200.svg/200px-Square_200x200.svg.png" />
+        <img alt={image.alt} src={image.image} />
        
       </div>
       <div className="content">
@@ -36,7 +40,7 @@ class ArtistCard extends React.Component {
             <strong>Specialties</strong> {image.specialties}
           </li>
           <li>
-            <strong>Rating</strong> <StarRating />
+            <strong>Rating</strong> <StarRating value={image.rating}/>
           </li>
           <li>
            

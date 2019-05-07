@@ -7,6 +7,8 @@ import Button from "react-bootstrap/Button"
 import images from "../images.json";
 import Modal from "../components/Modal/index";
 import { Col , Row , Container } from "../components/Grid/index";
+import axios from "axios";
+import "./ArtistEditPage.css";
 
 const artist = images.filter(artist => {
     return artist.id === parseInt(document.location.pathname.split("/")[2]);
@@ -26,7 +28,14 @@ class ArtistEditProfilePage extends React.Component {
             artistWorkImages: "http://images5.fanpop.com/image/photos/31000000/haters-gonna-hate-random-31076705-550-413.jpg",
             artistAboutMe: artist.about,
 
-            showModal : true
+            showModal : false,
+
+            editName: "",
+            editLocation: "",
+            editRates: "",
+            editAboutMe: ""
+
+
     
         }
      
@@ -49,31 +58,77 @@ class ArtistEditProfilePage extends React.Component {
         this.setState({ showModal: true });
       };
 
+      handleInputChange = event => {
+        const{ name, value} = event.target;
+        this.setState({
+            [name]: value
+        });
+
+    };
+
+    handleFormSubmit = event => {
+        axios.put("/api/users/" + artist.id, this.state)
+        this.setState({ })
+    }
+
     render(){
         console.log("rendering");
         
         return (
             <Container fluid>
+                
             <Row>
                 <Col size="md-12">
+                {this.state.showModal ?   <Modal
+            className="modal"
+            show={this.state.showModal}
+            close={this.hideModal}>
+                
+                <br />
+                Edit Name
+                <br />
+                <input type="text" name="editName" value={this.state.editName} onChange={this.handleInputChange}/>
+                <br />
+                Edit Location
+                <br />
+                <input type="text" name="editlocation" value={this.state.editLocation} onChange={this.handleInputChange}/>
+                <br />
+                Edit Rates
+                <br />
+                <input type="text" name="editrates" value={this.state.editRates} onChange={this.handleInputChange}/>
+                <br />
+                Edit About Me
+                <br />
+                <input type="text"  name="editAboutMe" value={this.state.editAboutMe} onChange={this.handleInputChange}/>
+                <br />
+                  <button className="btn-cancel" onClick={this.hideModal}>CLOSE</button>
+                    <button className="btn-continue" onClick={this.handleFormSubmit}>Save Changes</button>
+                 </Modal>
+                 :null}
+                </Col>
+                <Col size="md-12">
                 <div className = "profileComponent">
+                
                  <ArtistProfile  profileImage={this.state.artistProfileImage} profileAboutMe={this.state.artistAboutMe} profileName={this.state.artistName} profileLocation={this.state.artistLocation} profileRating={this.state.artistRating}/>
+                 
                  <br />
                  <br />
                   
-                 <Button  onClick={this.showModal} style={{marginLeft:"100px", marginTop:"35px", marginBottom:"50px"}} variant="danger">Edit Profile</Button>
-                 <Modal  show={this.state.showModal} handleClose={this.hideModal}>
-                        <p>helllo world</p>>
-                    </Modal>
+                 
+                <Button className="open-modal-btn" onClick={this.showModal}>Edit Profile</Button>
+
+            
                  <div className="profileImageShowCase">
                 <ProfileCarousel  />
+                
                 </div>
                 
-
+            
                 </div>
             
 
                 </Col>
+              
             </Row>
             
             </Container>

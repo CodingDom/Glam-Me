@@ -4,7 +4,7 @@ import axios from "axios";
 import "./style.css";
 import { Redirect } from "react-router-dom";
 
-class Artistform extends React.Component {
+export default class Artistform extends React.Component {
       constructor(props){
         super(props)
 
@@ -17,16 +17,10 @@ class Artistform extends React.Component {
         artistspecialties: "",
         artistcity: "",
         artiststate: "",
-<<<<<<< HEAD
-        artistzipcode: ""
-
-        }
-      }
-=======
         artistzipcode: "",
         redirect: false
     };
->>>>>>> c6ef91bb8a3690213952fdd953b9db49b28256c5
+  }
 
     renderRedirect = () => {
       if (this.state.redirect)
@@ -63,8 +57,9 @@ class Artistform extends React.Component {
             console.log(error)
           })
         }
-      };
-    render(){
+      }
+
+      render(){
         return (
           <div className="artistForm">
             <Form method="post" action="/api/signup " >
@@ -182,7 +177,7 @@ class Artistform extends React.Component {
     </Form>
           </div>
         )
+      }
+    
+  
     }
-}
-
-export default Artistform 

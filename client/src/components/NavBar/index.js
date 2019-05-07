@@ -58,7 +58,7 @@ export default class Navbar extends Component {
     }
 
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-lg navbar-black bg-black">
         <Link className="navbar-brand" to="/">
           Glam Me
         </Link>
