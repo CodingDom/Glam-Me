@@ -29,6 +29,17 @@ const UserSchema = new Schema({
     required: true
   },
   artist: Boolean,
+  location: {
+    type: {
+      type: String,
+      enum: ['Point'],
+      required: false
+    },
+    coordinates: {
+      type: [Number],
+      required: true
+    }
+  },
   specialties: {
     type: Array,
     required: false

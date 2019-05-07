@@ -38,9 +38,9 @@ class Loginform extends React.Component {
             this.updateInfo();
             console.log("Updated Info");
           }
-          // this.setState({
-          //   redirect: res.data
-          // })
+          this.setState({
+            redirect: res.data
+          })
           
         }).catch((err) => {
           console.log(err);

@@ -61,6 +61,7 @@ module.exports = function(app, passport) {
   // Otherwise the user will be sent an error
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
     res.json("/");
+    console.log("Logged in")
   });
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
@@ -74,6 +75,7 @@ module.exports = function(app, passport) {
       // specialties: req.body.specialties,
       // location: req.body.location
     };
+    console.log(userInfo);
     const user = new User(userInfo);
     user.save()
       .then(function() {
