@@ -4,42 +4,32 @@ import "./style.css";
 
 export default class Navbar extends Component {
   state = {}
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     loggedIn: props.loggedIn,
-  //     name: props.name,
-  //     id: props.id
-  //   }
-  //   console.log("Navbar: ",props);
-  // }
 
   componentDidMount() {
     console.log("Updated nav");
   }
 
   componentWillReceiveProps(props) {
-    this.setState = {
+    this.setState({
       loggedIn: props.loggedIn,
       name: props.name,
       id: props.id
-    }
-    console.log("Navbar: ",props);
+    });
   }
 
   render() {
     const userMenu = () => {
       if (this.state.loggedIn) {
         return (
-          <div class="nav-link" style={{ position:"absolute", right:"30px" }}>
-            <button class="dropdown-toggle text-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{background:"none",border:"none"}}>
+          <div className="nav-link" style={{ position:"absolute", right:"30px" }}>
+            <button className="dropdown-toggle text-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{background:"none",border:"none"}}>
               {this.state.name}
             </button>
 
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item" href="/mysettings">Settings</a>
-              <a class="dropdown-item" href="#">View Appointments</a>
-              <a class="dropdown-item" href="#">Sign Out</a>
+            <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a className="dropdown-item" href="/mysettings">Settings</a>
+              <a className="dropdown-item" href="#">View Appointments</a>
+              <a className="dropdown-item" href="#">Sign Out</a>
             </div>
           </div>
         )
