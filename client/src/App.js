@@ -26,11 +26,15 @@ class App extends Component {
     id: ""
   }
 
+  updateNavbar(e) {
+    console.log("Rerouting: ",e);
+  }
+
   updateInfo() {
     axios.get("/api/user_data").then(res => {
       const info = res.data;
       app.setState({
-        loggedIn: (info.name != undefined),
+        loggedIn: (info.name !== undefined),
         name: info.name,
         id: info.id
       }, () => {
@@ -54,9 +58,6 @@ class App extends Component {
       <Navbar loggedIn={this.state.loggedIn} name={this.state.name} id={this.state.id} />
         <Switch>
         <Route exact path="/" render={() => (<Homepage info={this.state} />)} />
-
-        </Switch>
-        <Switch>
         <Route exact path="/register" render={() => (<Register updateInfo={this.updateInfo}/>) }/>
         <Route exact path = "/artist" component={Artist} />
         <Route exact path = "/appointments" component={Appointments} />

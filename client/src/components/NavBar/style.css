@@ -1,5 +1,24 @@
 .navbar {
     background-color: black;
-    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
-    
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;   
+}
+
+#account{
+    position: absolute; 
+    right: 30px;
+}
+
+#register .nav-link {
+    padding-left: 0;
+}
+
+@media only screen and (min-width: 992px) {
+    #register {
+        position: absolute; 
+        right: 0;
+    }
+
+    #register .nav-link {
+        padding-left: 16px;
+    }
 }

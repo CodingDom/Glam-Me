@@ -7,6 +7,12 @@ import "./Artist.css";
 
 class Artist extends Component {
     state = {  }
+    componentDidMount(){
+        const currActive = document.querySelector(".navbar-nav .active");
+        currActive && currActive.classList.remove("active");
+        document.querySelector(`.navbar-nav [data-location="${window.location.pathname}"]`).classList.add("active");
+    }
+
     render() {
         return (
             <FadeIn>

@@ -68,13 +68,18 @@ module.exports = function(app, passport) {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/signup", function(req, res) {
-    const userInfo = {
+    let userInfo = {
       name: `${req.body.firstName} ${req.body.lastName}`,
       email: req.body.email,
-      password: req.body.password,
-      // specialties: req.body.specialties,
-      // location: req.body.location
+      password: req.body.password
     };
+    if (req.body.artist) {
+      userInfo = {
+        ...userInfo,
+        artist: true,
+        specialties: req.body.specialties.split(",")
+      }
+    }
     console.log(userInfo);
     const user = new User(userInfo);
     user.save()

@@ -1,10 +1,9 @@
 .parallaxContainer {
-    background-image: url("https://acuitys-a299.kxcdn.com/logo15428765.png?1521838305&hasAlpha=1&rectangular=1");
+    background-image: url("http://www.nationalbc.com/img/slideshow/1.jpg");
     /* Set a specific height */
     height: 500px;
     /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
+    background-position: left center;
     background-repeat: no-repeat;
     background-size: cover;
 }
