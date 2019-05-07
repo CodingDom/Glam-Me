@@ -1,4 +1,6 @@
 import React from "react";
+import axios from "axios";
+
 import "./style.css";
 
 class searchBar extends React.Component {
@@ -19,6 +21,7 @@ class searchBar extends React.Component {
             text: ""
         };
         
+        this.artistSearch = props.artistSearch
         
     }
 
@@ -45,6 +48,8 @@ class searchBar extends React.Component {
         if (suggestions.length === 0) {
             return null
         }
+
+
         return (
             <ul>
             {suggestions.map((suggestion) => <li onClick={() => this.suggestionSelected(suggestion)}>{suggestion}</li>)}
@@ -52,11 +57,20 @@ class searchBar extends React.Component {
         )
     }
 
+    handleKeyUp = event => {
+        if (event.keyCode !== 13) return;
+        const value = event.target.value
+
+        if(value){
+            this.artistSearch(value);
+        }
+    }
+
     render(){
         const { text } = this.state;
         return(
            <div className="searchBar">
-                <input  placeholder="Search For An Artist ..." value={text} onChange={this.onTextChanged} type="text" />
+                <input onKeyUp={this.handleKeyUp} placeholder="Search For An Artist ..." value={text} onChange={this.onTextChanged} type="text" />
            {this.renderSuggestions()}
            </div>
         )

@@ -1,0 +1,11 @@
+.wrapper {
+    position: relative;
+    width:450px;
+    height: auto;
+    background-color: lightblue;
+    margin:200px;
+    margin-left: 600px;
+ 
+    padding: 25px;
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+}

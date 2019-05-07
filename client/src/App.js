@@ -14,7 +14,8 @@ import FadeIn from "react-fade-in";
 import axios from "axios";
 import "./App.css";
 import ArtistEditProfilePage from "./pages/ArtistEditPage";
-
+import BookingPage from "./pages/Booking";
+import ViewAppointments from "./pages/ViewAppointments";
 
 
 let app;
@@ -64,6 +65,8 @@ class App extends Component {
         <Route exact path = "/artistregister" component={ArtistRegister} />
         <Route exact path = "/artist/:userId" component={ArtistProfilePage} />
         <Route exact path = "/artistedit/:userId" component={ArtistEditProfilePage} />
+        <Route exact path = "/Booking" component={BookingPage} />
+        <Route exact path = "/ViewAppointments" component={ViewAppointments} />
         <Route component={NoMatch} />
 
 

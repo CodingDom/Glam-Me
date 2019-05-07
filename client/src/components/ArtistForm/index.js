@@ -165,6 +165,8 @@ export default class Artistform extends React.Component {
         <option>Skincare</option>
         <option>Nails</option>
         <option>Hair</option>
+        <option>Waxing</option>
+        <option>Facials</option>
         </Form.Control>
         </Form.Group>
     

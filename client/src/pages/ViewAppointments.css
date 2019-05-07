@@ -1,0 +1,12 @@
+.appointmentWrapper {
+    position: relative;
+    width:600px;
+    height: 500px;
+    background-color: lightblue;
+    margin:200px;
+    margin-left: 600px;
+    border-style: double;
+    border-color: black;
+    padding: 25px;
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+}
