@@ -3,6 +3,7 @@
     /* Set a specific height */
     height: 500px;
     /* Create the parallax scrolling effect */
+    background-attachment: fixed;
     background-position: left center;
     background-repeat: no-repeat;
     background-size: cover;
