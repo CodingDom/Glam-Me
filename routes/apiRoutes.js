@@ -3,7 +3,7 @@ const User = require("../models/User");
 module.exports = function(app, passport) {
   //Api used for searching database for artists
   app.get("/api/search", function(req, res) {
-    if (req.query) {
+    if (req.query && req.query.name.trim() != "") {
       const {name, specialties, location} = req.query;
       const query = {
         $text: {
