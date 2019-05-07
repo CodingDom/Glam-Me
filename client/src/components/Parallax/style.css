@@ -1,10 +1,9 @@
 .parallaxContainer {
-    background-image: url("https://yourhappyplaceblog.files.wordpress.com/2015/06/lifeisbeautiful.jpg?w=443&h=281&zoom=2");
+    background-image: url("http://www.nationalbc.com/img/slideshow/1.jpg");
     /* Set a specific height */
     height: 500px;
     /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
+    background-position: left center;
     background-repeat: no-repeat;
     background-size: cover;
 }

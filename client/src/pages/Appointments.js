@@ -76,8 +76,14 @@ class Appointments extends Component {
             })
     }
 
+    componentDidMount() {
+        const currActive = document.querySelector(".navbar-nav .active");
+        currActive && currActive.classList.remove("active");
+        document.querySelector(`.navbar-nav [data-location="${window.location.pathname}"]`).classList.add("active");
+    }
+
     render() {
-        console.log(this.state)
+        
         return (
        
             <Container fluid>

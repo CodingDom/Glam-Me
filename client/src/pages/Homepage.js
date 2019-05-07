@@ -6,7 +6,6 @@ import Button from "react-bootstrap/Button";
 import Parallax from "../components/Parallax/index";
 import { Link } from "react-router-dom";
 import FadeIn from 'react-fade-in';
-import NavBar from "../components/NavBar/index";
 import "./Homepage.css";
 
 class Homepage extends Component {
@@ -14,17 +13,18 @@ class Homepage extends Component {
     constructor(props) {
         super(props);
         this.state = (props.info);
-        console.log("Real props: ",this.state);
     }
 
     componentDidMount() {
-        console.log("Props: ",this.props);
         const origin = document.querySelector("nav").parentElement;
         this.setState({...this.props.info, origin});
-        document.querySelector(".navBarHome").appendChild(document.querySelector("nav"));
+        const currActive = document.querySelector(".navbar-nav .active");
+        currActive && currActive.classList.remove("active");
+        document.querySelector(`.navbar-nav [data-location="${window.location.pathname}"]`).classList.add("active");
+        document.querySelector("nav").parentElement.insertBefore(document.querySelector(".parallaxHome"),document.querySelector("nav"));
     }
     componentWillUnmount() {
-        this.state.origin.appendChild(document.querySelector("nav"));
+        document.querySelector(".parallaxHome").remove();
     }
 
     render() {
