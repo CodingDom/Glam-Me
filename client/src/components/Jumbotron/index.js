@@ -10,9 +10,10 @@ function jumbotron(){
     <Container >
       <h1>About Us</h1>
       <p>
-      For your convenience, we are open 7 days a week. In addition, we offer memberships to help you de-stress, relax and maintain a healthy lifestyle.
-      Our highly experienced and friendly staff bring you the latest in styles, trends, treatments, and products for you to enjoy, in a comforting and welcoming environment.
-At Glame me , we take pride in creating a rewarding and relaxing experience for all of our clients and ensure that your visit with us leaves you with a feeling of satisfaction and overall well-being. Indulge in the escape to an elegant tranquil respite of exceptional service and unsurpassed expertise to renew your health and vitality.
+      Welcome to Glam Me, an on-call beauty service thats offers licensed technicians who specialize in :
+      Hair, Makeup, Nails, Waxings, Massages and facials, clients are able to book appointments with technicians 
+      once they have registered and logged in. If you would like to register as a technician view the register and login
+      tab for artist.
       </p>
     </Container>
   </Jumbotron>

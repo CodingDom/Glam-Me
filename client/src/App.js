@@ -9,6 +9,7 @@ import Appointments from './pages/Appointments';
 import ArtistRegister from "./pages/ArtistRegister";
 import ArtistProfilePage from "./pages/ArtistProfilePage";
 import Footer from "./components/Footer/index";
+import NoMatch from "./pages/NoMatch";
 import FadeIn from "react-fade-in";
 import axios from "axios";
 import "./App.css";
@@ -53,6 +54,7 @@ class App extends Component {
       <Navbar loggedIn={this.state.loggedIn} name={this.state.name} id={this.state.id} />
         <Switch>
         <Route exact path="/" render={() => (<Homepage info={this.state} />)} />
+
         </Switch>
         <Switch>
         <Route exact path="/register" render={() => (<Register updateInfo={this.updateInfo}/>) }/>
@@ -61,6 +63,7 @@ class App extends Component {
         <Route exact path = "/artistregister" component={ArtistRegister} />
         <Route exact path = "/artist/:userId" component={ArtistProfilePage} />
         <Route exact path = "/artistedit/:userId" component={ArtistEditProfilePage} />
+        <Route component={NoMatch} />
 
 
       </Switch>

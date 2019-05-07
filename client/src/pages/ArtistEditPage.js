@@ -7,6 +7,7 @@ import Button from "react-bootstrap/Button"
 import images from "../images.json";
 import Modal from "../components/Modal/index";
 import { Col , Row , Container } from "../components/Grid/index";
+import ImageUploader from 'react-images-upload';
 import axios from "axios";
 import "./ArtistEditPage.css";
 
@@ -33,7 +34,8 @@ class ArtistEditProfilePage extends React.Component {
             editName: "",
             editLocation: "",
             editRates: "",
-            editAboutMe: ""
+            editAboutMe: "",
+            editProfileImage: []
 
 
     
@@ -44,9 +46,7 @@ class ArtistEditProfilePage extends React.Component {
 
     componentDidMount(){
         console.log("This is working");
-        
-
-        
+    
     }
     
 
@@ -69,6 +69,15 @@ class ArtistEditProfilePage extends React.Component {
     handleFormSubmit = event => {
         axios.put("/api/users/" + artist.id, this.state)
         this.setState({ })
+    }
+    onDrop = (picture) => {
+        this.setState({
+            editProfileImage: this.state.editProfileImage.concat(picture),
+        });
+
+        if(this.state.pictures){
+            console.log("theres an image")
+        }
     }
 
     render(){
@@ -101,6 +110,14 @@ class ArtistEditProfilePage extends React.Component {
                 <br />
                 <input type="text"  name="editAboutMe" value={this.state.editAboutMe} onChange={this.handleInputChange}/>
                 <br />
+
+                <ImageUploader
+                withIcon={true}
+                buttonText='Change profile Image'
+                onChange={this.onDrop}
+                imgExtension={['.jpg', '.gif', '.png', '.gif']}
+                maxFileSize={5242880}
+            />
                   <button className="btn-cancel" onClick={this.hideModal}>CLOSE</button>
                     <button className="btn-continue" onClick={this.handleFormSubmit}>Save Changes</button>
                  </Modal>
@@ -113,6 +130,7 @@ class ArtistEditProfilePage extends React.Component {
                  
                  <br />
                  <br />
+                 </div>
                   
                  
                 <Button className="open-modal-btn" onClick={this.showModal}>Edit Profile</Button>
@@ -123,8 +141,8 @@ class ArtistEditProfilePage extends React.Component {
                 
                 </div>
                 
-            
-                </div>
+        
+             
             
 
                 </Col>

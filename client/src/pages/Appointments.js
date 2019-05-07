@@ -23,7 +23,7 @@ class Appointments extends Component {
          this.onDrop = this.onDrop.bind(this)
      }
     
-     onDrop(picture) {
+     onDrop = (picture) => {
         this.setState({
             pictures: this.state.pictures.concat(picture),
         });

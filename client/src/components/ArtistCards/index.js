@@ -1,5 +1,4 @@
 import React from "react";
-import Button from 'react-bootstrap/Button';
 import images from "../../images.json";
 import StarRating from "../StarRating/index";
 import "./style.css";

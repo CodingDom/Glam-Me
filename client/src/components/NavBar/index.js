@@ -27,8 +27,8 @@ export default class Navbar extends Component {
             </button>
 
             <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a className="dropdown-item" href="/mysettings">Settings</a>
-              <a className="dropdown-item" href="#">View Appointments</a>
+              <a className="dropdown-item" href="/artistedit/:userId">My profile</a>
+              <a className="dropdown-item" href="/viewAppointments">View Appointments</a>
               <a className="dropdown-item" href="#">Sign Out</a>
             </div>
           </div>
