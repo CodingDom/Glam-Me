@@ -28,6 +28,18 @@ const UserSchema = new Schema({
     ],
     required: true
   },
+  artist: Boolean,
+  location: {
+    type: {
+      type: String,
+      enum: ['Point'],
+      required: false
+    },
+    coordinates: {
+      type: [Number],
+      required: true
+    }
+  },
   specialties: {
     type: Array,
     required: false
@@ -43,7 +55,6 @@ UserSchema.pre("save", function(next) {
   if(!this.isModified("password")) {
       return next();
   }
-  console.log(this.password)
   this.password = bcrypt.hashSync(this.password, bcrypt.genSaltSync(10), null);
   next();
 });
@@ -51,5 +62,10 @@ UserSchema.pre("save", function(next) {
 UserSchema.methods.validPassword = function(password) {
   return bcrypt.compareSync(password, this.password);
 };
+
+// Used for search query
+const index = { name: 'text' };
+UserSchema.index(index);
+
 // eslint-disable-next-line no-undef
 module.exports = User = mongoose.model('users', UserSchema)

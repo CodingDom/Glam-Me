@@ -10,14 +10,14 @@ import NavBar from "../components/NavBar/index";
 import "./Homepage.css";
 
 class Homepage extends Component {
-    state = {  }
-
     constructor(props) {
         super(props);
         this.state = props.info;
+        console.log(this.state);
     }
 
     componentDidMount() {
+        this.setState(this.props.info);
         document.querySelector("nav").style.display = "none";
         document.querySelector(".navBarContainer").parentElement.style.zIndex = "20";
     }
