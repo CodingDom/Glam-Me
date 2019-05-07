@@ -5,8 +5,11 @@ import "./style.css";
 
 
 class Artistform extends React.Component {
-    state={
-        artistfirstname: "",
+      constructor(props){
+        super(props)
+
+        this.state = {
+          artistfirstname: "",
         artistlastname: "",
         artistemail: "",
         artistpassword: "",
@@ -16,8 +19,8 @@ class Artistform extends React.Component {
         artiststate: "",
         artistzipcode: ""
 
-
-    };
+        }
+      }
 
     handleInputChange = event => {
         const { name, value} = event.target;

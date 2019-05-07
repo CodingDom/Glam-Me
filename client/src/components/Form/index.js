@@ -33,6 +33,11 @@ class form extends React.Component {
         event.preventDefault();
         if(this.state.password === this.state.confirmpassword){
           axios.post("/api/signup", this.state)
+          this.setState({ firstName: "",
+          lastName: "",
+          email: "",
+          password: "",
+          confirmpassword: ""})
         } else{
           this.setState({ errorVisible: true})
         }

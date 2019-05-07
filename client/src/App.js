@@ -12,6 +12,10 @@ import Footer from "./components/Footer/index";
 import FadeIn from "react-fade-in";
 import axios from "axios";
 import "./App.css";
+import ArtistEditProfilePage from "./pages/ArtistEditPage";
+
+
+
 class App extends Component {
   state = {
     loggedIn: false
@@ -21,7 +25,7 @@ class App extends Component {
     axios.get("/api/user_data").then(res => {
       const info = res.data;
       this.setState({
-        loggedIn: (info.name != undefined),
+        loggedIn: (info.name !== undefined),
         name: info.name,
         id: info.id
       });
@@ -45,6 +49,7 @@ class App extends Component {
         <Route exact path = "/appointments" component={Appointments} />
         <Route exact path = "/artistregister" component={ArtistRegister} />
         <Route exact path = "/artist/:userId" component={ArtistProfilePage} />
+        <Route exact path = "/artistedit/:userId" component={ArtistEditProfilePage} />
 
 
       </Switch>
