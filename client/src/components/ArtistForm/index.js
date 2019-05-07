@@ -36,7 +36,6 @@ export default class Artistform extends React.Component {
     };
  
     handleFormSubmit = event => {
-        console.log(this.state);
         event.preventDefault();
         const userInfo = {
           firstName: this.state.artistfirstname,

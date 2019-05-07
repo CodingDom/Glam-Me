@@ -16,6 +16,8 @@ import ArtistEditProfilePage from "./pages/ArtistEditPage";
 
 
 
+let app;
+
 class App extends Component {
   state = {
     loggedIn: false,
@@ -26,18 +28,20 @@ class App extends Component {
   updateInfo() {
     axios.get("/api/user_data").then(res => {
       const info = res.data;
-      this.setState({
-        loggedIn: (info.name !== undefined),
+      app.setState({
+        loggedIn: (info.name != undefined),
         name: info.name,
         id: info.id
       }, () => {
-        console.log("Grabbed user information: ",this.state);
+        console.log("Grabbed user information2: ",app.state);
       });
     });
   }
 
   componentDidMount() {
-    console.log("App is now mounted!");
+    app = this;
+    console.log("App is now mounted!",Date.now());
+    this.updateInfo();
   }
 
   render() {
@@ -46,7 +50,7 @@ class App extends Component {
  <Router>
    <div>
       <FadeIn>
-      <Navbar loggedIn={this.state.loggedIn} name={this.state.name} id={this.state.id} test="hey" />
+      <Navbar loggedIn={this.state.loggedIn} name={this.state.name} id={this.state.id} />
         <Switch>
         <Route exact path="/" render={() => (<Homepage info={this.state} />)} />
         </Switch>

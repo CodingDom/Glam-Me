@@ -10,22 +10,25 @@ import NavBar from "../components/NavBar/index";
 import "./Homepage.css";
 
 class Homepage extends Component {
+    state = { }
     constructor(props) {
         super(props);
-        this.state = props.info;
-        console.log(this.state);
+        this.state = (props.info);
+        console.log("Real props: ",this.state);
     }
 
     componentDidMount() {
-        this.setState(this.props.info);
-        document.querySelector("nav").style.display = "none";
-        document.querySelector(".navBarContainer").parentElement.style.zIndex = "20";
+        console.log("Props: ",this.props);
+        const origin = document.querySelector("nav").parentElement;
+        this.setState({...this.props.info, origin});
+        document.querySelector(".navBarHome").appendChild(document.querySelector("nav"));
     }
     componentWillUnmount() {
-        document.querySelector("nav").style.display = "flex";
+        this.state.origin.appendChild(document.querySelector("nav"));
     }
 
     render() {
+        
         return (
             <FadeIn>
                 <div className="parallaxHome">
@@ -33,7 +36,6 @@ class Homepage extends Component {
                 </div>
                 <div className="navBarContainer">
                 <div className="navBarHome">
-                <NavBar loggedIn={this.state.loggedIn} name={this.state.name} id={this.state.id} test="bye" />
                 </div>
                 </div>
                 
