@@ -7,6 +7,8 @@ import Button from "react-bootstrap/Button"
 import images from "../images.json";
 import { Col , Row , Container } from "../components/Grid/index";
 
+import axios from "axios";
+
 const artist = images.filter(artist => {
     return artist.id === parseInt(document.location.pathname.split("/")[2]);
 })[0];
@@ -15,7 +17,7 @@ class ArtistProfilePage extends React.Component {
     state = {
         artistName: artist.name,
         artistProfileImage: artist.image,
-        // artistName: "John Doe",
+        artistSpecialties: "",
         artistLocation: "Orlando, Florida",
         artistRating: <StarRating value={artist.rating} />,
         // artistProfileImage: "",
@@ -27,7 +29,14 @@ class ArtistProfilePage extends React.Component {
     componentDidMount(){
         console.log("This is working");
         
-
+        axios.get("/api/users/" + window.location.pathname.split("/")[2]).then(res => {
+            const artist = res.data;
+            this.setState({
+                artistName: artist.name,
+                artistSpecialties: artist.specialties,
+                artistAboutMe: artist.blurb
+            })
+        });
         
     }
 

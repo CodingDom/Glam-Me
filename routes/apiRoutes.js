@@ -3,7 +3,7 @@ const User = require("../models/User");
 module.exports = function(app, passport) {
   //Api used for searching database for artists
   app.get("/api/search", function(req, res) {
-    if (req.query && req.query.name.trim() != "") {
+    if (req.query.name && req.query.name.trim() != "") {
       const {name, specialties, location} = req.query;
       const query = {
         $text: {
@@ -15,7 +15,7 @@ module.exports = function(app, passport) {
         query.specialties = specialties.split(",");
       };
       if (location) {
-        query.location = locaiton;
+        query.location = location;
       };
       console.log(query);
       User.createIndexes( { "name": "text" } ).then(function() {
@@ -26,7 +26,9 @@ module.exports = function(app, passport) {
               name: user.name,
               specialties: user.specialties,
               location: user.location,
-              rating: user.rating
+              rating: user.rating,
+              rating: user.rating,
+              id: user._id
             }
             return structure;
           });
@@ -41,7 +43,8 @@ module.exports = function(app, passport) {
             name: user.name,
             specialties: user.specialties,
             location: user.location,
-            rating: user.rating
+            rating: user.rating,
+            id: user._id
           }
           return structure;
         });

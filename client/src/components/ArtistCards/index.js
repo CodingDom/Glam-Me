@@ -9,7 +9,6 @@ import "./style.css";
 class ArtistCard extends React.Component {
       constructor (props) {
         super(props)
-        console.log(props.artists);
         this.state = {
           images:props.artists,
           
@@ -18,6 +17,7 @@ class ArtistCard extends React.Component {
       }
       
       componentWillReceiveProps(props){
+        console.log("Artists: ",props.artists);
         this.setState({
           images:props.artists
         })
