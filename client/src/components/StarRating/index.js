@@ -2,8 +2,8 @@ import React from 'react';
 import StarRatingComponent from 'react-star-rating-component';
  
 class StarRating extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
     
         this.state = {
           rating: 1,
@@ -45,7 +45,7 @@ class StarRating extends React.Component {
             name="app4"
             editing={false}
             starCount={5}
-            value={3} />
+            value={this.props.value} />
           )
       }
 }

@@ -3,6 +3,7 @@
     width: 100%;
     border-style: double;
     border-color: grey;
+    margin-bottom: 0px;
     box-shadow: 0 3px 6px #999, 0 3px 6px #999;
 }
 .text {

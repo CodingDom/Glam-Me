@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link, withRouter} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import "./style.css";
 
 export default class Navbar extends Component {
@@ -34,8 +34,8 @@ export default class Navbar extends Component {
             </button>
 
             <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a className="dropdown-item" href="/mysettings">Settings</a>
-              <a className="dropdown-item" href="#">View Appointments</a>
+              <a className="dropdown-item" href={"/artist/" + this.state.id}>My profile</a>
+              <a className="dropdown-item" href="/viewAppointments">View Appointments</a>
               <a className="dropdown-item" href="#">Sign Out</a>
             </div>
           </div>
@@ -70,7 +70,7 @@ export default class Navbar extends Component {
     ];
 
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-lg navbar-black bg-black">
         <Link className="navbar-brand" to="/">
           Glam Me
         </Link>
