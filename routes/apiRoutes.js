@@ -53,6 +53,23 @@ module.exports = function(app, passport) {
     }
   });
 
+  app.get("/api/users/:id", function(req, res) {
+    // Making sure the user is the account owner
+    console.log(req.params.id);
+    User.findById(req.params.id)
+    .then(user => {
+      const userInfo = {
+        name: user.name,
+        specialties: user.specialties,
+        blurb: user.blurb,
+        location: "Orlando, FL",
+        rating: user.rating,
+        isMyProfile: (req.params.id === req.user._id)
+      }
+      res.json(userInfo);
+    });
+  });
+
   // Allowing users to update their profile information
   app.put("/api/users/:id", function(req, res) {
     // Making sure the user is the account owner
@@ -81,7 +98,6 @@ module.exports = function(app, passport) {
   // Otherwise the user will be sent an error
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
     res.json("/");
-    console.log("Logged in")
   });
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to

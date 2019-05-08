@@ -28,6 +28,7 @@ const UserSchema = new Schema({
     ],
     required: true
   },
+  appointments: Array,
   artist: Boolean,
   location: {
     type: {
@@ -44,6 +45,7 @@ const UserSchema = new Schema({
     type: Array,
     required: false
   },
+  rating: Number,
   blurb: {
     type: String,
     maxLength: 300,
