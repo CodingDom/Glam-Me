@@ -22,7 +22,8 @@ class ArtistProfilePage extends React.Component {
         artistRating: <StarRating value={artist.rating} />,
         // artistProfileImage: "",
         artistWorkImages: "http://images5.fanpop.com/image/photos/31000000/haters-gonna-hate-random-31076705-550-413.jpg",
-        artistAboutMe: artist.about
+        artistAboutMe: artist.about,
+        myProfile: false
 
     }
 
@@ -31,10 +32,12 @@ class ArtistProfilePage extends React.Component {
         
         axios.get("/api/users/" + window.location.pathname.split("/")[2]).then(res => {
             const artist = res.data;
+            console.log(artist);
             this.setState({
                 artistName: artist.name,
                 artistSpecialties: artist.specialties,
-                artistAboutMe: artist.blurb
+                artistAboutMe: artist.blurb,
+                myProfile: artist.isMyProfile
             })
         });
         
@@ -42,7 +45,12 @@ class ArtistProfilePage extends React.Component {
 
     render(){
         console.log("rendering");
-        
+        let button;
+        if (this.state.myProfile) {
+            button = <Button style={{marginLeft:"100px", marginTop:"35px", marginBottom:"50px"}} variant="warning">Edit Profile</Button>;
+        } else {
+            button = <Button style={{marginLeft:"100px", marginTop:"35px", marginBottom:"50px"}} variant="danger">Book Appointment</Button>
+        }
         return (
             <Container fluid>
             <Row>
@@ -51,14 +59,13 @@ class ArtistProfilePage extends React.Component {
                  <ArtistProfile  profileImage={this.state.artistProfileImage} profileAboutMe={this.state.artistAboutMe} profileName={this.state.artistName} profileLocation={this.state.artistLocation} profileRating={this.state.artistRating} />
                  <br />
                  <br />
-                 <Button style={{marginLeft:"100px", marginTop:"35px", marginBottom:"50px"}} variant="danger">Book Appointment</Button>
-                
+                 {button}
                  <div className="profileImageShowCase">
                 <ProfileCarousel  />
                 </div>
 
                 </div>
-            \
+            
 
                 </Col>
             </Row>

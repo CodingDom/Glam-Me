@@ -38,16 +38,6 @@ class Register extends Component {
               
                 </div>
                 </Col>
-                {/* <Col size="md-6">
-                <div className="registerLinkButton">
-                <Link to="/artistRegister">
-                <Button style={{  boxShadow: "0 3px 6px #999, 0 3px 6px #999"}} variant="danger">
-                Register as artist
-                </Button>
-                </Link>
-                </div>
-                </Col> */}
-
             </Row>
             </Container>
             </FadeIn>
