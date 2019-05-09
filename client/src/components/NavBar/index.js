@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import "./style.css";
+import Axios from 'axios';
 
 export default class Navbar extends Component {
   state = {}
@@ -12,6 +13,12 @@ export default class Navbar extends Component {
     nav.classList.toggleClass("active");
   }
 
+  signOut() {
+    Axios.get("/logout").then(res => {
+        window.location.replace(res.data);
+    });
+  }
+
   componentDidMount() {
     console.log("Updated nav");
   }
@@ -20,7 +27,8 @@ export default class Navbar extends Component {
     this.setState({
       loggedIn: props.loggedIn,
       name: props.name,
-      id: props.id
+      id: props.id,
+      isArtist: props.artist
     });
   }
 
@@ -34,9 +42,9 @@ export default class Navbar extends Component {
             </button>
 
             <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a className="dropdown-item" href={"/artist/" + this.state.id}>My profile</a>
+              {!this.state.isArtist ? "" : <a className="dropdown-item" href={"/artist/" + this.state.id}>My profile</a>}
               <a className="dropdown-item" href="/viewAppointments">View Appointments</a>
-              <a className="dropdown-item" href="#">Sign Out</a>
+              <button className="dropdown-item" onClick={this.signOut}>Sign Out</button>
             </div>
           </div>
         )

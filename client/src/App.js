@@ -16,14 +16,14 @@ import ArtistEditProfilePage from "./pages/ArtistEditPage";
 import BookingPage from "./pages/Booking";
 import ViewAppointments from "./pages/ViewAppointments";
 
-
 let app;
 
 class App extends Component {
   state = {
     loggedIn: false,
     name: "",
-    id: ""
+    id: "",
+    artist: false
   }
 
   updateNavbar(e) {
@@ -36,7 +36,8 @@ class App extends Component {
       app.setState({
         loggedIn: (info.name !== undefined),
         name: info.name,
-        id: info.id
+        id: info.id,
+        artist: info.artist
       }, () => {
         console.log("Grabbed user information2: ",app.state);
       });
@@ -55,14 +56,14 @@ class App extends Component {
  <Router>
    <div>
       <FadeIn>
-      <Navbar loggedIn={this.state.loggedIn} name={this.state.name} id={this.state.id} />
+      <Navbar loggedIn={this.state.loggedIn} name={this.state.name} id={this.state.id} artist={this.state.artist} />
         <Switch>
         <Route exact path="/" render={() => (<Homepage info={this.state} />)} />
         <Route exact path="/register" render={() => (<Register updateInfo={this.updateInfo}/>) }/>
         <Route exact path = "/artist" component={Artist} />
+        <Route exact path = "/artistEdit" component={ArtistEditProfilePage} />
         <Route exact path = "/appointments" component={Appointments} />
         <Route exact path = "/artist/:userId" component={ArtistProfilePage} />
-        <Route exact path = "/artistedit/:userId" component={ArtistEditProfilePage} />
         <Route exact path = "/Booking" component={BookingPage} />
         <Route exact path = "/ViewAppointments" component={ViewAppointments} />
         <Route component={NoMatch} />
