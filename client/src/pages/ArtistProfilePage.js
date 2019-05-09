@@ -15,6 +15,7 @@ const artist = images.filter(artist => {
 
 class ArtistProfilePage extends React.Component {
     state = {
+        artistId: artist._id,
         artistName: artist.name,
         artistProfileImage: artist.image,
         artistSpecialties: "",
@@ -31,13 +32,15 @@ class ArtistProfilePage extends React.Component {
         console.log("This is working");
         
         axios.get("/api/users/" + window.location.pathname.split("/")[2]).then(res => {
+            
             const artist = res.data;
             console.log(artist);
             this.setState({
                 artistName: artist.name,
                 artistSpecialties: artist.specialties,
                 artistAboutMe: artist.blurb,
-                myProfile: artist.isMyProfile
+                myProfile: artist.isMyProfile,
+                artistId: artist._id,
             })
         });
         
@@ -47,9 +50,9 @@ class ArtistProfilePage extends React.Component {
         console.log("rendering");
         let button;
         if (this.state.myProfile) {
-            button = <Button style={{marginLeft:"100px", marginTop:"35px", marginBottom:"50px"}} variant="warning">Edit Profile</Button>;
+            button = <Button href={"/artistedit/" + window.location.pathname.split("/")[2]} style={{marginLeft:"100px", marginTop:"35px", marginBottom:"50px"}} variant="warning">Edit Profile</Button>;
         } else {
-            button = <Button style={{marginLeft:"100px", marginTop:"35px", marginBottom:"50px"}} variant="danger">Book Appointment</Button>
+            button = <Button href={"/Booking" + window.location.search} style={{marginLeft:"100px", marginTop:"35px", marginBottom:"50px"}} variant="danger">Book Appointment</Button>
         }
         return (
             <Container fluid>

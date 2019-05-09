@@ -3,7 +3,7 @@ import Carousel from "react-bootstrap/Carousel";
 import { Row, Container} from "../Grid/index";
 import "./style.css";
 
-const images = require("../../images.json");
+const images = require("../../HomepageCarousel.json");
 
 function carousel() {
     return (
