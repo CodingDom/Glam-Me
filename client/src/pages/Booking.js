@@ -1,10 +1,8 @@
 import React from "react";
 import { Col, Row, Container} from "../components/Grid/index";
-import DayPicker from 'react-day-picker';
 import Button from "react-bootstrap/Button";
 import "./Booking.css";
-import 'react-day-picker/lib/style.css';
-
+import Calendar from "../components/Calendar/index";
 
 export default class Booking extends React.Component {
     constructor(props){
@@ -30,7 +28,8 @@ export default class Booking extends React.Component {
             <Container fluid >
             <Row>
                 <Col size="md-12">
-                <div className="wrapper">
+                <Calendar />
+                {/* <div className="wrapper">
                 <h2>Book an Appointment</h2>
                 <br />
                 <strong>With: {this.state.technicianName}</strong>
@@ -43,19 +42,14 @@ export default class Booking extends React.Component {
 
 
 
-                <DayPicker onDayClick={this.handleDayClick} />
-            {this.state.selectedDay ? (
-            <p>You selected {this.state.selectedDay.toLocaleDateString()}</p>
-            ) : (
-             <p>Please select a day.</p>
-            )}
-
+                
+                
             
                 
                 <Button  variant="warning"> Book Now</Button>
                 </div>
 
-             
+              */}
                 </Col>
             </Row>
             </Container>

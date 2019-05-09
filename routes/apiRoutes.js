@@ -131,7 +131,7 @@ module.exports = function(app, passport) {
   // Route for logging user out
   app.get("/logout", function(req, res) {
     req.logout();
-    res.redirect("/");
+    res.json("/");
   });
 
   // Route for getting some data about our user to be used client side
@@ -146,7 +146,8 @@ module.exports = function(app, passport) {
       res.json({
         email: req.user.email,
         id: req.user._id,
-        name: req.user.name
+        name: req.user.name,
+        artist: req.user.artist
       });
     }
   });

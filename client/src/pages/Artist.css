@@ -1,5 +1,5 @@
 .searchBarComponent {
-    margin: 60px auto 250px 300px;
+    margin: 60px auto 100px 300px;
     width: 500px;
     
 }
@@ -10,3 +10,13 @@
     align-items: center;
     width: 100%
 }
+
+#page-loader {
+    height: 100%;
+    width: 100%;
+  }
+
+  #page-spinner {
+    width: 200px;
+    height: 200px;
+  }

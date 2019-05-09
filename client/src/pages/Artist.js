@@ -10,15 +10,19 @@ let artistPage;
 
 class Artist extends Component {
     state = { 
-        artists: []
+        artists: [],
+        loading: true
      }
 
      artistSearch(query) {
-         console.log(query, query.replace(" ","+"));
-        axios.get("/api/search?name=" + query.replace(" ","+"))
+        this.setState({
+            loading: true
+        })
+        axios.get("/api/search?name=" + query.trim().replace(" ","+"))
         .then(res => {
             artistPage.setState({
-                artists: res.data
+                artists: res.data,
+                loading: false
             });
         });
      }
@@ -31,12 +35,25 @@ class Artist extends Component {
         axios.get("/api/search")
         .then(res => {
             this.setState({
-                artists: res.data
+                artists: res.data,
+                loading: false
             });
         });
     }
 
     render() {
+        const loading = !this.state.loading ? "" : (
+        <div id="page-loader" class="d-flex justify-content-center">
+            <div id="page-spinner" class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+            </div>
+        </div>)
+
+         let results; 
+         if (!this.state.loading && this.state.artists.length === 0)
+            results = <h4>No results found!</h4>; 
+         else 
+            results = "";
         return (
             <FadeIn>
             <Container >
@@ -44,7 +61,9 @@ class Artist extends Component {
                 <Col size="12">
                 <div className="searchBarComponent">
                 <SearchBar artistSearch={this.artistSearch} />
-                </div>                
+                {results}
+                </div>
+                {loading}          
                 </Col>
                 </Row>
                 <Row>
