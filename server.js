@@ -7,6 +7,7 @@ const session = require("express-session");
 const passport = require("./config/passport");
 const PORT = process.env.PORT || 3001;
 const app = express();
+require('dotenv').config();
 
 app.use(bodyParser.json())
 // app.use(cors())
@@ -52,4 +53,5 @@ app.get("*", function(req, res) {
 
 app.listen(PORT, function() {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
+  console.log(process.env.IMGUR_CLIENT_ID);
 });

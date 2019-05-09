@@ -64,14 +64,14 @@ module.exports = function(app, passport) {
         blurb: user.blurb,
         location: "Orlando, FL",
         rating: user.rating,
-        isMyProfile: (req.params.id === req.user._id)
+        isMyProfile: req.user ? (req.params.id === req.user._id) : false
       }
       res.json(userInfo);
     });
   });
 
   // Allowing users to update their profile information
-  app.put("/api/users/:id", function(req, res) {
+  app.put("/api/user", function(req, res) {
     // Making sure the user is the account owner
     if (req.params.id != req.user.id) {
       return res.status(500).end();
@@ -131,7 +131,7 @@ module.exports = function(app, passport) {
   // Route for logging user out
   app.get("/logout", function(req, res) {
     req.logout();
-    res.redirect("/");
+    res.json("/");
   });
 
   // Route for getting some data about our user to be used client side
@@ -146,7 +146,8 @@ module.exports = function(app, passport) {
       res.json({
         email: req.user.email,
         id: req.user._id,
-        name: req.user.name
+        name: req.user.name,
+        artist: req.user.artist
       });
     }
   });
