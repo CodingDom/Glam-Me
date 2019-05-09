@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 import ServiceCards from "../components/ServicesCards/index";
 import ArtistCards from "../components/ArtistCards/index";
 import StylesCards from "../components/StyleCards/index"; 
@@ -116,7 +117,7 @@ class Appointments extends Component {
                 </Col> 
                 <Col size="md-12">
                <div className="artistCards">
-               {this.state.artistVisible ? <ArtistCards onClick={this.handleArtisteOnClick}  /> : null}
+               {this.state.artistVisible ? <Redirect to={`/artist?service=${this.state.servicePicked}&style=${this.state.stylesPicked}`} /> : null}
                </div>
                 </Col>
                

@@ -48,7 +48,7 @@ class ArtistCard extends React.Component {
           </li>
           <li>
            
-            <a className="btn btn-danger" href={"/artist/"+artist.id}>
+            <a className="btn btn-danger" href={"/artist/"+artist.id+window.location.search}>
               View Profile
             </a>
           </li>
