@@ -1,3 +1,36 @@
+
+This project We create about Glam Me App 
+
+ Glam Me !!  An on-call beauty service thats offers licensed technicians who specialize in : Hair, Makeup, Nails, Waxings, Massages and facials, clients are able to book appointments with technicians once they have registered and logged in. If you would like to register as a technician view the register and login tab for artist. 
+
+And...
+
+Built with
+
+* Mongodb
+* Express
+* React
+* NodeJs
+* API
+* Json
+* Express
+
+Useful resources:
+* Mongodb error index
+* mLab
+* Markdown
+* Passport
+* Axios GET Request
+
+
+Authors
+* Dominic Smith
+* Jonathan Diaz
+* Minh-Ngoc Tran (Sheila)
+
+#------------------------------------#
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -66,3 +99,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+<img src="./client/public/images/Capture1.PNG" width="100%">
+
+https://glamme.herokuapp.com
