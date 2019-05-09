@@ -64,7 +64,7 @@ module.exports = function(app, passport) {
         blurb: user.blurb,
         location: "Orlando, FL",
         rating: user.rating,
-        isMyProfile: (req.params.id === req.user._id)
+        isMyProfile: req.user ? (req.params.id === req.user._id) : false
       }
       res.json(userInfo);
     });

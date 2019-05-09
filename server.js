@@ -5,7 +5,7 @@ const path = require("path");
 const session = require("express-session");
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 const app = express();
 
 app.use(bodyParser.json())
