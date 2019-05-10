@@ -2,7 +2,7 @@ import React from "react";
 
 import Button from "react-bootstrap/Button"
 import images from "../images.json";
-
+import Select from "react-select";
 import { Col , Row , Container } from "../components/Grid/index";
 import ImageUploader from 'react-images-upload';
 import { Redirect } from "react-router-dom";
@@ -14,6 +14,15 @@ const artist = images.filter(artist => {
     return artist.id === parseInt(document.location.pathname.split("/")[2]);
 })[0];
 
+
+const options = [
+    { value: 'Makeup', label: 'Makeup' },
+    { value: 'Skincare', label: 'Skincare' },
+    { value: 'Nails', label: 'Nails' },
+    { value: 'Hair', label: 'Hair'},
+    { value: 'Massage', label: 'Massage'},
+    { value: 'Facials', label: 'Facials'},
+  ]
 class ArtistEditProfilePage extends React.Component {
     constructor(props) {
         super(props)
@@ -27,10 +36,11 @@ class ArtistEditProfilePage extends React.Component {
             artistId: "",
 
             myProfile: false,
-            redirect: false
+            //redirect: false
 
     
         }
+    
      
     }
 
@@ -43,7 +53,7 @@ class ArtistEditProfilePage extends React.Component {
             this.setState({
                 artistId: artist._id,
                 artistName: artist.name,
-                artistSpecialties: artist.specialties,
+                artistSpecialties: artist.Specialties,
                 artistAboutMe: artist.blurb,
                 myProfile: artist.isMyProfile,
             })
@@ -66,9 +76,9 @@ class ArtistEditProfilePage extends React.Component {
         axios.put("/api/user", this.state)
         .then(res => {
             console.log("profile updated");
-            this.setState({
-                redirect: true
-            });
+           // this.setState({
+            //    redirect: true
+            //});
         })
      
     }
@@ -79,14 +89,16 @@ class ArtistEditProfilePage extends React.Component {
 
         
     }
-
+    
+   
+      
     render(){
         console.log("rendering");
         
         return (
             (this.state.myProfile ?
                 <Container fluid>
-                {this.state.redirect ? <Redirect to={"/artist/" + this.state.artistId} /> : ""}
+                {/*{this.state.redirect ? <Redirect to={"/artist/" + this.state.artistId} /> : ""} */}
                 <Row>
                    <Col size="md-12">
                     <div style={{marginTop:"100px", marginLeft:"480px"}}><strong><h1 >Edit Profile</h1></strong></div>
@@ -94,19 +106,28 @@ class ArtistEditProfilePage extends React.Component {
     
                    <strong>Edit Name</strong>
                     <br />
-                    <Input name="artistName" value={this.state.artistName} onChange={this.handleInputChange}></Input>
+                    <Input name="artistName" value={this.state.artistName} onChange={this.handleInputChange} />
                     <br />
                     <strong>Edit Location</strong>
                     <br />
-                    <Input name="artistLocation" value={this.state.artistLocation} onChange={this.handleInputChange}></Input>
+                    <Input name="artistLocation" value={this.state.artistLocation} onChange={this.handleInputChange} />
                     <br />
                     <strong>Edit Specialties</strong>
                     <br />
-                    <Input name="artistSpecialties" value={this.state.artistSpecialties} onChange={this.handleInputChange}></Input>
+                    <Select hasValue={true} value={this.state.artistSpecialties} isMulti options={options}/>
+                    {/* <select class="chosen-select" onChange={this.handleInputChange} >
+                    <option value={this.artistSpecialties} name="Makeup">Makeup</option>
+                    <option value={this.artistSpecialties} name="Skincare">Skincare</option>
+                    <option value={this.artistSpecialties} name="Nails">Nails</option>
+                    <option value={this.artistSpecialties} name="Hair">Hair</option>
+                    <option value={this.artistSpecialties} name="Massage">Massage</option>
+                    <option value={this.artistSpecialties} name="Facials">Facials</option>
+                    </select> */}
+                   
                     <br />
                     <strong>Edit About Me</strong>
                     <br />
-                    <Input name="artistAboutMe" value={this.state.artistAboutMe} onChange={this.handleInputChange}></Input>
+                    <Input name="artistAboutMe" value={this.state.artistAboutMe} onChange={this.handleInputChange} /> 
                     <br />
                     <strong>Change profile image </strong>
                     <ImageUploader
@@ -124,7 +145,7 @@ class ArtistEditProfilePage extends React.Component {
                   
                 </Row>
                 
-                </Container> : <Redirect to={"/artist/" + this.state.artistId} />)
+                </Container> : null)
         )
     }
 }

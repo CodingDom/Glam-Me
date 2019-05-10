@@ -55,7 +55,7 @@ export default class Navbar extends Component {
                 to="/register"
                 className="nav-link active text-white"
               >
-                Login
+                Signup / Login
               </Link>
             </div>
         )
@@ -69,11 +69,11 @@ export default class Navbar extends Component {
       },
       {
         location: "/artist",
-        name: "Find an Artist"
+        name: "View Technicians"
       },
       {
         location: "/appointments",
-        name: "Make an Appointment"
+        name: "Book Appointment"
       }
     ];
 

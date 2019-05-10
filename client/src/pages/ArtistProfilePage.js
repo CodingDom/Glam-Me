@@ -59,7 +59,7 @@ class ArtistProfilePage extends React.Component {
             <Row>
                 <Col size="md-12">
                 <div className = "profileComponent">
-                 <ArtistProfile  profileImage={this.state.artistProfileImage} profileAboutMe={this.state.artistAboutMe} profileName={this.state.artistName} profileLocation={this.state.artistLocation} profileRating={this.state.artistRating} />
+                 <ArtistProfile  profileImage={this.state.artistProfileImage} profileAboutMe={this.state.artistAboutMe} profileName={this.state.artistName} profileLocation={this.state.artistLocation} profileRating={this.state.artistRating} profileSpecialties={this.state.artistSpecialties}/>
                  <br />
                  <br />
                  {button}

@@ -25,6 +25,8 @@ function ArtistProfile (props) {
                     <br />
                     <strong>Rates:</strong> 25$- 150$
                     <br />
+                    <strong>Specialties:</strong> {props.profileSpecialties}
+                    <br />
                     <strong>About Me: </strong>{props.profileAboutMe}
                     
                     </div>
