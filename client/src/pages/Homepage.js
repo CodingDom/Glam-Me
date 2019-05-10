@@ -7,7 +7,7 @@ import Parallax from "../components/Parallax/index";
 import { Link } from "react-router-dom";
 import FadeIn from 'react-fade-in';
 import "./Homepage.css";
-
+const $ = window.$;
 class Homepage extends Component {
     state = { }
     constructor(props) {
@@ -22,6 +22,16 @@ class Homepage extends Component {
         currActive && currActive.classList.remove("active");
         document.querySelector(`.navbar-nav [data-location="${window.location.pathname}"]`).classList.add("active");
         document.querySelector("nav").parentElement.insertBefore(document.querySelector(".parallaxHome"),document.querySelector("nav"));
+        // console.log($(window).width()*.581, $(window).height()/2.5);
+        // if ($(window).width()*.581 < $(window).height()/2.5) {
+        //     $(".parallaxContainer").css("height","58.1vw")
+        // }
+        // $(window).on("resize", function() {
+        //     console.log($(window).width()*.581, $(window).height()/2.5);
+        //     if ($(window).width()*.581 < $(window).height()/2.5) {
+        //         $(".parallaxContainer").css("height","58.1vw")
+        //     }
+        // });
     }
     componentWillUnmount() {
         document.querySelector(".parallaxHome").remove();
@@ -40,7 +50,7 @@ class Homepage extends Component {
                 </div>
                 
                 
-        <Container >
+        <Container className="main" >
             <Carousel  />
             <div className="homepageJumbo">
          

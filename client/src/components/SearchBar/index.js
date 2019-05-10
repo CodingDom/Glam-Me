@@ -63,6 +63,8 @@ class searchBar extends React.Component {
 
         if(value){
             this.artistSearch(value);
+        } else {
+            this.artistSearch(" ");
         }
     }
 

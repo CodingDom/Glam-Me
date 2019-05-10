@@ -28,15 +28,16 @@ class ArtistEditProfilePage extends React.Component {
         super(props)
 
         this.state = {
-            artistName: "",
-            artistProfileImage: "",
-            artistLocation: "Orlando, Florida",
-            artistSpecialties: "",
-            artistAboutMe: "",
-            artistId: "",
+            name: "",
+            profileImage: "",
+            location: "Orlando, Florida",
+            specialties: "",
+            blurb: "",
+            artistId: window.location.pathname.split("/")[2],
 
             myProfile: false,
-            //redirect: false
+            redirect: false,
+            loaded: false
 
     
         }
@@ -49,13 +50,12 @@ class ArtistEditProfilePage extends React.Component {
         axios.get("/api/users/" + window.location.pathname.split("/")[2]).then(res => {
             
             const artist = res.data;
-            console.log(artist);
             this.setState({
-                artistId: artist._id,
-                artistName: artist.name,
-                artistSpecialties: artist.Specialties,
-                artistAboutMe: artist.blurb,
+                name: artist.name,
+                specialties: artist.specialties,
+                blurb: artist.blurb,
                 myProfile: artist.isMyProfile,
+                loaded: true
             })
         });
     
@@ -84,7 +84,7 @@ class ArtistEditProfilePage extends React.Component {
     }
     onDrop = (picture) => {
         this.setState({
-            artistProfileImage: this.state.artistProfileImage.concat(picture),
+            profileImage: this.state.profileImage.concat(picture),
         });
 
         
@@ -93,26 +93,24 @@ class ArtistEditProfilePage extends React.Component {
    
       
     render(){
-        console.log("rendering");
-        
         return (
             (this.state.myProfile ?
-                <Container fluid>
-                {/*{this.state.redirect ? <Redirect to={"/artist/" + this.state.artistId} /> : ""} */}
+                <Container className="main" fluid>
+                {this.state.redirect ? <Redirect to={"/artist/" + this.state.artistId} /> : ""}
                 <Row>
                    <Col size="md-12">
-                    <div style={{marginTop:"100px", marginLeft:"480px"}}><strong><h1 >Edit Profile</h1></strong></div>
+                    <h1 ><strong>Edit Profile</strong></h1>
                    <div className="editWrapper">
     
-                   <strong>Edit Name</strong>
+                   <strong>Name</strong>
                     <br />
-                    <Input name="artistName" value={this.state.artistName} onChange={this.handleInputChange} />
+                    <Input name="name" value={this.state.name} onChange={this.handleInputChange} />
                     <br />
-                    <strong>Edit Location</strong>
+                    <strong>Location</strong>
                     <br />
-                    <Input name="artistLocation" value={this.state.artistLocation} onChange={this.handleInputChange} />
+                    <Input name="location" value={this.state.location} onChange={this.handleInputChange} />
                     <br />
-                    <strong>Edit Specialties</strong>
+                    <strong>Specialties</strong>
                     <br />
                     <Select hasValue={true} value={this.state.artistSpecialties} isMulti options={options}/>
                     {/* <select class="chosen-select" onChange={this.handleInputChange} >
@@ -125,9 +123,9 @@ class ArtistEditProfilePage extends React.Component {
                     </select> */}
                    
                     <br />
-                    <strong>Edit About Me</strong>
+                    <strong>About Me</strong>
                     <br />
-                    <Input name="artistAboutMe" value={this.state.artistAboutMe} onChange={this.handleInputChange} /> 
+                    <textarea className="form-control" rows="5" name="blurb" value={this.state.blurb} onChange={this.handleInputChange} />
                     <br />
                     <strong>Change profile image </strong>
                     <ImageUploader
@@ -136,6 +134,8 @@ class ArtistEditProfilePage extends React.Component {
                     onChange={this.onDrop}
                     imgExtension={['.jpg', '.gif', '.png', '.gif']}
                     maxFileSize={5242880}
+                    withPreview={true}
+                    singleImage={true}
                 />
     
                 <Button onClick={this.handleProfileUpdate} variant="warning"> Save Changes</Button>
@@ -145,7 +145,7 @@ class ArtistEditProfilePage extends React.Component {
                   
                 </Row>
                 
-                </Container> : null)
+                </Container> : this.state.loaded ? <Redirect to={"/artist/" + this.state.artistId} /> : "")
         )
     }
 }

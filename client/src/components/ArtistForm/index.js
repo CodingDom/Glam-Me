@@ -172,7 +172,7 @@ export default class Artistform extends React.Component {
     
     
     
-      <Button onClick={this.handleFormSubmit}variant="primary" type="submit">
+      <Button onClick={this.handleFormSubmit}variant="warning" type="submit">
             Sign up!
       </Button>
     </Form>

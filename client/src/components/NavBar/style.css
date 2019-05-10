@@ -8,8 +8,29 @@
     right: 30px;
 }
 
+.nav-link {
+    color: white!important;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link.active {
+    color: #d2b57f!important;
+}
+
+.nav-link:hover {
+    color: #d2b57f!important;
+}
+
 #register .nav-link {
     padding-left: 0;
+}
+
+#register .nav-link:hover {
+    color: #d2b57f!important;
+}
+
+.bullet {
+    display: none;
 }
 
 @media only screen and (min-width: 992px) {
@@ -20,5 +41,9 @@
 
     #register .nav-link {
         padding-left: 16px;
+    }
+
+    .bullet {
+        display: inline;
     }
 }

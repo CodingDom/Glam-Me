@@ -25,7 +25,7 @@ export default class Booking extends React.Component {
     render() {
 
         return (
-            <Container fluid >
+            <Container className="main" fluid >
             <Row>
                 <Col size="md-12">
                 <Calendar />

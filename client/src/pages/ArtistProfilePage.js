@@ -50,28 +50,16 @@ class ArtistProfilePage extends React.Component {
         console.log("rendering");
         let button;
         if (this.state.myProfile) {
-            button = <Button href={"/artistedit/" + window.location.pathname.split("/")[2]} style={{marginLeft:"100px", marginTop:"35px", marginBottom:"50px"}} variant="warning">Edit Profile</Button>;
+            button = <Button href={"/artistedit/" + window.location.pathname.split("/")[2]} style={{ display:"inline-block",marginTop:"105%" }} variant="warning">Edit Profile</Button>;
         } else {
-            button = <Button href={"/Booking" + window.location.search} style={{marginLeft:"100px", marginTop:"35px", marginBottom:"50px"}} variant="danger">Book Appointment</Button>
+            button = <Button href={"/Booking" + window.location.search} style={{ display:"inline-block",marginTop:"105%" }} variant="danger">Book Appointment</Button>
         }
         return (
-            <Container fluid>
-            <Row>
-                <Col size="md-12">
-                <div className = "profileComponent">
-                 <ArtistProfile  profileImage={this.state.artistProfileImage} profileAboutMe={this.state.artistAboutMe} profileName={this.state.artistName} profileLocation={this.state.artistLocation} profileRating={this.state.artistRating} profileSpecialties={this.state.artistSpecialties}/>
-                 <br />
-                 <br />
-                 {button}
-                 <div className="profileImageShowCase">
-                <ProfileCarousel  />
-                </div>
-
-                </div>
-            
-
-                </Col>
-            </Row>
+            <Container fluid className="main profileContainer">
+            <div className = "profileComponent">
+                 <ArtistProfile button={button} profileImage={this.state.artistProfileImage} profileAboutMe={this.state.artistAboutMe} profileName={this.state.artistName} profileLocation={this.state.artistLocation} profileRating={this.state.artistRating} />
+                 <ProfileCarousel  />
+            </div>
             </Container>
         )
     }

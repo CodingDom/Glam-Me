@@ -100,7 +100,7 @@ class form extends React.Component {
           <div>
          
 
-            <Form method="post" action="/api/signup" className="text-white" >
+            <Form method="post" action="/api/signup">
             {this.renderRedirect()}
       <Form.Row>
         <Form.Group as={Col} controlId="formGridFirstName">
@@ -215,7 +215,7 @@ class form extends React.Component {
         controlId="artist">
         <Form.Check type="checkbox" label="I am registering as a beauty technician." name="artist" />
       </Form.Group>
-      <Button onClick={this.handleFormSubmit}variant="primary" type="submit">
+      <Button onClick={this.handleFormSubmit}variant="warning" type="submit">
             Sign up!
       </Button>
     </Form>

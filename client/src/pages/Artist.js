@@ -15,9 +15,10 @@ class Artist extends Component {
      }
 
      artistSearch(query) {
-        this.setState({
-            loading: true
-        })
+        artistPage.setState({
+            loading: true,
+            artists: []
+        });
         axios.get("/api/search?name=" + query.trim().replace(" ","+"))
         .then(res => {
             artistPage.setState({
@@ -31,13 +32,15 @@ class Artist extends Component {
         artistPage = this;
         const currActive = document.querySelector(".navbar-nav .active");
         currActive && currActive.classList.remove("active");
-        document.querySelector(`.navbar-nav [data-location="${window.location.pathname}"]`).classList.add("active");
+        const currPage = document.querySelector(`.navbar-nav [data-location="${window.location.pathname}"]`)
+        currPage && currPage.classList.add("active");
         axios.get("/api/search")
         .then(res => {
             this.setState({
                 artists: res.data,
                 loading: false
             });
+            console.log(this.state);
         });
     }
 
@@ -56,7 +59,7 @@ class Artist extends Component {
             results = "";
         return (
             <FadeIn>
-            <Container >
+            <Container className="main" >
             <Row>
                 <Col size="12">
                 <div className="searchBarComponent">
