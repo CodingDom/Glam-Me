@@ -95,7 +95,7 @@ export default class Navbar extends Component {
                   data-location={item.location}
                 >
                   {item.name}
-                  {item !== navigators[navigators.length-1] ? <span className="bullet" style={{textDecoration:"none",color:"#d2b57f",marginLeft:"12px"}}>&bull;</span> : ""}
+                  {item !== navigators[navigators.length-1] ? <span className="bullet" style={{textDecoration:"none",color:"#d2b57f",marginLeft:"15px"}}>&bull;</span> : ""}
                 </Link>
               </li>
             ))}
