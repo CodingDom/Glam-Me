@@ -1,7 +1,6 @@
 .searchBarComponent {
-    margin: 60px auto 100px 300px;
-    width: 500px;
-    
+    margin: 30px auto 30px;
+    width: 60%;
 }
 .artistCardContainer {
     position: relative;

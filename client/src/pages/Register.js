@@ -18,7 +18,7 @@ class Register extends Component {
     render() {
         return (
             <FadeIn>
-            <Container fluid>
+            <Container className="main" fluid>
             <Row>
                 <Col size="md-12">
                 <div className="userRegisterForm mx-auto">

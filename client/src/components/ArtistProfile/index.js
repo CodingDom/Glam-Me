@@ -7,15 +7,16 @@ import { Col , Row, Container} from "../Grid/index";
 function ArtistProfile (props) {
     
             return (
-                <Container fluid>
                 <Row>
-                   
-                    <Col size="md-2">
-                    <div className="artistProfilePicture">
-                    <img alt="omomo" src={props.profileImage} style={{height:"200px",width:"200px"}} />
+                    {/* <Col size="s-12 md-3 picture"> */}
+                    <div className="picture-container">
+                    <div className="artistProfilePicture" style={{backgroundImage:`url('${props.profileImage}')`}}>
+                    {props.button}
                     </div>
-                    </Col>
-                    <Col size="md-10">
+                    </div>
+                    {/* </Col> */}
+                    {/* // <Col size="s-12 md-9"> */}
+                    <div className="info-container">
                     <div className="artistProfileInfo">
                     <strong>Technician: </strong>{props.profileName}
                     <br />
@@ -25,13 +26,13 @@ function ArtistProfile (props) {
                     <br />
                     <strong>Rates:</strong> 25$- 150$
                     <br />
-                    <strong>About Me: </strong>{props.profileAboutMe}
+                    <strong>About Me: </strong><span id="blurb">{props.profileAboutMe}</span>
                     
                     </div>
-                    </Col>
+                    </div>
+                    {/* // </Col> */}
                 
                 </Row>
-                </Container>
             )
 
 }

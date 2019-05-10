@@ -50,7 +50,7 @@ class Homepage extends Component {
                 </div>
                 
                 
-        <Container >
+        <Container className="main" >
             <Carousel  />
             <div className="homepageJumbo">
          

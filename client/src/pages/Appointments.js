@@ -87,7 +87,7 @@ class Appointments extends Component {
         
         return (
        
-            <Container fluid>
+            <Container fluid className="main">
             <Row>
                 <Col size="md-12">
                 <div className="appointmentMsgContainer">

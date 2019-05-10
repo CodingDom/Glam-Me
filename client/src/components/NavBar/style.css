@@ -9,11 +9,16 @@
 }
 
 .nav-link {
-    color: white;
+    color: white!important;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link.active {
+    color: #d2b57f!important;
 }
 
 .nav-link:hover {
-    color: #d2b57f;
+    color: #d2b57f!important;
 }
 
 #register .nav-link {
@@ -24,6 +29,10 @@
     color: #d2b57f!important;
 }
 
+.bullet {
+    display: none;
+}
+
 @media only screen and (min-width: 992px) {
     #register {
         position: absolute; 
@@ -32,5 +41,9 @@
 
     #register .nav-link {
         padding-left: 16px;
+    }
+
+    .bullet {
+        display: inline;
     }
 }

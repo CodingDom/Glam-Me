@@ -6,18 +6,19 @@
   "dependencies": {
     "axios": "^0.18.0",
     "jquery": "^3.4.1",
-    "jqwidgets-scripts": "^7.2.0",
     "react": "^16.6.3",
     "react-bootstrap": "^1.0.0-beta.8",
     "react-day-picker": "^7.3.0",
     "react-dom": "^16.6.3",
     "react-fade-in": "^0.1.6",
+    "react-id-swiper": "^2.1.2",
     "react-images-upload": "^1.2.6",
     "react-notifications-component": "^1.1.1",
     "react-router-dom": "^5.0.0",
     "react-scripts": "^2.1.1",
     "react-star-rating-component": "^1.4.1",
-    "react-tabs": "^3.0.0"
+    "react-tabs": "^3.0.0",
+    "swiper": "^4.5.0"
   },
   "scripts": {
     "start": "react-scripts start",
