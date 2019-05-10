@@ -73,20 +73,27 @@ module.exports = function(app, passport) {
   // Allowing users to update their profile information
   app.put("/api/user", function(req, res) {
     // Making sure the user is the account owner
-    if (req.params.id != req.user.id) {
+    if (!req.user.artist) {
       return res.status(500).end();
     }
+    console.log("Editing artist page!");
     // Limiting amount of information that may be changed
     const updatedInfo = {};
-    if (req.body.displayName) {
-      updatedInfo.displayName = req.body.displayName;
+    if (req.body.name) {
+      updatedInfo.name = req.body.name;
     }
     if (req.body.blurb) {
       updatedInfo.blurb = req.body.blurb;
     }
-    User.update(updatedInfo, { where: { id: req.params.id } })
-      .then(function() {
+    if (req.body.profileImage) {
+      console.log(req.body.profileImage);
+    }
+    console.log(updatedInfo, req.user._id);
+    User.updateOne({ _id: req.user._id }, updatedInfo)
+      .then(function(resp) {
         res.status(200).end();
+        console.log(resp);
+        console.log("Successfully Updated!");
       })
       .catch(function(err) {
         console.log(err);

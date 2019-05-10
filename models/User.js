@@ -30,6 +30,7 @@ const UserSchema = new Schema({
   },
   appointments: Array,
   artist: Boolean,
+  profileImage: String,
   location: {
     type: {
       type: String,

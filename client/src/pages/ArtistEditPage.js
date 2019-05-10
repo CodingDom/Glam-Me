@@ -19,11 +19,11 @@ class ArtistEditProfilePage extends React.Component {
         super(props)
 
         this.state = {
-            artistName: "",
-            artistProfileImage: "",
-            artistLocation: "Orlando, Florida",
-            artistSpecialties: "",
-            artistAboutMe: "",
+            name: "",
+            profileImage: "",
+            location: "Orlando, Florida",
+            specialties: "",
+            blurb: "",
             artistId: "",
 
             myProfile: false,
@@ -42,9 +42,9 @@ class ArtistEditProfilePage extends React.Component {
             console.log(artist);
             this.setState({
                 artistId: artist._id,
-                artistName: artist.name,
-                artistSpecialties: artist.specialties,
-                artistAboutMe: artist.blurb,
+                name: artist.name,
+                specialties: artist.specialties,
+                blurb: artist.blurb,
                 myProfile: artist.isMyProfile,
             })
         });
@@ -67,14 +67,14 @@ class ArtistEditProfilePage extends React.Component {
         .then(res => {
             console.log("profile updated");
             this.setState({
-                redirect: true
+                redirect: false
             });
         })
      
     }
     onDrop = (picture) => {
         this.setState({
-            artistProfileImage: this.state.artistProfileImage.concat(picture),
+            profileImage: this.state.profileImage.concat(picture),
         });
 
         
@@ -82,7 +82,7 @@ class ArtistEditProfilePage extends React.Component {
 
     render(){
         console.log("rendering");
-        
+        console.log("Artist Id: "+this.state.artistId);
         return (
             (this.state.myProfile ?
                 <Container fluid>
@@ -94,19 +94,19 @@ class ArtistEditProfilePage extends React.Component {
     
                    <strong>Edit Name</strong>
                     <br />
-                    <Input name="artistName" value={this.state.artistName} onChange={this.handleInputChange}></Input>
+                    <Input name="name" value={this.state.name} onChange={this.handleInputChange}></Input>
                     <br />
                     <strong>Edit Location</strong>
                     <br />
-                    <Input name="artistLocation" value={this.state.artistLocation} onChange={this.handleInputChange}></Input>
+                    <Input name="location" value={this.state.location} onChange={this.handleInputChange}></Input>
                     <br />
                     <strong>Edit Specialties</strong>
                     <br />
-                    <Input name="artistSpecialties" value={this.state.artistSpecialties} onChange={this.handleInputChange}></Input>
+                    <Input name="specialties" value={this.state.specialties} onChange={this.handleInputChange}></Input>
                     <br />
                     <strong>Edit About Me</strong>
                     <br />
-                    <Input name="artistAboutMe" value={this.state.artistAboutMe} onChange={this.handleInputChange}></Input>
+                    <Input name="blurb" value={this.state.blurb} onChange={this.handleInputChange}></Input>
                     <br />
                     <strong>Change profile image </strong>
                     <ImageUploader
@@ -115,6 +115,8 @@ class ArtistEditProfilePage extends React.Component {
                     onChange={this.onDrop}
                     imgExtension={['.jpg', '.gif', '.png', '.gif']}
                     maxFileSize={5242880}
+                    withPreview={true}
+                    singleImage={true}
                 />
     
                 <Button onClick={this.handleProfileUpdate} variant="warning"> Save Changes</Button>
@@ -124,7 +126,7 @@ class ArtistEditProfilePage extends React.Component {
                   
                 </Row>
                 
-                </Container> : <Redirect to={"/artist/" + this.state.artistId} />)
+                </Container> : "" /*<Redirect to={"/artist/" + this.state.artistId} />*/)
         )
     }
 }
