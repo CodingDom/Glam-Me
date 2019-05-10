@@ -61,7 +61,7 @@ class App extends Component {
         <Route exact path="/" render={() => (<Homepage info={this.state} />)} />
         <Route exact path="/register" render={() => (<Register updateInfo={this.updateInfo}/>) }/>
         <Route exact path = "/artist" component={Artist} />
-        <Route exact path = "/artistEdit" component={ArtistEditProfilePage} />
+        <Route exact path = "/artistedit/:userId" component={ArtistEditProfilePage} />
         <Route exact path = "/appointments" component={Appointments} />
         <Route exact path = "/artist/:userId" component={ArtistProfilePage} />
         <Route exact path = "/Booking" component={BookingPage} />

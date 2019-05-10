@@ -8,8 +8,20 @@
     right: 30px;
 }
 
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover {
+    color: #d2b57f;
+}
+
 #register .nav-link {
     padding-left: 0;
+}
+
+#register .nav-link:hover {
+    color: #d2b57f!important;
 }
 
 @media only screen and (min-width: 992px) {

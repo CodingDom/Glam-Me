@@ -31,7 +31,8 @@ class Artist extends Component {
         artistPage = this;
         const currActive = document.querySelector(".navbar-nav .active");
         currActive && currActive.classList.remove("active");
-        document.querySelector(`.navbar-nav [data-location="${window.location.pathname}"]`).classList.add("active");
+        const currPage = document.querySelector(`.navbar-nav [data-location="${window.location.pathname}"]`)
+        currPage && currPage.classList.add("active");
         axios.get("/api/search")
         .then(res => {
             this.setState({

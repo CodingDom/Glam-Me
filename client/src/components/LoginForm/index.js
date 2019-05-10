@@ -48,7 +48,7 @@ class Loginform extends React.Component {
       };
     render(){
         return (
-        <Form method="post" action="/api/login" className="text-white" >
+        <Form method="post" action="/api/login">
           {this.renderRedirect()}
 
           <Form.Group controlId="formGridEmail">
@@ -61,7 +61,7 @@ class Loginform extends React.Component {
             <Form.Control onChange={this.handleInputChange} value={this.state.password} name="password"type="password" placeholder="Password" />
           </Form.Group>
     
-          <Button onClick={this.handleFormSubmit}variant="primary" type="submit">
+          <Button onClick={this.handleFormSubmit}variant="warning" type="submit">
                 Login!
           </Button>
         </Form>
