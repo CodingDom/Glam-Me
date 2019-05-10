@@ -15,9 +15,10 @@ class Artist extends Component {
      }
 
      artistSearch(query) {
-        this.setState({
-            loading: true
-        })
+        artistPage.setState({
+            loading: true,
+            artists: []
+        });
         axios.get("/api/search?name=" + query.trim().replace(" ","+"))
         .then(res => {
             artistPage.setState({
@@ -39,6 +40,7 @@ class Artist extends Component {
                 artists: res.data,
                 loading: false
             });
+            console.log(this.state);
         });
     }
 
@@ -57,7 +59,7 @@ class Artist extends Component {
             results = "";
         return (
             <FadeIn>
-            <Container >
+            <Container className="main" >
             <Row>
                 <Col size="12">
                 <div className="searchBarComponent">

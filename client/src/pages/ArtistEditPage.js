@@ -24,10 +24,11 @@ class ArtistEditProfilePage extends React.Component {
             location: "Orlando, Florida",
             specialties: "",
             blurb: "",
-            artistId: "",
+            artistId: window.location.pathname.split("/")[2],
 
             myProfile: false,
-            redirect: false
+            redirect: false,
+            loaded: false
 
     
         }
@@ -39,13 +40,12 @@ class ArtistEditProfilePage extends React.Component {
         axios.get("/api/users/" + window.location.pathname.split("/")[2]).then(res => {
             
             const artist = res.data;
-            console.log(artist);
             this.setState({
-                artistId: artist._id,
                 name: artist.name,
                 specialties: artist.specialties,
                 blurb: artist.blurb,
                 myProfile: artist.isMyProfile,
+                loaded: true
             })
         });
     
@@ -67,7 +67,7 @@ class ArtistEditProfilePage extends React.Component {
         .then(res => {
             console.log("profile updated");
             this.setState({
-                redirect: false
+                redirect: true
             });
         })
      
@@ -81,32 +81,30 @@ class ArtistEditProfilePage extends React.Component {
     }
 
     render(){
-        console.log("rendering");
-        console.log("Artist Id: "+this.state.artistId);
         return (
             (this.state.myProfile ?
-                <Container fluid>
+                <Container className="main" fluid>
                 {this.state.redirect ? <Redirect to={"/artist/" + this.state.artistId} /> : ""}
                 <Row>
                    <Col size="md-12">
-                    <div style={{marginTop:"100px", marginLeft:"480px"}}><strong><h1 >Edit Profile</h1></strong></div>
+                    <h1 ><strong>Edit Profile</strong></h1>
                    <div className="editWrapper">
     
-                   <strong>Edit Name</strong>
+                   <strong>Name</strong>
                     <br />
-                    <Input name="name" value={this.state.name} onChange={this.handleInputChange}></Input>
+                    <Input name="name" value={this.state.name} onChange={this.handleInputChange} />
                     <br />
-                    <strong>Edit Location</strong>
+                    <strong>Location</strong>
                     <br />
-                    <Input name="location" value={this.state.location} onChange={this.handleInputChange}></Input>
+                    <Input name="location" value={this.state.location} onChange={this.handleInputChange} />
                     <br />
-                    <strong>Edit Specialties</strong>
+                    <strong>Specialties</strong>
                     <br />
-                    <Input name="specialties" value={this.state.specialties} onChange={this.handleInputChange}></Input>
+                    <Input name="specialties" value={this.state.specialties} onChange={this.handleInputChange} />
                     <br />
-                    <strong>Edit About Me</strong>
+                    <strong>About Me</strong>
                     <br />
-                    <Input name="blurb" value={this.state.blurb} onChange={this.handleInputChange}></Input>
+                    <textarea className="form-control" rows="5" name="blurb" value={this.state.blurb} onChange={this.handleInputChange} />
                     <br />
                     <strong>Change profile image </strong>
                     <ImageUploader
@@ -126,7 +124,7 @@ class ArtistEditProfilePage extends React.Component {
                   
                 </Row>
                 
-                </Container> : "" /*<Redirect to={"/artist/" + this.state.artistId} />*/)
+                </Container> : this.state.loaded ? <Redirect to={"/artist/" + this.state.artistId} /> : "")
         )
     }
 }
