@@ -1,4 +1,5 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
 import { Col, Row, Container} from "../components/Grid/index";
 import Button from "react-bootstrap/Button";
 import "./Booking.css";
@@ -80,6 +81,7 @@ export default class Booking extends React.Component {
 
         return (
             <Container className="main" fluid >
+            {this.state.redirect ? <Redirect to="/myappointments" /> : ""}
             <Row>
                 <Col size="md-12">
                 
