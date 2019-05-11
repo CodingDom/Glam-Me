@@ -2,7 +2,7 @@ import React from "react";
 
 import Button from "react-bootstrap/Button"
 import images from "../images.json";
-
+import Select from "react-select";
 import { Col , Row , Container } from "../components/Grid/index";
 import ImageUploader from 'react-images-upload';
 import { Redirect } from "react-router-dom";
@@ -15,6 +15,15 @@ const artist = images.filter(artist => {
     return artist.id === parseInt(document.location.pathname.split("/")[2]);
 })[0];
 
+
+const options = [
+    { value: 'Makeup', label: 'Makeup' },
+    { value: 'Skincare', label: 'Skincare' },
+    { value: 'Nails', label: 'Nails' },
+    { value: 'Hair', label: 'Hair'},
+    { value: 'Massage', label: 'Massage'},
+    { value: 'Facials', label: 'Facials'},
+  ]
 class ArtistEditProfilePage extends React.Component {
     constructor(props) {
         super(props)
@@ -33,6 +42,7 @@ class ArtistEditProfilePage extends React.Component {
 
     
         }
+    
      
     }
 
@@ -105,7 +115,9 @@ class ArtistEditProfilePage extends React.Component {
 
         console.log(picture);
     }
-
+    
+   
+      
     render(){
         return (
             (this.state.myProfile ?
@@ -126,7 +138,16 @@ class ArtistEditProfilePage extends React.Component {
                     <br />
                     <strong>Specialties</strong>
                     <br />
-                    <Input name="specialties" value={this.state.specialties} onChange={this.handleInputChange} />
+                    <Select hasValue={true} value={this.state.artistSpecialties} isMulti options={options}/>
+                    {/* <select class="chosen-select" onChange={this.handleInputChange} >
+                    <option value={this.artistSpecialties} name="Makeup">Makeup</option>
+                    <option value={this.artistSpecialties} name="Skincare">Skincare</option>
+                    <option value={this.artistSpecialties} name="Nails">Nails</option>
+                    <option value={this.artistSpecialties} name="Hair">Hair</option>
+                    <option value={this.artistSpecialties} name="Massage">Massage</option>
+                    <option value={this.artistSpecialties} name="Facials">Facials</option>
+                    </select> */}
+                   
                     <br />
                     <strong>About Me</strong>
                     <br />

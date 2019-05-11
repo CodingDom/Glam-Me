@@ -72,7 +72,7 @@ class searchBar extends React.Component {
         const { text } = this.state;
         return(
            <div className="searchBar">
-                <input onKeyUp={this.handleKeyUp} placeholder="Search For An Artist ..." value={text} onChange={this.onTextChanged} type="text" />
+                <input onKeyUp={this.handleKeyUp} placeholder="Search For a Technician" value={text} onChange={this.onTextChanged} type="text" />
            {this.renderSuggestions()}
            </div>
         )

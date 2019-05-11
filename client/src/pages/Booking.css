@@ -2,10 +2,19 @@
     position: relative;
     width:450px;
     height: auto;
-    background-color: lightblue;
+    background-color: black;
     margin:200px;
     margin-left: 600px;
- 
+    color: #d2b57f;
     padding: 25px;
     box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+}
+.dateTimePicker {
+    position: relative;
+    height: 100px;
+    width: 100px;
+}
+
+.datePicker input, .datePicker select {
+    color: #d2b57f !important;
 }

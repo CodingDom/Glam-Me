@@ -55,7 +55,7 @@ export default class Navbar extends Component {
                 to="/register"
                 className="nav-link active text-white"
               >
-                Login
+                Signup / Login
               </Link>
             </div>
         )
