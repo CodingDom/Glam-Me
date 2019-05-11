@@ -9,21 +9,21 @@ import { Col , Row , Container } from "../components/Grid/index";
 
 import axios from "axios";
 
-const artist = images.filter(artist => {
+const defaultArtist = images.filter(artist => {
     return artist.id === parseInt(document.location.pathname.split("/")[2]);
 })[0];
 
 class ArtistProfilePage extends React.Component {
     state = {
-        artistId: artist._id,
-        artistName: artist.name,
-        artistProfileImage: artist.image,
+        artistId: defaultArtist._id,
+        artistName: defaultArtist.name,
+        artistProfileImage: defaultArtist.image,
         artistSpecialties: "",
         artistLocation: "Orlando, Florida",
-        artistRating: <StarRating value={artist.rating} />,
+        artistRating: <StarRating value={defaultArtist.rating} />,
         // artistProfileImage: "",
         artistWorkImages: "http://images5.fanpop.com/image/photos/31000000/haters-gonna-hate-random-31076705-550-413.jpg",
-        artistAboutMe: artist.about,
+        artistAboutMe: defaultArtist.about,
         myProfile: false
 
     }
@@ -39,6 +39,8 @@ class ArtistProfilePage extends React.Component {
                 artistName: artist.name,
                 artistSpecialties: artist.specialties,
                 artistAboutMe: artist.blurb,
+                artistRating: <StarRating value={artist.rating} />,
+                artistProfileImage: artist.profileImage ? artist.profileImage : defaultArtist.image,
                 myProfile: artist.isMyProfile,
                 artistId: artist._id,
             })
@@ -50,7 +52,7 @@ class ArtistProfilePage extends React.Component {
         console.log("rendering");
         let button;
         if (this.state.myProfile) {
-            button = <Button href={"/artistedit/" + window.location.pathname.split("/")[2]} style={{ display:"inline-block",marginTop:"105%" }} variant="warning">Edit Profile</Button>;
+            button = <Button href={"/artist/" + window.location.pathname.split("/")[2] + "/edit"} style={{ display:"inline-block",marginTop:"105%" }} variant="warning">Edit Profile</Button>;
         } else {
             button = <Button href={"/Booking" + window.location.search} style={{ display:"inline-block",marginTop:"105%" }} variant="danger">Book Appointment</Button>
         }
