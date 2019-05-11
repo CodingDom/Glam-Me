@@ -3,7 +3,7 @@
     justify-content: space-around;
     align-items: flex-start;
     border: 2px dashed rgba(114, 186, 94, 0.35);
-    height: 400px;
+    /* height: 400px; */
     width: 100%;
     background-position: center;
     background-attachment: fixed;
@@ -20,44 +20,60 @@
       margin-bottom: 100px;
       display: inline-block;
       overflow-y: hidden;
-      background-color: black;
+      /* background-color: black; */
       
 
   }
 .appointmentMsgText {
     position: -webkit-sticky;
-    background-color: black;
-    color: white;
+    /* background-color: black; */
+    color: black;
     position: sticky;
     top: 0;
+    text-transform: uppercase;
+}
+
+.s-card {
+    display: inline-block;
+    margin: 10px;
+    text-transform: capitalize;
+}
+
+.s-card div {
+    border-radius: 15px;
+}
+
+.s-card:hover div {
+    border: 3px solid #d2b57f;
+    cursor: pointer;
+  }
+
+.s-card .img-container {
+    width: 250px;
+    height: 250px;
+    background-position: center;
+    background-size: cover;
 }
 
 .artistCards {
     position: relative;
     background-color: gray;
     height: auto;
-    width: 400px;
+    /* width: 400px; */
 }
 
 .serviceCards {
     text-align: center;
     position: relative;
     height: auto;
-    width: 300px;
-    margin-bottom: 20px;
-    margin-left: 600px;
-    margin-top: 100px;
-    display: inline-block;
+    margin: 10px auto 20px;
 
 }
 .stylesCards {
     text-align: center;
     position: relative;
     height: auto;
-    width: 300px;
-    margin-bottom: 20px;
-    margin-left: 600px;
-    margin-top: 100px;
+    margin: 10px auto 20px;
   
 }
 

@@ -6,19 +6,21 @@ import serviceImage from "../../serviceimages.json";
 function ServiceCards(props) {
     return(
         <div className="serviceCardWrapper">
-      {serviceImage.map(service => (
+      {serviceImage.sort((a,b) => {
+        const x = a.service.toLowerCase();
+        const y = b.service.toLowerCase();
+        if (x < y) {return -1;}
+        if (x > y) {return 1;}
+        return 0;
+      }).map(service => (
           <div  key={service.service}     
           data-service={service.service} 
           onClick={props.onClick} 
-          name="servicePicked">
+          name="servicePicked" className="s-card">
           <strong style={{color:"#d2b57f"}}>{service.service}</strong>
-        <div className="cards">
-      <div className="service-img-container">
-        <img alt={service.service} src={service.image} />
+      <div className="img-container" style={{backgroundImage:`url('${service.image}')`}}>
        
       </div>
-    
-    </div>
     </div>
       ))}
       </div>

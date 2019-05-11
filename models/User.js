@@ -39,7 +39,10 @@ const UserSchema = new Schema({
     style: String
   }],
   artist: Boolean,
-  profileImage: String,
+  profileImage: {
+    type: String,
+    default: "https://srpc.ukzn.ac.za/wp-content/uploads/2018/05/profile-placeholder.png"
+  },
   location: {
     type: {
       type: String,

@@ -7,15 +7,15 @@ module.exports = function(app, passport) {
   //Api used for searching database for artists
   app.get("/api/search", function(req, res) {
     if (req.query.name && req.query.name.trim() != "") {
-      const {name, specialties, location} = req.query;
+      const {name, service, location} = req.query;
       const query = {
         $text: {
           $search: name
         },
         artist: true
       };
-      if (specialties) {
-        query.specialties = specialties.split(",");
+      if (service) {
+        query.specialties = service.split(",");
       };
       if (location) {
         query.location = location;
@@ -30,7 +30,7 @@ module.exports = function(app, passport) {
               specialties: user.specialties,
               location: user.location,
               rating: user.rating,
-              rating: user.rating,
+              profileImage: user.profileImage,
               id: user._id
             }
             return structure;
@@ -39,14 +39,25 @@ module.exports = function(app, passport) {
         });
       });
     } else {
-      User.find({artist: true}).then(function(resp) {
+      const {service, location} = req.query;
+      const query = {
+        artist: true
+      };
+      if (service) {
+        query.specialties = service.split(",");
+      };
+      if (location) {
+        query.location = location;
+      };
+      console.log(service);
+      User.find(query).then(function(resp) {
         const users = resp.map(user => {
-          console.log(user);
           const structure = {
             name: user.name,
             specialties: user.specialties,
             location: user.location,
             rating: user.rating,
+            profileImage: user.profileImage,
             id: user._id
           }
           return structure;
