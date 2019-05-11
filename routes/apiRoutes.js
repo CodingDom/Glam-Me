@@ -1,4 +1,7 @@
 const User = require("../models/User");
+const axios = require("axios");
+const fs = require('fs');
+const imgurUploader = require('imgur-uploader');
 
 module.exports = function(app, passport) {
   //Api used for searching database for artists
@@ -53,9 +56,53 @@ module.exports = function(app, passport) {
     }
   });
 
+  app.get("/api/appointments", function(req, res) {
+    res.json(req.user.appointments);
+  });
+
+  app.post("/api/appointments", function(req, res) {
+    const appointmentInfo = {
+      examples: [],
+      service: req.body.service
+    };
+    if (req.body.specifications) {
+      updatedInfo.specification = req.body.specifications;
+    }
+    if (req.body.style) {
+      updatedInfo.style = req.body.style;
+    }
+
+    function updateAppointments() {
+        User.findById(technician)
+        .then(user => {
+          User.updateOne({ _id: req.user._id }, { $push: { apointments: { ...appointmentInfo, technician: user.name, technicianId: user._id } } })
+          .then(resp => {
+            // res.json(data.link);
+            console.log("Updated Client Info!");
+            res.status(200);
+          });
+        });
+        
+        User.updateOne({ _id: req.body.technician }, { $push: { apointments: { ...appointmentInfo, client: req.user.name, clientId: req.user._id } } })
+        .then(resp => {
+          console.log("Updated Technician Info!");
+        });
+    }
+
+    if (req.files.image) {
+      imgurUploader(fs.readFileSync(req.files.image.path),{title: "ExampleImage"}, "Client-Id " + process.env.IMGUR_CLIENT_ID).then(data => {
+        appointmentInfo.examples.push(data.link);
+        updateAppointments();
+      }).catch(err => {
+        console.log(err);
+        res.status(500).end();
+      });
+    } else {
+        updateAppointments();
+    }
+  });
+
   app.get("/api/users/:id", function(req, res) {
-    // Making sure the user is the account owner
-    console.log(req.params.id);
     User.findById(req.params.id)
     .then(user => {
       const userInfo = {
@@ -63,7 +110,8 @@ module.exports = function(app, passport) {
         specialties: user.specialties,
         blurb: user.blurb,
         location: "Orlando, FL",
-        rating: user.rating,
+        profileImage: user.profileImage,
+        rating: user.rating ? user.rating : 0,
         isMyProfile: req.user ? (req.params.id === req.user._id) : false
       }
       res.json(userInfo);
@@ -72,7 +120,7 @@ module.exports = function(app, passport) {
 
   // Allowing users to update their profile information
   app.put("/api/user", function(req, res) {
-    // Making sure the user is the account owner
+    // Making sure the user is the an artist account
     if (!req.user.artist) {
       return res.status(500).end();
     }
@@ -85,9 +133,6 @@ module.exports = function(app, passport) {
     if (req.body.blurb) {
       updatedInfo.blurb = req.body.blurb;
     }
-    if (req.body.profileImage) {
-      console.log(req.body.profileImage);
-    }
     console.log(updatedInfo, req.user._id);
     User.updateOne({ _id: req.user._id }, updatedInfo)
       .then(function(resp) {
@@ -99,6 +144,27 @@ module.exports = function(app, passport) {
         console.log(err);
         res.status(500).end();
       });
+  });
+
+  app.post("/api/upload", function(req, res) {
+    imgurUploader(fs.readFileSync(req.files.image.path),{title: "UserImage"}, "Client-Id " + process.env.IMGUR_CLIENT_ID).then(data => {
+      const updatedInfo = {
+        profileImage: data.link
+      };
+      if (req.body.name) {
+        updatedInfo.name = req.body.name;
+      }
+      if (req.body.blurb) {
+        updatedInfo.blurb = req.body.blurb;
+      }
+      User.updateOne({ _id: req.user._id }, updatedInfo)
+      .then(resp => {
+        res.json(data.link);
+      });
+    }).catch(err => {
+      console.log(err);
+      res.status(500).end();
+    });
   });
 
   // If the user has valid login credentials, send them to the members page.
