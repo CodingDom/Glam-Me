@@ -10,16 +10,14 @@ class ArtistCard extends React.Component {
       constructor (props) {
         super(props)
         this.state = {
-          images:props.artists,
-          
+          artists:props.artists,
         }
-      //  const ArtistArray = props.getStyles().styles;
       }
       
       componentWillReceiveProps(props){
         console.log("Artists: ",props.artists);
         this.setState({
-          images:props.artists
+          artists:props.artists
         })
       }
   
@@ -29,11 +27,10 @@ class ArtistCard extends React.Component {
       onClick={this.props.onClick} 
       onChange={this.props.handleInputChange}name="servicePicked">
       <div className="artistCardWrapper">
-      {this.state.images.map(artist => (
+      {this.state.artists.map(artist => (
         <div className="card">
       <div className="img-container">
-        <img alt={artist.alt} src={images[0].image} />
-       
+        <div className="img-div" style={{backgroundImage:`url('${artist.profileImage}')`}}></div>
       </div>
       <div className="content">
         <ul>

@@ -68,12 +68,12 @@ export default class Navbar extends Component {
         name: "Home"
       },
       {
-        location: "/artist",
-        name: "View Technicians"
-      },
-      {
         location: "/appointments",
         name: "Book Appointment"
+      },
+      {
+        location: "/artist",
+        name: "View Technicians"
       }
     ];
 

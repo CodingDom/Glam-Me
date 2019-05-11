@@ -10,3 +10,8 @@
 .main {
   min-height: calc(100vh - 261px);
 }
+
+.dv-star-rating {
+  line-height: 0;
+  vertical-align: text-bottom;
+}

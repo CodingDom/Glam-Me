@@ -40,7 +40,7 @@ class ArtistProfilePage extends React.Component {
                 artistSpecialties: artist.specialties,
                 artistRating: artist.rating,
                 artistAboutMe: artist.blurb,
-                artistRating: <StarRating value={artist.rating} />,
+                artistRating: <StarRating value={artist.rating} emptyStarColor="white" />,
                 artistProfileImage: artist.profileImage ? artist.profileImage : defaultArtist.image,
                 myProfile: artist.isMyProfile,
                 artistId: artist._id,

@@ -45,7 +45,8 @@ class StarRating extends React.Component {
             name="app4"
             editing={false}
             starCount={5}
-            value={this.props.value} />
+            value={this.props.value}
+            emptyStarColor={this.props.emptyStarColor} />
           )
       }
 }
