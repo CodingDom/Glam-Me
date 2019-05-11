@@ -38,6 +38,7 @@ class ArtistProfilePage extends React.Component {
             this.setState({
                 artistName: artist.name,
                 artistSpecialties: artist.specialties,
+                artistRating: artist.rating,
                 artistAboutMe: artist.blurb,
                 myProfile: artist.isMyProfile,
                 artistId: artist._id,
@@ -50,9 +51,11 @@ class ArtistProfilePage extends React.Component {
         console.log("rendering");
         let button;
         if (this.state.myProfile) {
-            button = <Button href={"/artistedit/" + window.location.pathname.split("/")[2]} style={{ display:"inline-block",marginTop:"105%" }} variant="warning">Edit Profile</Button>;
+            
+            button = <Button href={"/artist/" + window.location.pathname.split("/")[2] + "/edit"} style={{ display:"inline-block",marginTop:"105%" }} variant="warning">Edit Profile</Button>;
         } else {
-            button = <Button href={"/Booking" + window.location.search} style={{ display:"inline-block",marginTop:"105%" }} variant="danger">Book Appointment</Button>
+
+            button = <Button href={"/artist/" + window.location.pathname.split("/")[2] + "/booking" + window.location.search + "&technician=" + (this.state.artistName ? this.state.artistName.replace(" ","+") : "")} style={{ display:"inline-block",marginTop:"105%" }} variant="danger">Book Appointment</Button>
         }
         return (
             <Container fluid className="main profileContainer">
