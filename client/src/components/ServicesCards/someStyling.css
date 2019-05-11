@@ -1,6 +1,8 @@
 .serviceCardWrapper {
-
-
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: inline-block;
 }
 .cards {
   background: #fff;
@@ -8,15 +10,14 @@
   margin: 10px;
   position: relative;
   width: 275px;
-  box-shadow: 0 3px 6px #999, 0 3px 6px #999;
-  align-self: flex-end;
-
+  box-shadow: 0 3px 6px #d2b57f, 0 3px 6px #d2b57f;
+  display: flex;
 
   
   }
   
   .cards > .service-img-container {
-    height: 60%;
+  
     
     text-align: center;
     background: black;
