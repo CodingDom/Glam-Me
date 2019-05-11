@@ -3,19 +3,28 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const path = require("path");
 const session = require("express-session");
+const formData = require('express-form-data');
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
 const PORT = process.env.PORT || 3002;
 const app = express();
 require('dotenv').config();
 
-app.use(bodyParser.json())
-// app.use(cors())
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+app.use(formData.parse());
+
+app.use(bodyParser.json());
+
 app.use(
   bodyParser.urlencoded({
     extended: false
   })
-)
+);
 
 app.use(
   session({ secret: "keyboard cat", resave: true, saveUninitialized: true })

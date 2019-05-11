@@ -10,6 +10,7 @@ import Input from "../components/Input/index";
 import axios from "axios";
 import "./ArtistEditPage.css";
 
+const $ = window.$;
 const artist = images.filter(artist => {
     return artist.id === parseInt(document.location.pathname.split("/")[2]);
 })[0];
@@ -73,21 +74,46 @@ class ArtistEditProfilePage extends React.Component {
     };
 
     handleProfileUpdate = event => {
-        axios.put("/api/user", this.state)
-        .then(res => {
-            console.log("profile updated");
-           // this.setState({
-            //    redirect: true
-            //});
-        })
-     
-    }
-    onDrop = (picture) => {
-        this.setState({
-            profileImage: this.state.profileImage.concat(picture),
-        });
+        const updateMyInfo = () => {
+            console.log(this.state);
+            axios.put("/api/user", this.state)
+            .then(res => {
+                console.log("profile updated");
+                this.setState({
+                    redirect: true
+                });
+            })
+        }
+        if (this.state.profileImage) {
+            var formData = new FormData();
+            Object.keys(this.state).forEach(key => {
+                formData.append(key === 'profileImage' ? 'image' : key, this.state[key]);
+            });
+            axios({
+            method: "POST",
+            url: "/api/upload", 
+            data: formData
+            })
+            .then(res => {
+                console.log("profile updated");
+                this.setState({
+                    redirect: true
+                });
+            }).catch(err => {
+                console.log("Error Occurred: ", err)
+            });
+        } else {
+            updateMyInfo();
+        }
 
         
+    }
+    onDrop = (picture, file) => {
+        this.setState({
+            profileImage: picture[0],
+        });
+
+        console.log(picture);
     }
     
    
