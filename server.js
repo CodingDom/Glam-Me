@@ -36,7 +36,7 @@ app.use(passport.session());
 var isAuthenticated = require("./config/middleware/isAuthenticated");
 app.use(isAuthenticated);
 
-const mongoURI = 'mongodb://localhost:27017/Glam-me'
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/Glam-me';
 mongoose
 .connect(mongoURI, {useNewUrlParser: true})
 .then(() => console.log("MongoDB connect"))
