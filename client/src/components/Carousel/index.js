@@ -16,10 +16,7 @@ function carousel() {
             </Carousel.Item>
             ))}
           </Carousel>
-          <Carousel.Caption>
-            <h3>Glam Me</h3>
-            <p>The Best of Beauty !!</p>
-          </Carousel.Caption>
+         
         </Row>
        </Container>
     )
