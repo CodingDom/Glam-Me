@@ -11,7 +11,7 @@ function ServiceCards(props) {
           data-service={service.service} 
           onClick={props.onClick} 
           name="servicePicked">
-          {service.service}
+          <strong style={{color:"#d2b57f"}}>{service.service}</strong>
         <div className="cards">
       <div className="service-img-container">
         <img alt={service.service} src={service.image} />

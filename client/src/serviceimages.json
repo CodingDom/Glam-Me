@@ -3,7 +3,7 @@
         "service": "Hair",
         "styles": [{
                 "style": "Updo",
-                "image": "http://pophaircuts.com/images/2018/01/trendy-updos-for-medium-length-hair-updo-hairstyle-ideas.jpg"
+                "image": "https://loxhairextensions.com/wp-content/uploads/2016/12/Micro-Bead-Skin-Weft-Remy-Hair-Extensions-Application-600x600-LOX-Hair-Extensions.jpg"
             },
             {
                 "style": "Haircut",
@@ -24,11 +24,11 @@
         "id": 2,
         "service": "Makeup",
         "styles": [{
-                "style": "light-MakeUp",
+                "style": "light MakeUp",
                 "image": "http://dressedupnails.com/wp-content/uploads/2018/03/light-makeup.jpg"
             },
             {
-                "style": "Dark_MakeUp",
+                "style": "Dark MakeUp",
                 "image": "https://i.pinimg.com/originals/d4/1c/fe/d41cfe8e97a335737771b43ed2b1823a.jpg"
             }
         ],
@@ -47,7 +47,7 @@
                 "image": "https://luxenailandspa.com/wp-content/uploads/2018/09/SNS-Healthy-Nails-Scottsdale.jpg"
             },
             {
-                "style": "French-Tip",
+                "style": "French Tip",
                 "image": "http://www.fluxmagazine.com/wp-content/uploads/2018/02/Revel-Web-3.gif"
             },
             {
@@ -62,15 +62,15 @@
         "id": 4,
         "service": "Waxing",
         "styles": [{
-                "style": "Full-Face",
+                "style": "Full Face",
                 "image": "https://mm.aiircdn.com/120/5acdb972d9f3e.jpg"
             },
             {
-                "style": "Eyes-Waxing",
+                "style": "Eyes Waxing",
                 "image": "https://hair-salon-albury.com/wp-content/uploads/waxing-for-the-face-1.jpg"
             },
             {
-                "style": "lex-Waxing",
+                "style": "leg Waxing",
                 "image": "https://arayabeauty.com/wp-content/uploads/2016/11/leg-waxing-1.jpg"
             }
 
@@ -93,7 +93,7 @@
                 "image": "http://onlinebeautytraining.com/wp-content/uploads/2017/03/body-massage.png"
             },
             {
-                "style": "foot-Massage",
+                "style": "foot Massage",
                 "image": "https://s3-media2.fl.yelpcdn.com/bphoto/wvMhJEVXqqP68RvVfqTLOw/o.jpg"
             }
         ],
@@ -103,15 +103,15 @@
         "id": 6,
         "service": "Facial",
         "styles": [{
-                "style": "Mini-Facial",
+                "style": "Mini Facial",
                 "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK6Yt-1YariSO9QT6blUZnbO1omjx6LXrYzofbvVHm8rRcwtKV2A"
             },
             {
-                "style": "EuroPean_Facial",
+                "style": "European Facial",
                 "image": "https://mandalabarcelona.es/wp-content/uploads/2017/02/Mandala-Barcelona-servicios-portada-tratameintos-faciales.jpg"
             },
             {
-                "style": "OxyGgen-Facial",
+                "style": "Oxygen Facial",
                 "image": "http://4.bp.blogspot.com/-680NgMsNFns/VgXqsgMJIxI/AAAAAAAAE8Y/rSlDHKTG4M4/s400/Masaje%2BFacial%2BiStM.jpg"
             }
 

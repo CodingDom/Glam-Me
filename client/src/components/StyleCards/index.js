@@ -6,10 +6,11 @@ function StyleCards(props) {
     return(
         <div className="styleCardWrapper">
       {stylesArray.map(styles => (
-          <span  key={styles.style}      
+          <div  key={styles.style}      
           data-style={styles.style} 
           onClick={props.onClick} 
           onChange={props.handleInputChange}name="stylesPicked">
+          <strong style={{color:"#d2b57f"}}>{styles.style}</strong>
         <div className="cards">
       <div className="style-img-container">
         <img alt={styles.styles} src={styles.image} />
@@ -17,7 +18,7 @@ function StyleCards(props) {
       </div>
     
     </div>
-    </span>
+    </div>
       ))}
       </div>
 

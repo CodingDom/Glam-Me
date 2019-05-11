@@ -1,0 +1,32 @@
+.styleCardWrapper {
+    position: relative;
+    height: 300px;
+    width: 400px;
+    display: inline-block;
+}
+.cards {
+    background: #fff;
+    border-radius: 2px;
+    margin: 10px;
+    position: relative;
+    width: 275px;
+    box-shadow: 0 3px 6px #d2b57f, 0 3px 6px#d2b57f;
+  
+    
+}
+.cards > .style-img-container {
+  
+   
+    text-align: center;
+    background: black;
+  }
+  .cards > .style-img-container > img {
+    width: 60%
+  }
+ 
+  
+
+  .cards:hover {
+    background-color: lightskyblue;
+    cursor: pointer;
+  }
