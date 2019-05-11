@@ -51,6 +51,7 @@ class ArtistEditProfilePage extends React.Component {
         axios.get("/api/users/" + window.location.pathname.split("/")[2]).then(res => {
             
             const artist = res.data;
+            console.log(artist.specialties);
             this.setState({
                 name: artist.name,
                 specialties: artist.specialties,
@@ -108,6 +109,13 @@ class ArtistEditProfilePage extends React.Component {
 
         
     }
+
+    handleSelection = (sel) => {
+        this.setState({
+            specialties: sel.map(val => val.value)
+        })
+    }
+
     onDrop = (picture, file) => {
         this.setState({
             profileImage: picture[0],
@@ -138,7 +146,7 @@ class ArtistEditProfilePage extends React.Component {
                     <br />
                     <strong>Specialties</strong>
                     <br />
-                    <Select hasValue={true} value={this.state.artistSpecialties} isMulti options={options}/>
+                    <Select hasValue={true} defaultValue={this.state.specialties.map(spec => ({value: spec, label: spec}))} isMulti options={options} onChange={this.handleSelection}/>
                     {/* <select class="chosen-select" onChange={this.handleInputChange} >
                     <option value={this.artistSpecialties} name="Makeup">Makeup</option>
                     <option value={this.artistSpecialties} name="Skincare">Skincare</option>
