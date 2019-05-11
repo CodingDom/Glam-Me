@@ -1,4 +1,5 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
 import { Col, Row, Container} from "../components/Grid/index";
 import Button from "react-bootstrap/Button";
 import "./Booking.css";
@@ -7,6 +8,7 @@ import ImageUploader from 'react-images-upload';
 import Calendar from 'react-calendar';
 import Clock from 'react-clock';
 import axios from "axios";
+import moment from "moment";
 const $ = window.$;
 const urlParams = new URLSearchParams(window.location.search)
 
@@ -20,7 +22,7 @@ export default class Booking extends React.Component {
             technicianName: urlParams.get("technician"),
             clientImages: [],
             date: new Date(),
-            
+            redirect: false
         }
 
     }
@@ -35,8 +37,11 @@ export default class Booking extends React.Component {
           $("g,svg").attr("stroke","#d2b57f");
     }
     
-    onChange = (date) => {this.setState({ date })
-    console.log(this.state.date)
+    onChange = (date) => {
+        this.setState({ date })
+        console.log(date)
+        console.log(moment(date).valueOf())
+    
     };
 
     onDrop = (picture) => {
@@ -46,9 +51,25 @@ export default class Booking extends React.Component {
     };
 
     handleOnClick = event => {
-        axios.post("/api/book", this.state)
+        const urlParams = new URLSearchParams(window.location.search);
+        const appointmentInfo = {
+            technician: window.location.pathname.split("/")[2],
+            service: urlParams.get("service"),
+            style: urlParams.get("style"),
+            date: moment(this.state.date).valueOf()
+        }
+        if (this.state.specifications) {
+            appointmentInfo.specifications = this.state.specifications;
+        }
+        const formData = new FormData();
+        Object.keys(appointmentInfo).forEach(key => {
+            formData.append(key,appointmentInfo[key])
+        });
+        axios.post("/api/appointments", formData)
         .then(res => {
-            
+            this.setState({
+                redirect: true
+            })
         })
     }
     
@@ -60,6 +81,7 @@ export default class Booking extends React.Component {
 
         return (
             <Container className="main" fluid >
+            {this.state.redirect ? <Redirect to="/myappointments" /> : ""}
             <Row>
                 <Col size="md-12">
                 
@@ -75,7 +97,7 @@ export default class Booking extends React.Component {
                 <br />
                 <strong> Style: {urlParams.get("style")}</strong>
                 <hr />
-                <strong>Client images</strong>: 
+                <strong>Example Images:</strong><i style={{float:"right"}}>(Optional)</i> 
                 <ImageUploader
                     withIcon={true}
                     buttonText='Upload Image'
@@ -86,7 +108,7 @@ export default class Booking extends React.Component {
                     singleImage={false}
                 />
                 <hr />
-                <strong>Any Specifications:</strong>
+                <strong>Any Specifications:</strong><i style={{float:"right"}}>(Optional)</i> 
                 <br />
                 <textarea className="form-control" rows="5"value={this.state.clientSpecifications}></textarea>
                 

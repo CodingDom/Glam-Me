@@ -1,11 +1,14 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect , Link} from "react-router-dom";
 import ServiceCards from "../components/ServicesCards/index";
 import ArtistCards from "../components/ArtistCards/index";
 import StylesCards from "../components/StyleCards/index"; 
 import "./Appointments.css";
 import { Col, Row, Container} from "../components/Grid/index";
 import ImageUploader from 'react-images-upload';
+import Parallax from "../components/Parallax/index";
+
+import Button from "react-bootstrap/Button";
 import serviceImage from "../serviceimages.json";
 
 class Appointments extends Component {
@@ -81,47 +84,61 @@ class Appointments extends Component {
         const currActive = document.querySelector(".navbar-nav .active");
         currActive && currActive.classList.remove("active");
         document.querySelector(`.navbar-nav [data-location="${window.location.pathname}"]`).classList.add("active");
+        document.querySelector("nav").parentElement.insertBefore(document.querySelector(".parallaxHome"),document.querySelector("nav"));
+    }
+
+    componentWillUnmount() {
+        document.querySelector(".parallaxHome").remove();
     }
 
     render() {
         
         return (
        
-            <Container fluid className="main">
-            <Row>
+            <Container fluid className="appointmentWrapper">
+            <div className="parallaxHome">
+                    <Parallax />
+                </div>
+            {/* <Row>
                 <Col size="md-12">
                 <div className="appointmentMsgContainer">
-               <div className="appointmentMsgText">
-               {this.state.servicesVisible ? <h1>Select a service</h1> : null}
-                {this.state.stylesVisible ? <h1>Select your favorite style or upload images below</h1> : null}
-                {this.state.artistVisible ? <h1>Choose a possible Artist</h1> : null}
-               </div>
+               
                 </div>
                 </Col>
+                </Row> */}
+
+                {/* <div className="cardsWrapper"> */}
+                <Row>
+                <div style={{margin:"auto"}}className="appointmentMsgText">
+               {this.state.servicesVisible ? <h1>Select a service</h1> : null}
+                {this.state.stylesVisible ? <h1>Select a style</h1> : null}
+                {this.state.artistVisible ? <h1>Choose a possible Artist</h1> : null}
+               </div>
+               {this.state.servicesVisible ?
                 <Col size="md-12">
-                 <div className="serviceCards">
-                 {this.state.servicesVisible ? <ServiceCards   onClick={this.handleServiceOnClick} /> : null}
+                 <div className="serviceCards" >
+                  <ServiceCards   onClick={this.handleServiceOnClick} /> 
                  </div>
                 </Col>
+                : null}
+                {this.state.stylesVisible ?
                 <Col size="md-12">
                <div className="stylesCards">
-               {this.state.stylesVisible ? <StylesCards getStyles={() => serviceImage.filter(style => { return style.service === this.state.servicePicked})[0]} onClick={this.handleStylesOnClick} /> : null}
-               {this.state.stylesVisible ?  <ImageUploader
-                withIcon={true}
-                buttonText='Upload images'
-                onChange={this.onDrop}
-                imgExtension={['.jpg', '.gif', '.png', '.gif']}
-                maxFileSize={5242880}
-            /> : null }
+                <StylesCards getStyles={() => serviceImage.filter(style => { return style.service === this.state.servicePicked})[0]} onClick={this.handleStylesOnClick} /> 
+               
                </div>
+               {/* {this.state.stylesVisible ? <Link to={`/artist?service=${this.state.servicePicked}&style=uploadingimage`}> <Button variant="primary">Continue to booking</Button> </Link> : null} */}
                 </Col> 
+                : null}
                 <Col size="md-12">
                <div className="artistCards">
                {this.state.artistVisible ? <Redirect to={`/artist?service=${this.state.servicePicked}&style=${this.state.stylesPicked}`} /> : null}
                </div>
                 </Col>
+              
                
             </Row>
+            {/* </div> */}
             </Container>
             
         );

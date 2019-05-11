@@ -52,3 +52,10 @@
     color: #d50000;
   }
   
+  .artistCardWrapper .img-div {
+    width: 165px;
+    height: 165px;
+    background-position: center;
+    background-size: cover;
+    margin: auto;
+  }

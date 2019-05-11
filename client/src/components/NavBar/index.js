@@ -43,7 +43,7 @@ export default class Navbar extends Component {
 
             <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
               {!this.state.isArtist ? "" : <a className="dropdown-item" href={"/artist/" + this.state.id}>My profile</a>}
-              <a className="dropdown-item" href="/viewAppointments">View Appointments</a>
+              <a className="dropdown-item" href="/myappointments">My Appointments</a>
               <button className="dropdown-item" onClick={this.signOut}>Sign Out</button>
             </div>
           </div>
@@ -68,12 +68,12 @@ export default class Navbar extends Component {
         name: "Home"
       },
       {
-        location: "/artist",
-        name: "View Technicians"
-      },
-      {
         location: "/appointments",
         name: "Book Appointment"
+      },
+      {
+        location: "/artist",
+        name: "View Technicians"
       }
     ];
 
