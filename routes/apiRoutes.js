@@ -57,35 +57,47 @@ module.exports = function(app, passport) {
   });
 
   app.get("/api/appointments", function(req, res) {
+    if (!req.user || !req.user.appointments) {
+      return res.status(404).end();
+    }
     res.json(req.user.appointments);
   });
 
   app.post("/api/appointments", function(req, res) {
+    // Making sure the user is logged in
+    // if (!req.user || !req.user._id) {
+    //   return res.status(500).end();
+    // }
     const appointmentInfo = {
       examples: [],
-      service: req.body.service
+      service: req.body.service,
+      date: req.body.date
     };
     if (req.body.specifications) {
-      updatedInfo.specification = req.body.specifications;
+      appointmentInfo.specification = req.body.specifications;
     }
     if (req.body.style) {
-      updatedInfo.style = req.body.style;
+      appointmentInfo.style = req.body.style;
     }
 
     function updateAppointments() {
-        User.findById(technician)
+      console.log("Updating appointments");
+        User.findById(req.body.technician)
         .then(user => {
-          User.updateOne({ _id: req.user._id }, { $push: { apointments: { ...appointmentInfo, technician: user.name, technicianId: user._id } } })
+          console.log(user);
+          const upsert = { $push: { appointments: { ...appointmentInfo, technician: user.name, technicianId: user._id } }};
+          console.log(upsert);
+          User.updateOne({ _id: req.user._id },  upsert)
           .then(resp => {
             // res.json(data.link);
-            console.log("Updated Client Info!");
+            console.log("Updated Client Info!", resp);
             res.status(200);
           });
         });
         
-        User.updateOne({ _id: req.body.technician }, { $push: { apointments: { ...appointmentInfo, client: req.user.name, clientId: req.user._id } } })
+        User.updateOne({ _id: req.body.technician }, { $push: { appointments: { ...appointmentInfo, client: req.user.name, clientId: req.user._id } } })
         .then(resp => {
-          console.log("Updated Technician Info!");
+          console.log("Updated Technician Info!", resp);
         });
     }
 

@@ -28,7 +28,16 @@ const UserSchema = new Schema({
     ],
     required: true
   },
-  appointments: Array,
+  appointments: [{
+    date: Date,
+    clientId: String,
+    client: String,
+    technicianId: String,
+    technician: String,
+    examples: Array,
+    service: String,
+    style: String
+  }],
   artist: Boolean,
   profileImage: String,
   location: {
