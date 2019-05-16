@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Carousel from "../components/Carousel/index";
 import { Container} from "../components/Grid/index";
-import Jumbotron from "../components/Jumbotron/index";
-import Button from "react-bootstrap/Button";
+import Jumbotron1 from "../components/Jumbotron/index";
+import {Button, Jumbotron} from "react-bootstrap";
 import Parallax from "../components/Parallax/index";
 import { Link } from "react-router-dom";
 import FadeIn from 'react-fade-in';
@@ -50,16 +50,40 @@ class Homepage extends Component {
                 </div>
                 
                 
-        <Container className="main" >
-            <Carousel  />
-            <div className="homepageJumbo">
+        <Container fluid className="main" >
+        <div className="homepageJumbo1">
          
-                <Jumbotron />
-
-               <Link to="/register">
-               <Button style={{  boxShadow: "0 3px 6px #999, 0 3px 6px #999"}}variant="primary">Register Now</Button>
-               </Link>
+                <Jumbotron1 />
             </div>
+            <Carousel  />
+
+            <div className="homepageJumbo2">
+            <Jumbotron fluid style={{   backgroundColor:"transparent", color:"black", textAlign:"center"}}>
+            <Container >
+            <h1 style={{fontFamily: "Lobster, cursive", fontSize:"50px"}}>Services Offered</h1>
+            <hr />
+            <p style={{fontSize:"x-large", lineHeight:"50px", letterSpacing:"1px"}}>
+                
+            </p>
+            <div style={{textAlign:"left",marginLeft:"30%",width:"60%", fontSize:"x-large"}}>
+            <ul style={{width:"50%",float:"left", listStyleImage:"url('https://resizeimage.net/mypic/wz4HkD3WnICAiFUQ/qXq81/goldenarrow.png')"}}>
+                <li>Hair</li>
+                <li>Makeup</li>
+                <li>Nails</li>
+            </ul>
+            <ul style={{width:"50%",float:"right", listStyleImage:"url('https://resizeimage.net/mypic/wz4HkD3WnICAiFUQ/qXq81/goldenarrow.png')"}}>
+                <li>Massages</li>
+                <li>Facials</li>
+                <li>Waxings</li>
+            </ul>
+            </div>
+            </Container>
+        </Jumbotron>
+
+
+       
+     </div>
+           
 
         </Container>
         </FadeIn>

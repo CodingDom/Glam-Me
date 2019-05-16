@@ -4,10 +4,15 @@
     height: 250px;
     display: flex;
 }
-.homepageJumbo {
-    margin-top: 200px;
+.homepageJumbo1 {
+    margin-top: 50px;
+    margin-bottom: 75px;
+}
+.homepageJumbo2 {
+    margin-top: 50px;
     margin-bottom: 100px;
 }
+
 .parallaxHome {
     position: relative;
     width: 100%;
@@ -24,4 +29,8 @@
     color: white;
     position: sticky;
     top: 0;
+}
+
+@media only screen and (max-width: 991px) {
+    
 }

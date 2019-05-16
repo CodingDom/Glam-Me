@@ -4,20 +4,17 @@ import Jumbotron from "react-bootstrap/Jumbotron";
 import { Container } from "../Grid/index";
 
 
-function jumbotron(){
+export default function jumbotron(){
   return (
-    <Jumbotron fluid style={{  boxShadow: "0 3px 6px #999, 0 3px 6px #999"}}>
+    <Jumbotron fluid style={{   backgroundColor:"transparent", color:"black", fontFamily:"Aref Ruqaa, serif", textAlign:"center"}}>
     <Container >
-      <h1>About Us</h1>
-      <p>
-      Welcome to Glam Me, an on-call beauty service thats offers licensed technicians who specialize in :
-      Hair, Makeup, Nails, Waxings, Massages and facials, clients are able to book appointments with technicians 
-      once they have registered and logged in. If you would like to register as a technician view the register and login
-      tab for artist.
+     <h1 style={{fontFamily: "Lobster, cursive", fontSize:"50px"}}>What is Glam Me ?</h1>
+     <hr />
+      <p style={{fontSize:"x-large", lineHeight:"50px", letterSpacing:"1px"}}>
+      Glam Me, is an on-call beauty service offers licensed technicians to the masses. Once registered, clients are able to book appointments with technicians around their area. Glam Me's goal is to provide a platform for freelance technicians to widen their clientele while providing clients on demand beauty expertise right at their door step.
       </p>
     </Container>
   </Jumbotron>
   )
 }
 
-export default jumbotron;
