@@ -69,4 +69,6 @@ class ArtistCard extends React.Component {
     }
 }
 
+
 export default ArtistCard;
+
