@@ -13,7 +13,6 @@ class ArtistCard extends React.Component {
         }
     }
 
-
     render() {
         return ( <
             span >

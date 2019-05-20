@@ -2,8 +2,6 @@ import React from "react";
 import "./style.css";
 import { Col , Row, Container} from "../Grid/index";
 
-
-
 function ArtistEditProfile (props) {
     
             return (
