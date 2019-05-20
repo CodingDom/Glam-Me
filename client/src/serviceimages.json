@@ -193,7 +193,7 @@
             },
             {
                 "style": "Hot Stone",
-                "image": "https://i0.wp.com/www.dtoxdayspa.com/wp-content/uploads/2013/04/banner-hot-stone.jpg?fit=950%2C350&ssl=1"
+                "image": "http://thegrovegp.com/wp-content/uploads/2017/03/hotstone.jpg"
             },
             {
                 "style": "Signature",
@@ -202,7 +202,33 @@
             {
                 "style": "Foot Massage",
                 "image": "https://s3-media2.fl.yelpcdn.com/bphoto/wvMhJEVXqqP68RvVfqTLOw/o.jpg"
+            },
+            {
+                "style": "back Massage",
+                "image": "https://www.verywellhealth.com/thmb/TAazDMgT2FNYQwN_icLptCz1vso=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/woman-receiving-back-massage-883219348-5a28609c494ec90036ffed80.jpg"
+            },
+            {
+                "style": "leg Massage",
+                "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaiPbyogWwi87AJ8TzN1oMUkgHcCHnWuaHYe7ZcGSYNCIYitf1xQ"
+            },
+            {
+                "style": "Neck Massage",
+                "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkRmK_GYElHgzquHWtz8tMah9FrlybQrGEubp4ZdhANZU7H_Wf"
+            },
+            {
+                "style": "Hot-Stone Massage",
+                "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSepdlNl6dcscuj3qrx76KsTIpjBuB7i_q9PShHo4-OmaAX68l3"
+            },
+            {
+                "style": "Face Hot-stone Massage",
+                "image": "https://img.alicdn.com/imgextra/i2/6000000006206/TB2HQ6ZuljTBKNjSZFDXXbVgVXa_!!6000000006206-0-tbvideo.jpg"
+            },
+            {
+                "style": "Couple Massage",
+                "image": "https://www.spafinder.com/wp-content/uploads/2015/08/massage.jpg"
             }
+            
+        
         ],
         "image": "https://elementsmassage.com/files/frontend/original/MASSAGE-couple.jpg"
     },
@@ -220,6 +246,34 @@
             {
                 "style": "Oxygen Facial",
                 "image": "http://4.bp.blogspot.com/-680NgMsNFns/VgXqsgMJIxI/AAAAAAAAE8Y/rSlDHKTG4M4/s400/Masaje%2BFacial%2BiStM.jpg"
+            },
+            {
+                "style": "Girl-day Facial",
+                "image": "https://www.finishingtouchesdayspa.com/wp-content/uploads/sites/396/2016/10/facial.jpg"
+            },
+            {
+                "style": "Massage Facial",
+                "image": "https://mt-backend-familycircle-environment-contentbucket-1qlli1qnqqj9z.s3.amazonaws.com/s3fs-public/styles/664x398/public/2018-02/woman-getting-facial-peel.png"
+            },
+            {
+                "style": "Fruit Facial",
+                "image": "http://www.hotelcasacarolina.com/wp-content/uploads/2015/07/Fruit-Facial-Therapy-800x675.jpg"
+            },
+            {
+                "style": "Mask Facial",
+                "image": "http://cdn.thervo.com/assets/images/courses/costs/thervo-facial-peeling-mask-beauty-treatment.jpg"
+            },
+            {
+                "style": "beauty Facial",
+                "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQVkfZKKiS4282cKAkzVJH0KO8eNWEHqPwPj8qaTcES9pt4lE-"
+            },
+            {
+                "style": "Euro-Facial",
+                "image": "http://1akx4u39884j1rrouh1ttlpy-wpengine.netdna-ssl.com/wp-content/uploads/2014/11/Facial-article.jpg"
+            },
+            {
+                "style": "Micro-Facial",
+                "image": "http://cdn.thervo.com/assets/images/courses/costs/thervo-facial-hydro-microdermabrasion-peeling-treatment.jpg"
             }
 
         ],
@@ -233,13 +287,42 @@
                 "image": "https://s3-media2.fl.yelpcdn.com/bphoto/308ipGFI5nGhEIjoR1bpow/ls.jpg"
             },
             {
-                "style": "European Facial",
-                "image": "https://mandalabarcelona.es/wp-content/uploads/2017/02/Mandala-Barcelona-servicios-portada-tratameintos-faciales.jpg"
+                "style": "Long Eyes-Lash",
+                "image": "https://i.ytimg.com/vi/g_5-aqhCojQ/maxresdefault.jpg"
+            },
+            {
+                "style": "Short Eyes-Lash",
+                "image": "https://www.ebenezereyelash.com/wp-content/uploads/2017/09/j10-before.jpg"
+            },
+            {
+                "style": "Pure Eyes-lash",
+                "image": "https://www.byrdie.com/thmb/LDEa9cSUKTXRkXww06rx4VEIIA0=/700x366/filters:fill(auto,1)/cdn.cliqueinc.com__cache__posts__71900__how-to-make-lash-extension-last-longer-71900-1520985166958-fb.700x0c-a6a9e55d470a4a8fbae236c1c232cf2f.jpg"
+            },
+            {
+                "style": "Pretty Eyes-Lash",
+                "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3T-4vN2Be4NsGwU_HzdNI5yFdW-5r66hEwvZZXTt9U8Q68X0o"
+            },
+            {
+                "style": "Medium-eyes-lash",
+                "image": "http://flagstaffhairsalon.com/wp-content/uploads/2018/01/Flagstaff-eyelash-extensions-Northern-Arizona-Glam-Squad.jpg"
+            },
+            {
+                "style": "Cat Eyes-Lash",
+                "image": "https://dta0yqvfnusiq.cloudfront.net/eyeca73760061/2018/08/eyelashes-5b73222ce5ae7.jpg"
             },
             {
                 "style": "Oxygen Facial",
                 "image": "http://4.bp.blogspot.com/-680NgMsNFns/VgXqsgMJIxI/AAAAAAAAE8Y/rSlDHKTG4M4/s400/Masaje%2BFacial%2BiStM.jpg"
+            },
+            {
+                "style": "before & after",
+                "image": "https://soulagemedspa.com/wp-content/uploads/sites/501/2018/11/shutterstock_1120042385.png"
+            },
+            {
+                "style": "full eyes-lash",
+                "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8KBfC2Tc_YXk6hpreRAWR631Jfso8MZoXfL-q-qmYpTbi1jXR"
             }
+
 
         ],
         "image": "https://dta0yqvfnusiq.cloudfront.net/eyeca73760061/2018/08/eyelashes-5b73222ce5ae7.jpg"
@@ -248,16 +331,44 @@
         "id": 8,
         "service": "Microblading",
         "styles": [{
-                "style": "Mini Facial",
-                "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK6Yt-1YariSO9QT6blUZnbO1omjx6LXrYzofbvVHm8rRcwtKV2A"
+                "style": "Eyes-brow2",
+                "image": "http://www.beverleyhills.co.nz/wp-content/uploads/2016/07/eyelash-eyebrow-tinting.jpg"
             },
             {
-                "style": "European Facial",
-                "image": "https://mandalabarcelona.es/wp-content/uploads/2017/02/Mandala-Barcelona-servicios-portada-tratameintos-faciales.jpg"
+                "style": "Natural brow",
+                "image": "https://lilyhandt.com/wp-content/uploads/2017/08/3D-Microblading.jpg"
             },
             {
-                "style": "Oxygen Facial",
-                "image": "http://4.bp.blogspot.com/-680NgMsNFns/VgXqsgMJIxI/AAAAAAAAE8Y/rSlDHKTG4M4/s400/Masaje%2BFacial%2BiStM.jpg"
+                "style": "Eyes brow",
+                "image": "https://bellaroseskincare.com/wp-content/uploads/2018/02/eyebrow-1024x683.jpg"
+            },
+            {
+                "style": "Natural-lip",
+                "image": "http://seriousskin.co.uk/wp-content/uploads/2016/11/lip-augmentation.jpg"
+            },
+            {
+                "style": "Sexy-lip",
+                "image": "https://vbrows.com/wp-content/uploads/2017/04/stock2.jpg"
+            },
+            {
+                "style": "lip-permanent",
+                "image": "https://www.glam.com/wp-content/uploads/2017/12/lip-tat-hp.jpg"
+            },
+            {
+                "style": "Scoope-brow",
+                "image": "https://cdn.shopify.com/s/files/1/1989/7081/files/Schermafdruk_2018-05-17_15.34.56_large.png?v=1526542524"
+            },
+            {
+                "style": "Eyes lid",
+                "image": "http://bebrows.us/upload/photo//thumbs/eyeliner-1498093176.jpeg"
+            },
+            {
+                "style": "Eyes-liner",
+                "image": "https://s3.eu-central-1.amazonaws.com/dashl-media-prod/beauty-center--1521820401075.jpg"
+            },
+            {
+                "style": "permanant",
+                "image": "https://keemdenicebeautystudio.files.wordpress.com/2018/10/what-is-microblading-entity-1320x720.jpg?w=1320&h=400&crop=1"
             }
 
         ],
