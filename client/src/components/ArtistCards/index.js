@@ -3,9 +3,6 @@ import images from "../../images.json";
 import StarRating from "../StarRating/index";
 import "./style.css";
 
-
-
-
 class ArtistCard extends React.Component {
       constructor (props) {
         super(props)

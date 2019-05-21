@@ -13,7 +13,6 @@ class ArtistCard extends React.Component {
         }
     }
 
-
     render() {
         return ( <
             span >
@@ -69,4 +68,6 @@ class ArtistCard extends React.Component {
     }
 }
 
+
 export default ArtistCard;
+

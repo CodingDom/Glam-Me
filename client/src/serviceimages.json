@@ -3,7 +3,7 @@
         "service": "Hair",
         "styles": [{
                 "style": "Updo",
-                "image": "https://loxhairextensions.com/wp-content/uploads/2016/12/Micro-Bead-Skin-Weft-Remy-Hair-Extensions-Application-600x600-LOX-Hair-Extensions.jpg"
+                "image": "http://static1.vigbo.com/u20827/25201/blog/1998947/471359/4569383/1000-5915c6a6bf4f471576cf40a93b86d9c0.jpg"
             },
             {
                 "style": "Haircut",
@@ -16,6 +16,27 @@
             {
                 "style": "Highlight",
                 "image": "https://images-na.ssl-images-amazon.com/images/I/61yG9QnnePL.jpg"
+            },
+            {
+                "style": "Hair-Color",
+                "image": "http://www.schwarzkopf.com/content/dam/schwarzkopf/us/en/articleimages/Defero_HairColor/13/Big-Teaser-1280x680-13-Hair-Color-Trend-Pastel-Pastel-Hair-Soft-Intriguing.jpg"
+            },
+            {
+                "style": "Hair-UpDo",
+                "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbIOBevKbEDNB5ylXT5PL83qTS-AJYuNhifj2Px_FxETz01PY4"
+            },
+            {
+                "style": "Dark-Higlight",
+                "image": "https://i.pinimg.com/564x/20/d2/ae/20d2ae88909a65ff63301949a81f0786.jpg"
+            }, {
+                "style": "Lavender-Color",
+                "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRocXCj3blVyZYdIrl9M46qjtkUReG6pTHYZF0HTSNwPnSy8GRlxw"
+            }, {
+                "style": "Hair Color",
+                "image": "http://www.lebook.com/sites/default/files/styles/square_thumbnail2_large/public/1_82.png?itok=5zJPfp2D"
+            }, {
+                "style": "Hair-Color",
+                "image": "https://qtxasset.com/styles/breakpoint_sm_default_480px_w/s3/American%20Salon-1510859938/Untitled-1.png?bwK2kBTRNncNCLorpehLfpbLDZiswvZ9&itok=LQgrWVjw"
             }
         ],
         "image": "https://kimberleymilousis.com/wp-content/uploads/2017/04/Long-Beautiful-Hair.jpg"
@@ -30,7 +51,40 @@
             {
                 "style": "Dark Makeup",
                 "image": "https://i.pinimg.com/originals/d4/1c/fe/d41cfe8e97a335737771b43ed2b1823a.jpg"
+            },
+            {
+                "style": "Eyes Makeup",
+                "image": "data:image/jpeg;base64,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"
+            },
+            {
+                "style": "Eyes&Lip Makeup",
+                "image": "http://chicnailsibiza.com/wp-content/uploads/2017/04/96258a1ef1e8716c588d69c6bbe8c74c.jpg"
+            },
+            {
+                "style": "Halloween Makeup",
+                "image": "https://avatars.mds.yandex.net/get-pdb/199965/1f273f95-c310-4b8c-b1bd-ccf6c7a173bc/orig"
+            },
+            {
+                "style": "Face Makeup",
+                "image": "https://rudranibanikmd.com/wp-content/uploads/2017/11/Eye22-1080x675.jpg"
+            },
+            {
+                "style": "Light-Natural Makeup",
+                "image": "http://www.loore.com/wp-content/uploads/2016/04/natural_makeup_tutorial_loore.jpg"
+            },
+            {
+                "style": "Royal Makeup",
+                "image": "https://images-eu.ssl-images-amazon.com/images/G/31/img17/Beauty/content/LAKMELOOKBOOK/GOLD-02._V530152182_.jpg"
+            },
+            {
+                "style": "Smoke Makeup",
+                "image": "https://i.pinimg.com/originals/69/41/d5/6941d5c59d07af55334c3ffd3945b4fe.jpg"
+            },
+            {
+                "style": "Green- Makeup",
+                "image": "https://images6.alphacoders.com/705/thumb-350-705975.jpg"
             }
+
         ],
         "image": "https://media.discordapp.net/attachments/345274420606140426/576673793334837251/image0.jpg"
     },
@@ -43,7 +97,7 @@
                 "image": "https://static1.squarespace.com/static/56902c3ea976afc695619880/t/583f160eff7c5059145d495e/1480529429227"
             },
             {
-                "style": "Sns",
+                "style": "Nails-Sns",
                 "image": "https://luxenailandspa.com/wp-content/uploads/2018/09/SNS-Healthy-Nails-Scottsdale.jpg"
             },
             {
@@ -53,7 +107,32 @@
             {
                 "style": "Design",
                 "image": "https://data.whicdn.com/images/311000522/original.jpg"
+            },
+            {
+                "style": "Feet&Nails Tip",
+                "image": "https://img.grouponcdn.com/deal/uvE1VkxS2puRiXh9724Y/1D-2048x1242/v1/c700x420.jpg"
+            },
+            {
+                "style": "long Tip",
+                "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTttfIcWCGgGdG-lGJTqTmBcyo_HaIPKcu8I5kSfzMMzEpyZxQSlA"
+            },
+            {
+                "style": "So-Awesome-Design",
+                "image": "https://s-media-cache-ak0.pinimg.com/736x/fe/e8/2c/fee82c83f9fefae6340dd71c500295fd.jpg"
+            },
+            {
+                "style": "French-Feet&Nails",
+                "image": "https://www.opensolarium.com/wp-content/uploads/2017/08/Manicura.jpg"
+            },
+            {
+                "style": "Long Nails",
+                "image": "http://img.arttonail.com/full/3b145fcf1031b721.jpg"
+            },
+            {
+                "style": "Design-Nails",
+                "image": "https://naildesignsjournal.com/wp-content/uploads/2017/04/cute-acrylic-nails-art-6.jpg"
             }
+           
         ],
         "image": "https://media.discordapp.net/attachments/345274420606140426/576675207448887296/image0.jpg"
     },
@@ -72,6 +151,34 @@
             {
                 "style": "Leg Waxing",
                 "image": "https://arayabeauty.com/wp-content/uploads/2016/11/leg-waxing-1.jpg"
+            },
+            {
+                "style": "Under-Arm Waxing",
+                "image": "https://s3.amazonaws.com/mytime_prod/attachments/3685/large_arm/Fotolia_45658177_Subscription_Monthly_XXL.jpg?1391237328"
+            },
+            {
+                "style": "Lavender Waxing",
+                "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtNPEucKJGejQJHhZFxq6KFZtkdodRayh6NEHNfisjSl-IrO3I"
+            },
+            {
+                "style": "Honey Waxing",
+                "image": "https://cdn.shopify.com/s/files/1/1265/7867/files/waxing-final.jpg?v=1517860189"
+            },
+            {
+                "style": "lip Waxing",
+                "image": "https://www.maxilashboston.com/upload/services/g5h5usc63u.jpg"
+            },
+            {
+                "style": "Body Waxing",
+                "image": "https://i1.wp.com/beautystudiothea.com/wp-content/uploads/2017/10/cropped-back-waxing-cr-640x640.jpg?fit=2000%2C1603&ssl=1"
+            },
+            {
+                "style": "Threading",
+                "image": "https://img.grouponcdn.com/iam/A3UVTQwxZd7iwkWcjtvd6qt1pMB/A3-2048x1229/v1/c700x420.jpg"
+            },
+            {
+                "style": "Face Waxing",
+                "image": "https://image.shutterstock.com/image-photo/waxing-woman-leg-sugar-hair-260nw-1155724915.jpg"
             }
 
         ],
@@ -86,7 +193,7 @@
             },
             {
                 "style": "Hot Stone",
-                "image": "https://i0.wp.com/www.dtoxdayspa.com/wp-content/uploads/2013/04/banner-hot-stone.jpg?fit=950%2C350&ssl=1"
+                "image": "http://thegrovegp.com/wp-content/uploads/2017/03/hotstone.jpg"
             },
             {
                 "style": "Signature",
@@ -95,7 +202,33 @@
             {
                 "style": "Foot Massage",
                 "image": "https://s3-media2.fl.yelpcdn.com/bphoto/wvMhJEVXqqP68RvVfqTLOw/o.jpg"
+            },
+            {
+                "style": "back Massage",
+                "image": "https://www.verywellhealth.com/thmb/TAazDMgT2FNYQwN_icLptCz1vso=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/woman-receiving-back-massage-883219348-5a28609c494ec90036ffed80.jpg"
+            },
+            {
+                "style": "leg Massage",
+                "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaiPbyogWwi87AJ8TzN1oMUkgHcCHnWuaHYe7ZcGSYNCIYitf1xQ"
+            },
+            {
+                "style": "Neck Massage",
+                "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkRmK_GYElHgzquHWtz8tMah9FrlybQrGEubp4ZdhANZU7H_Wf"
+            },
+            {
+                "style": "Hot-Stone Massage",
+                "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSepdlNl6dcscuj3qrx76KsTIpjBuB7i_q9PShHo4-OmaAX68l3"
+            },
+            {
+                "style": "Face Hot-stone Massage",
+                "image": "https://img.alicdn.com/imgextra/i2/6000000006206/TB2HQ6ZuljTBKNjSZFDXXbVgVXa_!!6000000006206-0-tbvideo.jpg"
+            },
+            {
+                "style": "Couple Massage",
+                "image": "https://www.spafinder.com/wp-content/uploads/2015/08/massage.jpg"
             }
+            
+        
         ],
         "image": "https://elementsmassage.com/files/frontend/original/MASSAGE-couple.jpg"
     },
@@ -113,9 +246,132 @@
             {
                 "style": "Oxygen Facial",
                 "image": "http://4.bp.blogspot.com/-680NgMsNFns/VgXqsgMJIxI/AAAAAAAAE8Y/rSlDHKTG4M4/s400/Masaje%2BFacial%2BiStM.jpg"
+            },
+            {
+                "style": "Girl-day Facial",
+                "image": "https://www.finishingtouchesdayspa.com/wp-content/uploads/sites/396/2016/10/facial.jpg"
+            },
+            {
+                "style": "Massage Facial",
+                "image": "https://mt-backend-familycircle-environment-contentbucket-1qlli1qnqqj9z.s3.amazonaws.com/s3fs-public/styles/664x398/public/2018-02/woman-getting-facial-peel.png"
+            },
+            {
+                "style": "Fruit Facial",
+                "image": "http://www.hotelcasacarolina.com/wp-content/uploads/2015/07/Fruit-Facial-Therapy-800x675.jpg"
+            },
+            {
+                "style": "Mask Facial",
+                "image": "http://cdn.thervo.com/assets/images/courses/costs/thervo-facial-peeling-mask-beauty-treatment.jpg"
+            },
+            {
+                "style": "beauty Facial",
+                "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQVkfZKKiS4282cKAkzVJH0KO8eNWEHqPwPj8qaTcES9pt4lE-"
+            },
+            {
+                "style": "Euro-Facial",
+                "image": "http://1akx4u39884j1rrouh1ttlpy-wpengine.netdna-ssl.com/wp-content/uploads/2014/11/Facial-article.jpg"
+            },
+            {
+                "style": "Micro-Facial",
+                "image": "http://cdn.thervo.com/assets/images/courses/costs/thervo-facial-hydro-microdermabrasion-peeling-treatment.jpg"
             }
 
         ],
         "image": "https://plantationbaygolf.com/wp-content/uploads/2016/04/facial_orchid__05542.1379337037.1280.1280.jpg"
+    },
+    {
+        "id": 7,
+        "service": "Eyes-Lash",
+        "styles": [{
+                "style": "Mini Eyes-Lash",
+                "image": "https://s3-media2.fl.yelpcdn.com/bphoto/308ipGFI5nGhEIjoR1bpow/ls.jpg"
+            },
+            {
+                "style": "Long Eyes-Lash",
+                "image": "https://i.ytimg.com/vi/g_5-aqhCojQ/maxresdefault.jpg"
+            },
+            {
+                "style": "Short Eyes-Lash",
+                "image": "https://www.ebenezereyelash.com/wp-content/uploads/2017/09/j10-before.jpg"
+            },
+            {
+                "style": "Pure Eyes-lash",
+                "image": "https://www.byrdie.com/thmb/LDEa9cSUKTXRkXww06rx4VEIIA0=/700x366/filters:fill(auto,1)/cdn.cliqueinc.com__cache__posts__71900__how-to-make-lash-extension-last-longer-71900-1520985166958-fb.700x0c-a6a9e55d470a4a8fbae236c1c232cf2f.jpg"
+            },
+            {
+                "style": "Pretty Eyes-Lash",
+                "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3T-4vN2Be4NsGwU_HzdNI5yFdW-5r66hEwvZZXTt9U8Q68X0o"
+            },
+            {
+                "style": "Medium-eyes-lash",
+                "image": "http://flagstaffhairsalon.com/wp-content/uploads/2018/01/Flagstaff-eyelash-extensions-Northern-Arizona-Glam-Squad.jpg"
+            },
+            {
+                "style": "Cat Eyes-Lash",
+                "image": "https://dta0yqvfnusiq.cloudfront.net/eyeca73760061/2018/08/eyelashes-5b73222ce5ae7.jpg"
+            },
+            {
+                "style": "Oxygen Facial",
+                "image": "http://4.bp.blogspot.com/-680NgMsNFns/VgXqsgMJIxI/AAAAAAAAE8Y/rSlDHKTG4M4/s400/Masaje%2BFacial%2BiStM.jpg"
+            },
+            {
+                "style": "before & after",
+                "image": "https://soulagemedspa.com/wp-content/uploads/sites/501/2018/11/shutterstock_1120042385.png"
+            },
+            {
+                "style": "full eyes-lash",
+                "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8KBfC2Tc_YXk6hpreRAWR631Jfso8MZoXfL-q-qmYpTbi1jXR"
+            }
+
+
+        ],
+        "image": "https://dta0yqvfnusiq.cloudfront.net/eyeca73760061/2018/08/eyelashes-5b73222ce5ae7.jpg"
+    },
+    {
+        "id": 8,
+        "service": "Microblading",
+        "styles": [{
+                "style": "Eyes-brow2",
+                "image": "http://www.beverleyhills.co.nz/wp-content/uploads/2016/07/eyelash-eyebrow-tinting.jpg"
+            },
+            {
+                "style": "Natural brow",
+                "image": "https://lilyhandt.com/wp-content/uploads/2017/08/3D-Microblading.jpg"
+            },
+            {
+                "style": "Eyes brow",
+                "image": "https://bellaroseskincare.com/wp-content/uploads/2018/02/eyebrow-1024x683.jpg"
+            },
+            {
+                "style": "Natural-lip",
+                "image": "http://seriousskin.co.uk/wp-content/uploads/2016/11/lip-augmentation.jpg"
+            },
+            {
+                "style": "Sexy-lip",
+                "image": "https://vbrows.com/wp-content/uploads/2017/04/stock2.jpg"
+            },
+            {
+                "style": "lip-permanent",
+                "image": "https://www.glam.com/wp-content/uploads/2017/12/lip-tat-hp.jpg"
+            },
+            {
+                "style": "Scoope-brow",
+                "image": "https://cdn.shopify.com/s/files/1/1989/7081/files/Schermafdruk_2018-05-17_15.34.56_large.png?v=1526542524"
+            },
+            {
+                "style": "Eyes lid",
+                "image": "http://bebrows.us/upload/photo//thumbs/eyeliner-1498093176.jpeg"
+            },
+            {
+                "style": "Eyes-liner",
+                "image": "https://s3.eu-central-1.amazonaws.com/dashl-media-prod/beauty-center--1521820401075.jpg"
+            },
+            {
+                "style": "permanant",
+                "image": "https://keemdenicebeautystudio.files.wordpress.com/2018/10/what-is-microblading-entity-1320x720.jpg?w=1320&h=400&crop=1"
+            }
+
+        ],
+        "image": "https://makeupbymirna.com/wp-content/uploads/2016/08/Cut-crease-2.jpg"
     }
 ]

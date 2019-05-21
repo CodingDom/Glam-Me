@@ -5,7 +5,6 @@ import ReactNotification from "react-notifications-component";
 import "react-notifications-component/dist/theme.css";
 import axios from "axios";
 
-
 class form extends React.Component {
   constructor(props){
     super(props)
@@ -204,6 +203,8 @@ class form extends React.Component {
         <option>Hair</option>
         <option>Waxing</option>
         <option>Facials</option>
+        <option>Eyes-Lash Extension</option>
+        <option>Microblading</option>
         </Form.Control>
       </Form.Group>
       <Form.Group 
