@@ -1,0 +1,46 @@
+[
+    {
+        "Light-MakeUp": "$70.00",
+        "Dark-Makeup":  "$95.00"
+    },
+    {
+        "Hair-BlowDry": "$55.00",
+        "Hair-Updo": "$75.00",
+        "Hair-Cut": "$35.00",
+        "Hair-Highlight": "$95.00",
+        "Hair-COlor": "$70.00"
+    },
+    {
+        "Acrylic-Nails": "$35.00",
+        "SNS-Nails": "$45.00",
+        "Pink & White": "$55.00",
+        "Design-Nails": "$35.00-up"
+    },
+    {
+        "Hotstone-Massage": "$90.00",
+        "Swedish-Massage": "$65.00",
+        "DeepTissue-Massage": "$105.00"
+    },
+    {
+       "Mini-Facial": "$45.00",
+       "Dermalogica-Facial": "$60.00",
+       "European-Facial": "$75.00",
+       "Oxygen-Facial": "$95.00"
+      
+    },
+    {
+        "Waxing-FullFace": "$55.00",
+        "Waxing-EyeBrow": "$10.00",
+        "Waxing-hands": "$35.00"
+    },
+    {
+        "Full Eyes-Lash": "$45.00",
+        "Individual Lash": "$150.00",
+        "Cat-eyes Lash": "$125.00" 
+    },
+    {
+        "Microbalding Eyesbrow": "$350.00",
+        "Microbalding Lip": "$450.00",
+        "Microbalding EyesLiner": "$250.00"
+    }
+]
