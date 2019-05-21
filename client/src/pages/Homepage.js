@@ -66,14 +66,16 @@ class Homepage extends Component {
                 
             </p>
             <div style={{textAlign:"left",marginLeft:"30%",width:"60%", fontSize:"x-large"}}>
-            <ul style={{width:"50%",float:"left", listStyleImage:"url('https://resizeimage.net/mypic/wz4HkD3WnICAiFUQ/qXq81/goldenarrow.png')"}}>
+            <ul style={{width:"50%",float:"left", listStyleImage:"url('/images/goldenArrow.png')"}}>
+                <li>Eyelashes</li>
                 <li>Hair</li>
                 <li>Makeup</li>
                 <li>Nails</li>
             </ul>
-            <ul style={{width:"50%",float:"right", listStyleImage:"url('https://resizeimage.net/mypic/wz4HkD3WnICAiFUQ/qXq81/goldenarrow.png')"}}>
-                <li>Massages</li>
+            <ul style={{width:"50%",float:"right", listStyleImage:"url('/images/goldenArrow.png')"}}>
                 <li>Facials</li>
+                <li>Massages</li>
+                <li>Microblading</li>
                 <li>Waxings</li>
             </ul>
             </div>

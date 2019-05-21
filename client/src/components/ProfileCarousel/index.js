@@ -5,8 +5,6 @@ import Swiper from 'react-id-swiper';
 // Need to add Pagination, Navigation modules
 import { Pagination, Navigation } from 'swiper/dist/js/swiper.esm';
 
-const images = require("../../images.json");
-
 const params = {
   modules: [Pagination, Navigation],
   slidesPerView: window.innerWidth < 992 ? 2 : 3,
@@ -28,18 +26,20 @@ const params = {
 };
 
 export default class ProfileCarousel extends React.Component {
-    componentDidMount() {
-      
+    constructor(props) {
+      super(props);
+
     }
 
     render() {
+      // console.log(this.props);
       let id = 0;
       return (
           <Row>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/css/swiper.css"></link>
             <div className="profileImageShowCase">
               <Swiper {...params}>
-                {images.map(currImage => (
+                {this.props.workImages.map(currImage => (
                   <div key={id++} style={{height:"200px",backgroundImage:`url(${currImage.image})`,backgroundSize:"cover",backgroundPosition:"center"}}></div>
                 ))}
               </Swiper>

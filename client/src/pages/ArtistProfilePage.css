@@ -2,7 +2,12 @@
     position: relative;
     width: 100%;
     /* min-height: 900px; */
-    background-color: #2d2d2d;
+    /* background-color: #2d2d2d; */
+    background: url("https://sitejerk.com/images/light-transparent-png.png"), 
+    linear-gradient(to right bottom, #242831 50%, #14161d 50%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     margin-top: 10px;
     margin-bottom: 10px;
     border-style: double;
