@@ -70,13 +70,11 @@ class Homepage extends Component {
                 <li>Hair</li>
                 <li>Makeup</li>
                 <li>Nails</li>
-                <li>Eyes-Lash</li>
             </ul>
             <ul style={{width:"50%",float:"right", listStyleImage:"url('https://resizeimage.net/mypic/wz4HkD3WnICAiFUQ/qXq81/goldenarrow.png')"}}>
                 <li>Massages</li>
                 <li>Facials</li>
                 <li>Waxings</li>
-                <li>Microbalding</li>
             </ul>
             </div>
             </Container>
