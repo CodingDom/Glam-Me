@@ -31,7 +31,7 @@ class ArtistCard extends React.Component {
       </div>
       <div className="content">
         <ul>
-          <li>
+          <li style={{ whiteSpace: "nowrap" }}>
             <strong>Technician: </strong> {artist.name}
           </li>
           <li>
@@ -42,7 +42,7 @@ class ArtistCard extends React.Component {
           </li>
           <li>
            
-            <a className="btn btn-danger" href={"/artist/"+artist.id+window.location.search}>
+            <a className="btn btn-danger" href={"/technicians/"+artist.id+window.location.search}>
               View Profile
             </a>
           </li>
