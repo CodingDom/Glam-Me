@@ -72,7 +72,7 @@ export default class Navbar extends Component {
         name: "Book Appointment"
       },
       {
-        location: "/artist",
+        location: "/technicians",
         name: "View Technicians"
       }
     ];

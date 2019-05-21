@@ -127,12 +127,12 @@ class Appointments extends Component {
                 <StylesCards getStyles={() => serviceImage.filter(style => { return style.service === this.state.servicePicked})[0]} onClick={this.handleStylesOnClick} /> 
                
                </div>
-               {/* {this.state.stylesVisible ? <Link to={`/artist?service=${this.state.servicePicked}&style=uploadingimage`}> <Button variant="primary">Continue to booking</Button> </Link> : null} */}
+               {/* {this.state.stylesVisible ? <Link to={`/technicians?service=${this.state.servicePicked}&style=uploadingimage`}> <Button variant="primary">Continue to booking</Button> </Link> : null} */}
                 </Col> 
                 : null}
                 <Col size="md-12">
                <div className="artistCards">
-               {this.state.artistVisible ? <Redirect to={`/artist?service=${this.state.servicePicked}&style=${this.state.stylesPicked}`} /> : null}
+               {this.state.artistVisible ? <Redirect to={`/technicians?service=${this.state.servicePicked}&style=${this.state.stylesPicked}`} /> : null}
                </div>
                 </Col>
               
