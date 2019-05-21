@@ -54,10 +54,10 @@ class ArtistProfilePage extends React.Component {
         console.log("rendering");
         let button;
         if (this.state.myProfile) {
-            button = <Button href={"/artist/" + window.location.pathname.split("/")[2] + "/edit"} style={{ display:"inline-block",marginTop:"105%" }} variant="warning">Edit Profile</Button>;
+            button = <Button href={"/technicians/" + window.location.pathname.split("/")[2] + "/edit"} style={{ display:"inline-block",marginTop:"105%" }} variant="warning">Edit Profile</Button>;
         } else {
 
-            button = <Button href={"/artist/" + window.location.pathname.split("/")[2] + "/booking" + window.location.search + "&technician=" + (this.state.artistName ? this.state.artistName.replace(" ","+") : "")} style={{ display:"inline-block",marginTop:"105%" }} variant="danger">Book Appointment</Button>
+            button = <Button href={"/technicians/" + window.location.pathname.split("/")[2] + "/booking" + window.location.search + "&technician=" + (this.state.artistName ? this.state.artistName.replace(" ","+") : "")} style={{ display:"inline-block",marginTop:"105%" }} variant="danger">Book Appointment</Button>
         }
 
         let images = this.state.artistWorkImages.length > 0 ? this.state.artistWorkImages : defaultImages;
