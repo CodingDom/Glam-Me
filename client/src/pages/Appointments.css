@@ -17,8 +17,9 @@
   }
   .appointmentWrapper {
       position: relative;
-      margin-bottom: 100px;
-      display: inline-block;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      /* display: inline-block; */
       overflow-y: hidden;
       /* background-color: black; */
       
