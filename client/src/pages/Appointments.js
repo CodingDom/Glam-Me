@@ -95,7 +95,7 @@ class Appointments extends Component {
         
         return (
        
-            <Container fluid className="appointmentWrapper">
+            <Container className="appointmentWrapper">
             <div className="parallaxHome">
                     <Parallax />
                 </div>
