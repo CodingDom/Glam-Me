@@ -16,3 +16,10 @@ Authors
 * Dominic Smith
 * Jonathan Diaz
 * Minh-Ngoc Tran (Sheila)
+
+## Preview
+
+![Imgur](https://i.imgur.com/dlZOndb.png)
+![Imgur](https://i.imgur.com/LMS3eVd.png)
+![Imgur](https://i.imgur.com/JUItnAx.png)
+![Imgur](https://i.imgur.com/Rnix1DM.png)
