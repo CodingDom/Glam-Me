@@ -29,7 +29,7 @@
     "express-session": "^1.16.1",
     "if-env": "^1.0.4",
     "imgur-uploader": "^4.2.1",
-    "mongoose": "^5.5.4",
+    "mongoose": "^5.7.5",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0"
   },
