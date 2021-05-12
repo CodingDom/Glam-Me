@@ -23,7 +23,7 @@
     "react-select": "^2.4.3",
     "react-star-rating-component": "^1.4.1",
     "react-tabs": "^3.0.0",
-    "swiper": "^4.5.0"
+    "swiper": "^6.5.1"
   },
   "scripts": {
     "start": "react-scripts start",
